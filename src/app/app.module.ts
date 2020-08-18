@@ -8,24 +8,23 @@ import { FooterComponent } from './Components/footer/footer.component';
 
 //For Firebase
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from "@angular/fire/auth"; //For Authentication
+import { AngularFirestoreModule } from '@angular/fire/firestore'; //For Firestore
 import { environment } from '../environments/environment';
-import { RegisteredWelcomeScreenComponent } from './Components/registered-welcome-screen/registered-welcome-screen.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    RegisteredWelcomeScreenComponent
-   
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

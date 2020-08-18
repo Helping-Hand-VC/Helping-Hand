@@ -1,7 +1,9 @@
 export class Student {
-    id:         string;
-    firstname:  string;
-    surname:    string;
+    id:             string;
+    firstname:      string;
+    surname:        string;
+    email:          string;
+    emailVerified:  string;
 }
 
 export class Teahcer {
