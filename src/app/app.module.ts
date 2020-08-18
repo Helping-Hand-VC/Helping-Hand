@@ -10,12 +10,14 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { RegisteredWelcomeScreenComponent } from './registered-welcome-screen/registered-welcome-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RegisteredWelcomeScreenComponent
   ],
   imports: [
     BrowserModule,
