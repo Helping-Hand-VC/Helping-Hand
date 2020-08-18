@@ -10,7 +10,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-import { RegisteredWelcomeScreenComponent } from './registered-welcome-screen/registered-welcome-screen.component';
+import { RegisteredWelcomeScreenComponent } from './Components/registered-welcome-screen/registered-welcome-screen.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RegisteredWelcomeScreenComponent } from './registered-welcome-screen/re
     HeaderComponent,
     FooterComponent,
     RegisteredWelcomeScreenComponent
+   
   ],
   imports: [
     BrowserModule,
