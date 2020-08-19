@@ -1,12 +1,16 @@
 
 form {
+
+
+}
+.column2{
   padding: 10px;
   background-color: #FFFFFFbd;
   border: none;
-
+  border-radius: 25px;
 }
 
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -33,11 +37,6 @@ button:hover {
   opacity: 0.8;
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
 
 .imgcontainer {
   text-align: center;
