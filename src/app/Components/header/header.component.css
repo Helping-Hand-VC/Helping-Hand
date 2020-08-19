@@ -12,7 +12,7 @@ body {
   }
   
   .body-wrap {
-    min-height: 700px;
+    min-height: 25px;
   }
   
   .body-wrap {
@@ -28,7 +28,7 @@ body {
     left: 0;
     right: 0;
     z-index: -1;
-    height: 260px;
+    height: 65px;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26, 49, 95, 1)), color-stop(100%, rgba(26, 49, 95, 0)));
     background: linear-gradient(to bottom, rgba(26, 49, 95, 1) 0%, rgba(26, 49, 95, 0) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#001a315f', GradientType=0);
