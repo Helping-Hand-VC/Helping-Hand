@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth"; //For Authentication
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //For Firestore
 import { environment } from '../environments/environment';
+import { ProfilePageComponent } from './Components/profile-page/profile-page.component';
 
 
 
@@ -18,7 +19,8 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
