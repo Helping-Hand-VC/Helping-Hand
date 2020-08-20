@@ -35,7 +35,7 @@ export class FirebaseConnectionService {
             }
 
   async SignInUser(email, password) : Promise<string> {
-    var ReturnResult: string = "Logged In";
+    var ReturnResult: string = "error";
 
     await this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -52,16 +52,24 @@ export class FirebaseConnectionService {
   }
 
    // Sign up with email/password
-  CreateNewUser(email, password) {
-    return this.afAuth.createUserWithEmailAndPassword(email, password)
+   async CreateNewUser(email, password, UserType) : Promise<string>{
+    var ReturnResult: string = "error";
+
+    //Depending on UserType depends where the extra user data will be stored
+
+    await this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
+        ReturnResult = "New user created";
+
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
-        this.SendVerificationMail();
+        //this.SendVerificationMail();
         //this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert(error.message)
+        ReturnResult = "error," + error;
       })
+
+    return ReturnResult;
   }
 
   // Send email verfificaiton when new user sign up
