@@ -1,13 +1,23 @@
 .site-footer
 {
+  position: fixed;
   background-color:#26272b;
-  padding:45px 0 20px;
-  font-size:15px;
-  line-height:24px;
+  font-size:14pxpx;
+  line-height:15px;
+  width: 100%;
+  height: 100%;
+  max-height: 250px;;
   color:#737373;
+}
+.container{
+  width: 100%;
+  padding-top: 10px;
 }
 .site-footer hr
 {
+  margin-top: 0 !important;
+  margin-bottom: 0px !important;
+  width: 100% !important;
   border-top-color:#bbb;
   opacity:0.5
 }
@@ -18,7 +28,7 @@
 .site-footer h6
 {
   color:#fff;
-  font-size:16px;
+  font-size:12px;
   text-transform:uppercase;
   margin-top:5px;
   letter-spacing:2px
@@ -77,6 +87,8 @@
   .site-footer [class^=col-]
   {
     margin-bottom:30px
+    width 100%;
+    max-width: 150px;
   }
 }
 @media (max-width:767px)
@@ -160,4 +172,8 @@
     margin-right:0;
     font-weight:600
   }
+}
+.col-xs-12 .col-md-3{
+  width: 100%;
+  max-width: 200px;
 }
