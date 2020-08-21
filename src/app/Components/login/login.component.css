@@ -1,11 +1,13 @@
 
+form {
+
+
+}
 .column2{
   padding: 10px;
   background-color: #FFFFFFbd;
   border: none;
   border-radius: 25px;
-  width: 100%;
-  max-width: 500px;
 }
 
 input[type=email], input[type=password] {
@@ -15,11 +17,6 @@ input[type=email], input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
-
-input[type=checkbox]{
-  width: 100%;
-
 }
 .row{
   display: inline-block;
@@ -47,17 +44,14 @@ button:hover {
 }
 
 img.avatar {
-  width: 100%;
-  max-width: 150px;
-  height: 100%;
-  max-height: 150px;
+  width: 40%;
   border-radius: 50%;
 }
 
 .container {
   padding: 16px;
   text-align: center;
-
+  max-width: 80%;
   width: 100%;
 }
 
@@ -68,8 +62,6 @@ span.psw {
 label{
   float: left;
 }
-
-
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
