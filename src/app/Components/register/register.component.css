@@ -1,13 +1,16 @@
 
-form {
+/* form {
 
 
-}
+} */
 .column2{
   padding: 10px;
   background-color: #FFFFFFbd;
   border: none;
+  
   border-radius: 25px;
+  width: 100%;
+  max-width: 500px;
 }
 
 input[type=email], input[type=password] {
