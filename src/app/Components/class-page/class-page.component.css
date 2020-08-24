@@ -43,6 +43,8 @@ boby{
     padding: 10px 10px;
 } */
 
+.inline{display:inline}
+
 #btn0{
     background-color: #6EB26E;
     width:100px;
