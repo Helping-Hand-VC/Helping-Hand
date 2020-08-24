@@ -7,6 +7,9 @@ import { TestPageComponent } from './Components/test-page/test-page.component';
 //import { AwardsComponent } from './Components/awards/awards.component';
 import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
+import { ClassPageComponent } from './Components/class-page/class-page.component';
+
+
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent },
@@ -15,6 +18,7 @@ const routes: Routes = [
   { path: 'test', component: TestPageComponent },
   { path: 'completed', component: TestCompletionPageComponent },
   { path: 'error-404', component: ErrorPageComponent },
+  { path: 'class', component: ClassPageComponent },
   
 
   //Working with this for design purposes - Jon Pallatte

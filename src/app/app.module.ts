@@ -16,6 +16,7 @@ import { TestPageComponent } from './Components/test-page/test-page.component';
 import { AwardsComponent } from './Components/awards/awards.component';
 import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
+import { ClassPageComponent } from './Components/class-page/class-page.component';
 
 
 
@@ -28,7 +29,8 @@ import { ErrorPageComponent } from './Components/error-page/error-page.component
     TestPageComponent,
     AwardsComponent,
     TestCompletionPageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ClassPageComponent
   ],
   imports: [
     BrowserModule,
