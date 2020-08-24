@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { ProfilePageComponent } from './Components/profile-page/profile-page.component';
 import { TestPageComponent } from './Components/test-page/test-page.component';
 import { AwardsComponent } from './Components/awards/awards.component';
+import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
 
 
 
@@ -24,7 +25,8 @@ import { AwardsComponent } from './Components/awards/awards.component';
     FooterComponent,
     ProfilePageComponent,
     TestPageComponent,
-    AwardsComponent
+    AwardsComponent,
+    TestCompletionPageComponent
   ],
   imports: [
     BrowserModule,
