@@ -6,7 +6,7 @@ import { ProfilePageComponent } from './Components/profile-page/profile-page.com
 import { TestPageComponent } from './Components/test-page/test-page.component';
 //import { AwardsComponent } from './Components/awards/awards.component';
 import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
-
+import { ErrorPageComponent } from './Components/error-page/error-page.component';
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent },
@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfilePageComponent },
   { path: 'test', component: TestPageComponent },
   { path: 'completed', component: TestCompletionPageComponent },
+  { path: 'error-404', component: ErrorPageComponent },
+  
 
   //Working with this for design purposes - Jon Pallatte
   // { path: 'awards', component: AwardsComponent },

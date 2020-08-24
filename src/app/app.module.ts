@@ -15,6 +15,7 @@ import { ProfilePageComponent } from './Components/profile-page/profile-page.com
 import { TestPageComponent } from './Components/test-page/test-page.component';
 import { AwardsComponent } from './Components/awards/awards.component';
 import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
+import { ErrorPageComponent } from './Components/error-page/error-page.component';
 
 
 
@@ -26,7 +27,8 @@ import { TestCompletionPageComponent } from './Components/test-completion-page/t
     ProfilePageComponent,
     TestPageComponent,
     AwardsComponent,
-    TestCompletionPageComponent
+    TestCompletionPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
