@@ -12,6 +12,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth"; //For Authentication
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //For Firestore
 import { environment } from '../environments/environment';
 import { ProfilePageComponent } from './Components/profile-page/profile-page.component';
+import { TestPageComponent } from './Components/test-page/test-page.component';
+import { AwardsComponent } from './Components/awards/awards.component';
 
 
 
@@ -20,7 +22,9 @@ import { ProfilePageComponent } from './Components/profile-page/profile-page.com
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    TestPageComponent,
+    AwardsComponent
   ],
   imports: [
     BrowserModule,
