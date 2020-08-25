@@ -1,86 +1,257 @@
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
 body {
-    color: #6a6c6f;
-    background-color: #f1f3f6;
-    margin-top: 30px;
-  }
+  background: #F1F3FA;
+}
+
+form {
+  padding: 20px;
+  width: 50%;
+}
+
+h3 {
+  padding-left: 20px;
+  text-align: right;
+  font-size: 20px;
+}
+
+#GenCodeDisplay {
+  font: 100;
+  font-size: 20px;
+  width: 100%;
+  max-width: 200px;
+  height: 30px;
+  border: 1px solid black;
+  margin-left: 25px;
+  text-align: center;
+}
+
+#btnReset {
+  float: right;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 55px;
+  background-color: #FF7043;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+#btnSave{
+  font-size: 16px;
+  float: right;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 55px;
+  background-color: #15d4ff;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+}
+#btnReset:hover {
+  float: right;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 55px;
+  background-color: #e65f36;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+#btnSave:hover{
+  font-size: 16px;
+  float: right;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 55px;
+  background-color: #17a1c0;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+}
+
+#btnGenerateLinkCode {
+  border-radius: 50px;
+  width: fit-content;
+  background-color: #15d4ff;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+#btnGenerateLinkCode:hover {
+  border-radius: 50px;
+  width: fit-content;
+  background-color: #17a1c0;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+#btnLinkAccount {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 155px;
+  background-color: #4CAF50;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+#btnLinkAccount:hover {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 155px;
+  background-color: #3b883e;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Profile container */
+.container {
+  margin: 20px 0;
+  width: 100%;
+  height: 100%;
+  float: left;
   
-  .container {
-    max-width: 960px;
-  }
-  
-  .panel-default>.panel-heading {
-    color: #333;
-    background-color: #fff;
-    border-color: #e4e5e7;
-    padding: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  .panel-default>.panel-heading a {
-    display: block;
-    padding: 10px 15px;
-  }
-  
-  .panel-default>.panel-heading a:after {
-    content: "";
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    float: right;
-    transition: transform .25s linear;
-    -webkit-transition: -webkit-transform .25s linear;
-  }
-  
-  .panel-default>.panel-heading a[aria-expanded="true"] {
-    background-color: #eee;
-  }
-  
-  .panel-default>.panel-heading a[aria-expanded="true"]:after {
-    content: "\2212";
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-  
-  .panel-default>.panel-heading a[aria-expanded="false"]:after {
-    content: "\002b";
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-  
-  .accordion-option {
-    width: 100%;
-    float: left;
-    clear: both;
-    margin: 15px 0;
-  }
-  
-  .accordion-option .title {
-    font-size: 20px;
-    font-weight: bold;
-    float: left;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .accordion-option .toggle-accordion {
-    float: right;
-    font-size: 16px;
-    color: #6a6c6f;
-  }
-  
-  .accordion-option .toggle-accordion:before {
-    content: "Expand All";
-  }
-  
-  .accordion-option .toggle-accordion.active:before {
-    content: "Collapse All";
-  }
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 45%;
+  height: 45%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-grade {
+  text-transform: uppercase;
+  color: #5a7391;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-usertitle-class {
+  text-transform: uppercase;
+  color: #5a7391;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
