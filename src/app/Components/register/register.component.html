@@ -1,84 +1,51 @@
-
 <div class="container">
-    <div class="row">
-      <div class="column1" style="width: 33%;">
-      </div>
-      <div class="column2"  style="width: 100%;">
-        <form id="loginform" name="loginform">
-          <div class="imgcontainer">
-            <!-- <link type='text/css' rel='stylesheet' href='register.component.css'/> -->
-            <img src="../../../assets/img/helpinghands150.svg" alt="Helping Hands" class="avatar">
-          </div>
-  
-          <div class="container">
-            <label ><b>EMAIL</b></label>
-            
-            <input type="email" minlength="3" placeholder="Enter Email Address" name="email" id="userEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            title="Must contain @ and . (example characters@characters.domain)"required>
-
-            <!-- <label >User Role:</label>
-            <select id="utype" name="utype" size="4" multiple>
-              <option value="student">Student</option>
-              <option value="parent">Parent</option>
-              <option value="teacher">Teacher</option>
-              <option value="headmaster">Head Master</option>
-            </select> -->
-
-            
-            <label><b>PASSWORD</b></label>
-
-            <input type="password" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-
-            <input type="password" placeholder="Enter Password" name="cnfpsw" id="cnfpsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-  
-            <label >SELECT THE TYPE OF USER</label>
-            <button id="btn0"><span id="choice0"></span>Student</button>  
-            <button id="btn1"><span id="choice1"></span>Parent</button>
-            <button id="btn2"><span id="choice2"></span>Teacher</button>
-            <button id="btn3"><span id="choice3"></span>Headmaster</button>
-
-            <!-- <p>Please select your gender:</p> -->
-            <!-- <input type="radio" id="male" name="gender" value="male">&nbsp;
-            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-            <label for="male">I accept the Terms of use.</label><br> -->
-            <br> 
-            <input type="radio" id="female" name="gender" value="female"> 
-            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-            <label for="female">I accept the Privacy policy</label>
-
-
-            <!-- <div>
-            <fieldset id="group1">
-              <input type="radio" id="male" name="gender" value="male">&nbsp;
-              &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-              <label for="male">I accept the Terms of use.</label><br>
-              <br>
-            </fieldset>
-          </div>
-          
-            <fieldset id="group2">
-              <input type="radio" id="female" name="gender" value="female"> 
-              &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-              <label for="female">I accept the Privacy policy</label>
-            </fieldset> -->
-
-            <button type="submit" id="btnRegister" (click)="RegisterUser()">Register</button>
-          </div>
-        </form>
-        <div class="container">
-         
-            <span>Change language to  <a href="#">Afrikaans</a></span>
-          
-          <br>
-          <span >Forgot <a href="#">password?</a></span>
-          <br>
-          <a href="Login">Already have an account? Perhaps Login</a>
+  <div class="row">
+    <div class="column1" style="width: 33%;"></div>
+    <div class="column2" style="width: 100%;">
+      <form id="Registerform" name="Registerform">
+        <div class="imgcontainer">
+          <img src="../../../assets/img/helpinghands150.svg" alt="Helping Hands" class="avatar" />
         </div>
-      </div>
-      <div class="column3" style="width: 33%;">
+        <div class="container">
+          <label><b>EMAIL</b></label>
+
+          <input type="email" minlength="3" placeholder="Enter Email Address" name="email" id="RegUserEmail"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Must contain @ and . (example characters@characters.domain)" required />
+
+          <label><b>PASSWORD</b></label>
+
+          <input type="password" placeholder="Enter Password" name="RegPsw" id="RegPsw"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+            required />
+
+          <input type="password" placeholder="Confirm Password" name="cnfpsw" id="cnfpsw"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+            required />
+
+          <label>SELECT THE TYPE OF USER</label>
+          <button id="btnStudent">Student</button>
+          <button id="btnParent">Parent</button>
+          <button id="btnTeacher">Teacher</button>
+          <button id="btnHeadmaster">Headmaster</button>
+          <br />
+          <input type="checkbox" id="checkpolicy" style="float: left;" />
+          <label style="float: left; padding-top: 5px;">I accept the Privacy policy</label>
+          <button type="submit" id="btnRegister" (click)="RegisterUser()">
+            Register
+          </button>
+        </div>
+      </form>
+      <div class="containerLinks">
+        <span>Change language to <a href="#">Afrikaans</a></span>
+        <br />
+        <span>Forgot <a href="#">password?</a></span>
+        <br />
+        <a href="Login">Already have an account? Perhaps Login</a>
       </div>
     </div>
+    <div class="column3" style="width: 33%;"></div>
   </div>
-  
+</div>

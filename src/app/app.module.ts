@@ -17,6 +17,7 @@ import { AwardsComponent } from './Components/awards/awards.component';
 import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { ClassPageComponent } from './Components/class-page/class-page.component';
+import { HomeComponent } from './Components/home/home.component';
 
 
 
@@ -30,7 +31,8 @@ import { ClassPageComponent } from './Components/class-page/class-page.component
     AwardsComponent,
     TestCompletionPageComponent,
     ErrorPageComponent,
-    ClassPageComponent
+    ClassPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

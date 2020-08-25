@@ -8,18 +8,19 @@ import { TestPageComponent } from './Components/test-page/test-page.component';
 import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { ClassPageComponent } from './Components/class-page/class-page.component';
-
+import { HomeComponent } from './Components/home/home.component';
 
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent },
-  { path: 'Register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfilePageComponent },
   { path: 'test', component: TestPageComponent },
   { path: 'completed', component: TestCompletionPageComponent },
   { path: 'error-404', component: ErrorPageComponent },
   { path: 'class', component: ClassPageComponent },
-  
+  { path: 'home', component: HomeComponent },
+
 
   //Working with this for design purposes - Jon Pallatte
   // { path: 'awards', component: AwardsComponent },

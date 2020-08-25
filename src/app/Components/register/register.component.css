@@ -1,13 +1,15 @@
-
-/* form {
-
-
-} */
+#checkpolicy{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.containerLinks{
+  line-height: 25px;
+}
 .column2{
   padding: 10px;
   background-color: #FFFFFFbd;
   border: none;
-  
   border-radius: 25px;
   width: 100%;
   max-width: 500px;
@@ -47,12 +49,11 @@ button:hover {
 }
 
 img.avatar {
-  width: 40%;
   border-radius: 50%;
 }
 
 .container {
-  padding: 16px;
+  padding: 20px;
   text-align: center;
   max-width: 80%;
   width: 100%;
@@ -64,45 +65,46 @@ span.psw {
 }
 label{
   float: left;
+  margin-bottom: 0px !important;
 }
 
 
-#btn0{
+#btnStudent{
   background-color: #6EBAF6;
   width:130px;
   font-size:20px;
   color:#fff;
-  border: 1px solid #1d3c6a;
-  margin: 10px 40px 10px 0px;
+  border-radius: 50px;
+  margin: 10px 20px 10px 10px;
   padding: 10px 10px;
 }
 
-#btn1{
+#btnParent{
   background-color: #6EBAF6;
   width:130px;
   font-size:20px;
   color:#fff;
-  border: 1px solid #1d3c6a;
-  margin: 10px 40px 10px 0px;
+  border-radius: 50px;
+  margin: 10px 10px 10px 0px;
   padding: 10px 10px;
 }
 
-#btn2{
+#btnTeacher{
   background-color: #6EBAF6;
   width:130px;
   font-size:20px;
   color:#fff;
-  border: 1px solid #1d3c6a;
-  margin: 10px 40px 10px 0px;
+  border-radius: 50px;
+  margin: 10px 20px 10px 10px;
   padding: 10px 10px;
 }
-#btn3{
+#btnHeadmaster{
   background-color: #6EBAF6;
   width:130px;
   font-size:20px;
   color:#fff;
-  border: 1px solid #1d3c6a;
-  margin: 10px 40px 10px 0px;
+  border-radius: 50px;
+  margin: 10px 10px 10px 0px;
   padding: 10px 10px;
 }
 
