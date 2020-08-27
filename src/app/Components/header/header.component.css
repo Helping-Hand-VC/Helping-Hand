@@ -48,4 +48,6 @@ li:hover{
 nav {
   width: 100%;
   box-shadow: 5px 4px 5px #000;
+  margin-bottom: 0px;
+    border-radius: 0px;
 }
