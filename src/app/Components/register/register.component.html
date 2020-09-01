@@ -16,7 +16,7 @@
           <label><b>PASSWORD</b></label>
 
           <input type="password" placeholder="Enter Password" name="RegPsw" id="RegPsw"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
             title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
             required />
 
@@ -26,10 +26,10 @@
             required />
 
           <label>SELECT THE TYPE OF USER</label>
-          <button id="btnStudent">Student</button>
-          <button id="btnParent">Parent</button>
-          <button id="btnTeacher">Teacher</button>
-          <button id="btnHeadmaster">Headmaster</button>
+          <button id="btnStudent" type="button" (click)="studClick()">Student</button>
+          <button id="btnParent" type="button" (click)="parentClick()">Parent</button>
+          <button id="btnTeacher" type="button" (click)="teacherClick()">Teacher</button>
+          <button id="btnHeadmaster" type="button" (click)="hmClick()">Headmaster</button>
           <br />
           <input type="checkbox" id="checkpolicy" style="float: left;" />
           <label style="float: left; padding-top: 5px;">I accept the Privacy policy</label>
