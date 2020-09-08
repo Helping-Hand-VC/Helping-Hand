@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from "@angular/router";
+
 //For Firebase
 import { FirebaseConnectionService } from 'src/app/Firebase/firebase-connection.service';
 import { Student } from 'src/app/models/Users/user.model';
@@ -15,7 +17,9 @@ export class LoginComponent implements OnInit {
   
   blnValid: boolean = true;
   clsStudent: Student;
-  constructor(private clsFirebaseConnectionService: FirebaseConnectionService) { }
+  constructor(private clsFirebaseConnectionService: FirebaseConnectionService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
 
@@ -25,9 +29,11 @@ export class LoginComponent implements OnInit {
     var username = (<HTMLInputElement>document.getElementById("username")).value;
     var psw = (<HTMLInputElement>document.getElementById("psw")).value;
     this.ValidateUserInfo(username, psw);
-    if (this.blnValid)
-      console.log(await this.clsFirebaseConnectionService.SignInUser(username,psw));
-    //"test@gmaisl.com", "123123"
+    if (this.blnValid) {
+      this.router.navigate(['home']); 
+      console.log(await this.clsFirebaseConnectionService.SignInUser(username, psw));
+      //"test@gmaisl.com", "123123"
+    }
   }
 
   ValidateUserInfo(uemail: string, pwd: string): void {
