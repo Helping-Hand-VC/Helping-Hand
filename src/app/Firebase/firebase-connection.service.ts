@@ -39,9 +39,6 @@ export class FirebaseConnectionService {
 
     await this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.ngZone.run(() => {
-          //this.router.navigate(['dashboard']);
-        });
         ReturnResult = "Logged in";
         //this.SetUserData(result.user);
       }).catch((error) => {
@@ -58,13 +55,14 @@ export class FirebaseConnectionService {
     //Depending on UserType depends where the extra user data will be stored
 
     await this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        ReturnResult = "New user created";
+      .then(async (result) => {
+        await this.CreateUserTable(result.user.uid);
+        this.SendVerificationMail();
 
+        ReturnResult = "New user created";
+        //this.SetUserData(result.user);
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
-        //this.SendVerificationMail();
-        //this.SetUserData(result.user);
       }).catch((error) => {
         ReturnResult = "error," + error;
       })
@@ -72,14 +70,28 @@ export class FirebaseConnectionService {
     return ReturnResult;
   }
 
+  CreateUserTable(UsersID){
+    this.firestore.collection("Users").doc(UsersID).set({
+      FirstName: ""
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+        return true;
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+        return false;
+    });
+  }
+
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
     this.afAuth.currentUser.then((user)=>{
       user.sendEmailVerification();
-      window.alert("Please confirm your account email, you will recieve an OTP via your email.");
+      //window.alert("Please confirm your account email, you will recieve an OTP via your email.");
     })
     .catch((err) => {
-      window.alert("Sorry somethign went wrong");
+      //window.alert("Sorry somethign went wrong");
     })    
   }
 

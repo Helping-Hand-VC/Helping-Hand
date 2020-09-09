@@ -27,7 +27,6 @@ export class RegisterComponent implements OnInit {
 
     document.getElementById("btnRegister").addEventListener("click", function (event) {
       event.preventDefault();
-      
     });
   
   }
@@ -64,23 +63,29 @@ export class RegisterComponent implements OnInit {
     if (this.blnValid) {
 
       //window.alert(this.clsFirebaseConnectionService.CreateNewUser(email, psw, utype));
-      this.router.navigate(['profile']); 
-      console.log("Worked")
-      console.log(await this.clsFirebaseConnectionService.CreateNewUser(email, psw, utype));
+      //this.router.navigate(['profile']); 
+      //console.log("Worked")
+      let strResult: string = await(this.clsFirebaseConnectionService.CreateNewUser(email, psw, utype));
+
+      if(strResult.includes("error,")){
+        window.alert(strResult.replace("error,",""));
+      }else{
+        this.router.navigate(['profile']); 
+      }
       
       //console.log(email, psw, utype)
       //window.location.href = 'profile';
     } else {
       window.alert(this.strErr);
-      console.log("Invalid Data");
-      console.log(this.strErr);
+      //console.log("Invalid Data");
+      //console.log(this.strErr);
     }
     //"test@gmaisl.com", "123123"
   }
 
 
 
-  async ValidateUserInfo(uemail: string, utype: string, pwd: string, cnfps: string, chkPol:boolean) {
+  ValidateUserInfo(uemail: string, utype: string, pwd: string, cnfps: string, chkPol:boolean) {
     
     var iError = 0;
     this.strErr = "";

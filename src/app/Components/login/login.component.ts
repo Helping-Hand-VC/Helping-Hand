@@ -17,22 +17,37 @@ export class LoginComponent implements OnInit {
   
   blnValid: boolean = true;
   clsStudent: Student;
+  strErr: string;
+
   constructor(private clsFirebaseConnectionService: FirebaseConnectionService,
     public router: Router
   ) { }
 
   ngOnInit(): void {
-
+    document.getElementById("btnlogin").addEventListener("click", function (event) {
+      event.preventDefault();
+    });
   }
 
   async SignInUser() {
-    var username = (<HTMLInputElement>document.getElementById("username")).value;
+    var username = (<HTMLInputElement>document.getElementById("userEmail")).value;
     var psw = (<HTMLInputElement>document.getElementById("psw")).value;
-    this.ValidateUserInfo(username, psw);
+    //this.ValidateUserInfo(username, psw);
     if (this.blnValid) {
-      this.router.navigate(['home']); 
-      console.log(await this.clsFirebaseConnectionService.SignInUser(username, psw));
+      
+      let strResult: string = await this.clsFirebaseConnectionService.SignInUser(username, psw);
+
+
+      if(strResult.includes("error,")){
+        window.alert(strResult.replace("error,",""));
+      }else{
+        this.router.navigate(['home']); 
+      }
       //"test@gmaisl.com", "123123"
+    }else {
+      window.alert(this.strErr);
+      //console.log("Invalid Data");
+      //console.log(this.strErr);
     }
   }
 
