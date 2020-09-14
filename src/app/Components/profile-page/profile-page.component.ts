@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseConnectionService } from 'src/app/Firebase/firebase-connection.service';
 import { Router } from "@angular/router";
 
+import { Student } from 'src/app/models/Users/user.model';
+
+
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -12,7 +15,21 @@ export class ProfilePageComponent implements OnInit {
   constructor(private clsFirebaseConnectionService: FirebaseConnectionService) { }
 
   ngOnInit(): void {
+    this.AccountSettingsOnLoad();
   }
+
+  async AccountSettingsOnLoad(){
+    //get details from FB
+    var clsStudent : Student = await(this.clsFirebaseConnectionService.GetUsersDetails());
+    console.log(clsStudent);
+
+    (<HTMLInputElement>document.getElementById("username")).value = clsStudent.firstname;
+    (<HTMLInputElement>document.getElementById("usersurname")).value= clsStudent.surname;
+    (<HTMLInputElement>document.getElementById("mobile")).value= clsStudent.cell;
+    (<HTMLInputElement>document.getElementById("DOB")).value = clsStudent.id;
+  }
+
+
   async saveProfile() {
     let userName = (<HTMLInputElement>document.getElementById("username")).value;
     let userSName = (<HTMLInputElement>document.getElementById("usersurname")).value;
@@ -23,7 +40,7 @@ export class ProfilePageComponent implements OnInit {
     if (strResult.includes("error,")) {
       window.alert(strResult.replace("error,", ""));
     } else {
-      //this.router.navigate(['profile']);
+      window.alert("Details updated");
     }
   }
 

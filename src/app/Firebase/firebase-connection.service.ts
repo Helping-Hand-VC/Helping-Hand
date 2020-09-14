@@ -5,6 +5,8 @@ import { Router } from "@angular/router";
 
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { promise } from 'protractor';
+import { variable } from '@angular/compiler/src/output/output_ast';
 
 
 @Injectable({
@@ -34,6 +36,7 @@ export class FirebaseConnectionService {
               })
             }
 
+
   async SignInUser(email, password) : Promise<string> {
     var ReturnResult: string = "error";
 
@@ -49,7 +52,7 @@ export class FirebaseConnectionService {
   }
 
    // Sign up with email/password
-   async CreateNewUser(email, password, UserType) : Promise<string>{
+  async CreateNewUser(email, password, UserType) : Promise<string>{
     var ReturnResult: string = "error";
 
     //Depending on UserType depends where the extra user data will be stored
@@ -70,19 +73,39 @@ export class FirebaseConnectionService {
     return ReturnResult;
   }
 
+  async GetUsersDetails(): Promise<Student>{
+    var clsStudents: Student;
+    console.log(this.userData);
+    await this.firestore.collection("Users").doc(this.userData.uid).get().toPromise().then(function (docs) {
+      clsStudents= {
+        id: docs.data().ID,
+        firstname: docs.data().FirstName,
+        surname: docs.data().Surname,
+        email: docs.data().ContactDetails.Email,
+        cell:docs.data().ContactDetails.Cell
+      };
+      
+    }).catch(function (error) {
+      console.log("Error getting document:", error);
+      return null;
+    });
+
+    return clsStudents;
+  }
+
+
   async UpdateUser(uName, uSName, uCell, uIdNo): Promise<string> {
     var ReturnResult: string = "error";
     await this.UpdateUserProfile(uName, uSName, uCell, uIdNo);
     //Depending on UserType depends where the extra user data will be stored
 
-  
     return ReturnResult;
   }
 
   UpdateUserProfile(uName, uSName, uCell, uIdNo) {
     console.log(this.userData);
     console.log(this.userData.uid);
-    this.firestore.collection("Users").doc(this.userData.uid).set({
+    this.firestore.collection("Users").doc(this.userData.uid).update({
       FirstName: uName,
       Surname: uSName,
       ContactDetails: {
@@ -90,23 +113,19 @@ export class FirebaseConnectionService {
         Email: this.userData.email
       },
       ID: uIdNo      
-    })
-      .then(function () {
-        console.log("Document successfully written!");
-        return true;
-      })
-      .catch(function (error) {
-        console.error("Error writing document: ", error);
-        return false;
-      });
+    }).then(function () {
+      console.log("Document successfully written!");
+      return true;
+    }).catch(function (error) {
+      console.error("Error writing document: ", error);
+      return false;
+    });
   }
 
   CreateUserTable(UsersID, utype) {
     console.log(utype);
     this.firestore.collection("Users").doc(UsersID).set({
-      Role: utype,
-  
-      
+      Role: utype
     })
     .then(function() {
         console.log("Document successfully written!");

@@ -3,7 +3,7 @@ export class Student {
     firstname:      string;
     surname:        string;
     email:          string;
-    emailVerified:  string;
+    cell:           string;
 }
 
 export class Teahcer {
