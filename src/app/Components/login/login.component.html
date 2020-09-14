@@ -17,12 +17,15 @@
           <input type="password" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 
-          <button type="submit" id="btnlogin" (click)="SignInUser()">Login</button>
-          <button type="submit" id="btnRegister">Register</button>
-          <button type="submit" id="btnPSWReset" class="buttonReset">Forgot Password?</button>
           <label>
             <input type="checkbox" checked="checked" name="remember" id="rememberMe"> Remember me
           </label>
+
+          <button type="submit" id="btnlogin" (click)="SignInUser()">Login</button>
+          <button type="submit" id="btnRegister" (click)="this.router.navigate(['register']);">Register</button>
+          <button type="submit" id="btnPSWReset" class="buttonReset">Forgot Password?</button>
+          
+
         </div>
       </form>
       <div class="container">
