@@ -56,7 +56,7 @@ export class FirebaseConnectionService {
 
     await this.afAuth.createUserWithEmailAndPassword(email, password)
       .then(async (result) => {
-        await this.CreateUserTable(result.user.uid);
+        await this.CreateUserTable(result.user.uid, UserType);
         this.SendVerificationMail();
 
         ReturnResult = "New user created";
@@ -70,9 +70,43 @@ export class FirebaseConnectionService {
     return ReturnResult;
   }
 
-  CreateUserTable(UsersID){
+  async UpdateUser(uName, uSName, uCell, uIdNo): Promise<string> {
+    var ReturnResult: string = "error";
+    await this.UpdateUserProfile(uName, uSName, uCell, uIdNo);
+    //Depending on UserType depends where the extra user data will be stored
+
+  
+    return ReturnResult;
+  }
+
+  UpdateUserProfile(uName, uSName, uCell, uIdNo) {
+    console.log(this.userData);
+    console.log(this.userData.uid);
+    this.firestore.collection("Users").doc(this.userData.uid).set({
+      FirstName: uName,
+      Surname: uSName,
+      ContactDetails: {
+        Cell: uCell,
+        Email: this.userData.email
+      },
+      ID: uIdNo      
+    })
+      .then(function () {
+        console.log("Document successfully written!");
+        return true;
+      })
+      .catch(function (error) {
+        console.error("Error writing document: ", error);
+        return false;
+      });
+  }
+
+  CreateUserTable(UsersID, utype) {
+    console.log(utype);
     this.firestore.collection("Users").doc(UsersID).set({
-      FirstName: ""
+      Role: utype,
+  
+      
     })
     .then(function() {
         console.log("Document successfully written!");

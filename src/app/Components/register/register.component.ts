@@ -93,9 +93,11 @@ export class RegisterComponent implements OnInit {
     //console.log(uemail, utype, pwd, cnfps);
     this.blnValid = true;
 
-    let regexHMPass = new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$');
-    let regexTeacherPass = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Zaz\\d@$!%*?&]{10,20}');
-    let regexParentPass = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Zaz\\d@$!%*?&]{8,20}');
+    let regexHMPass = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$!%*?&])[A-Zaz\\d@$!%*?&].{13,20}$');
+    let regexTeacherPass = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Zaz\\d@$!%*?&].{10,20}$');
+    let regexParentPass =  new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Zaz\\d@$!%*?&].{8,20}$');
+    //let regexTeacherPass = new RegExp('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\\]).{10,32}$');
+                                    //^ (?=.* [0 - 9])(?=.* [a - z])(?=.* [A - Z])(?=.* [*.!@$%^& (){ } []: ; <>,.? /~_+-=|\]).{8,32}$
     let regexStudPass = new RegExp('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$');
     let regexEmail = new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$');
 
