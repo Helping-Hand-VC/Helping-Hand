@@ -1,7 +1,8 @@
-<div class="container">
+<div style="padding-top: 31px;" class="container">
   <div class="row">
     <div class="column1" style="width: 33%;"></div>
     <div class="column2" style="width: 100%;">
+      <h1>Register</h1>
       <form id="Registerform" name="Registerform">
         <div class="imgcontainer">
           <img src="../../../assets/img/helpinghands150.svg" alt="Helping Hands" class="avatar" />
@@ -26,16 +27,19 @@
             required />
 
           <label>SELECT THE TYPE OF USER</label>
+          <div class="btnUserClass">
           <button id="btnStudent" type="button" (click)="studClick()">Student</button>
           <button id="btnParent" type="button" (click)="parentClick()">Parent</button>
           <button id="btnTeacher" type="button" (click)="teacherClick()">Teacher</button>
           <button id="btnHeadmaster" type="button" (click)="hmClick()">Headmaster</button>
+          </div>
           <br />
           <input type="checkbox" id="checkpolicy" style="float: left;" />
           <label style="float: left; padding-top: 5px;">I accept the Privacy policy</label>
-          
+
           <button type="submit" id="btnRegister" (click)="RegisterUser()">Register</button>
-         
+          <button type="button" id="btnLogin">Login</button>
+
         </div>
       </form>
       <div class="containerLinks">
@@ -43,7 +47,6 @@
         <br />
         <span>Forgot <a href="#">password?</a></span>
         <br />
-        <a href="Login">Already have an account? Perhaps Login</a>
       </div>
     </div>
     <div class="column3" style="width: 33%;"></div>

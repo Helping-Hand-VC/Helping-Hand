@@ -18,11 +18,16 @@ input[type=email], input[type=password] {
 }
 
 input[type=checkbox]{
-  width: 100%;
+
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 
 }
 .row{
-  display: inline-block;
+  display: -webkit-inline-box;
+  flex-wrap: wrap;
+  max-width: 90%;
 }
 button {
   background-color: #4CAF50;
