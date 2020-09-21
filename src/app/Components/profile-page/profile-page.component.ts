@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 
 import { Student } from 'src/app/models/Users/user.model';
 
-
+ 
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -12,21 +12,22 @@ import { Student } from 'src/app/models/Users/user.model';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(private clsFirebaseConnectionService: FirebaseConnectionService) { }
+  constructor(private clsFirebaseConnectionService: FirebaseConnectionService,private router: Router) { }
 
   ngOnInit(): void {
-    this.AccountSettingsOnLoad();
+    this.AccountSettingsOnLoad();//Calling method as it is async
   }
 
   async AccountSettingsOnLoad(){
-    //get details from FB
-    var clsStudent : Student = await(this.clsFirebaseConnectionService.GetUsersDetails());
-    console.log(clsStudent);
-
-    (<HTMLInputElement>document.getElementById("username")).value = clsStudent.firstname;
-    (<HTMLInputElement>document.getElementById("usersurname")).value= clsStudent.surname;
-    (<HTMLInputElement>document.getElementById("mobile")).value= clsStudent.cell;
-    (<HTMLInputElement>document.getElementById("DOB")).value = clsStudent.id;
+    let clsStudent: Student  = await(this.clsFirebaseConnectionService.GetUsersDetails());
+    if(clsStudent.firstname == null){
+      this.router.navigate(['login']); //Something went wrong so make them login again
+    }else{
+      (<HTMLInputElement>document.getElementById("username")).value     = clsStudent.firstname;
+      (<HTMLInputElement>document.getElementById("usersurname")).value  = clsStudent.surname;
+      (<HTMLInputElement>document.getElementById("mobile")).value       = clsStudent.cell;
+      (<HTMLInputElement>document.getElementById("DOB")).value          = clsStudent.id;
+    }
   }
 
 

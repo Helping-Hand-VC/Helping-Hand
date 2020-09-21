@@ -7,6 +7,8 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { promise } from 'protractor';
 import { variable } from '@angular/compiler/src/output/output_ast';
+import { VariableAst } from '@angular/compiler';
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 
 @Injectable({
@@ -24,7 +26,7 @@ export class FirebaseConnectionService {
 
                /* Saving user data in localstorage when 
               logged in and setting up null when logged out */
-              this.afAuth.authState.subscribe(user => {
+              /*this.afAuth.authState.subscribe(user => {
                 if (user) {
                   this.userData = user;
                   localStorage.setItem('user', JSON.stringify(this.userData));
@@ -33,7 +35,7 @@ export class FirebaseConnectionService {
                   localStorage.setItem('user', null);
                   JSON.parse(localStorage.getItem('user'));
                 }
-              })
+              })*/
             }
 
 
@@ -42,6 +44,8 @@ export class FirebaseConnectionService {
 
     await this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
+        console.log(result);
+        this.userData = result.user;
         ReturnResult = "Logged in";
         //this.SetUserData(result.user);
       }).catch((error) => {
@@ -61,7 +65,7 @@ export class FirebaseConnectionService {
       .then(async (result) => {
         await this.CreateUserTable(result.user.uid, UserType);
         this.SendVerificationMail();
-
+        this.userData = result.user;
         ReturnResult = "New user created";
         //this.SetUserData(result.user);
         /* Call the SendVerificaitonMail() function when new user sign 
@@ -74,58 +78,59 @@ export class FirebaseConnectionService {
   }
 
   async GetUsersDetails(): Promise<Student>{
-    var clsStudents: Student;
-    console.log(this.userData);
+    var clsStudents = new Student();
+
+    if(this.userData == null){//Check to see if the user is Logged in or not
+      this.router.navigate(['login']); //Something went wrong so make them login again
+      return null;
+    }
+
+    clsStudents.email = this.userData.email;
     await this.firestore.collection("Users").doc(this.userData.uid).get().toPromise().then(function (docs) {
-      clsStudents= {
-        id: docs.data().ID,
-        firstname: docs.data().FirstName,
-        surname: docs.data().Surname,
-        email: docs.data().ContactDetails.Email,
-        cell:docs.data().ContactDetails.Cell
-      };
-      
+      clsStudents.id        = docs.data().ID;
+      clsStudents.firstname = docs.data().FirstName;
+      clsStudents.surname   = docs.data().Surname;
+      clsStudents.cell      = docs.data().ContactDetails.Cell;
     }).catch(function (error) {
-      console.log("Error getting document:", error);
+      console.log(error);
       return null;
     });
 
     return clsStudents;
+
+    //Will return here if there is an error and somehow misses the catch statement
+    //return null;
   }
 
 
   async UpdateUser(uName, uSName, uCell, uIdNo): Promise<string> {
-    var ReturnResult: string = "error";
-    await this.UpdateUserProfile(uName, uSName, uCell, uIdNo);
-    //Depending on UserType depends where the extra user data will be stored
+    var ReturnResult: string = "error, Something went wrong";
+    
+    await this.firestore.collection("Users").doc(this.userData.uid).update({
+      FirstName: uName,
+      Surname: uSName,
+      ContactDetails: {
+        Cell: uCell
+      },
+      ID: uIdNo      
+    }).then(function () {
+      ReturnResult = "true";
+    }).catch(function (error) {
+      ReturnResult = "error," + error;
+    });
 
     return ReturnResult;
   }
 
-  UpdateUserProfile(uName, uSName, uCell, uIdNo) {
-    console.log(this.userData);
-    console.log(this.userData.uid);
-    this.firestore.collection("Users").doc(this.userData.uid).update({
-      FirstName: uName,
-      Surname: uSName,
-      ContactDetails: {
-        Cell: uCell,
-        Email: this.userData.email
-      },
-      ID: uIdNo      
-    }).then(function () {
-      console.log("Document successfully written!");
-      return true;
-    }).catch(function (error) {
-      console.error("Error writing document: ", error);
-      return false;
-    });
-  }
 
   CreateUserTable(UsersID, utype) {
     console.log(utype);
     this.firestore.collection("Users").doc(UsersID).set({
-      Role: utype
+      Role: utype,
+      id: "-",
+      firstname: "-",
+      surname: "-",
+      cell:"-"
     })
     .then(function() {
         console.log("Document successfully written!");
@@ -159,8 +164,36 @@ export class FirebaseConnectionService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['']);
+      this.userData = null;
+      this.router.navigate(["login"]);
     })
+  }
+
+
+
+
+  //FOR Tests
+  async GetTest(Subject, Difficulty): Promise<Student>{
+    var clsStudents = new Student();
+
+    
+
+    clsStudents.email = this.userData.email;
+    //Test/English/Grade 1/Maths/Easy/
+    await this.firestore.collection("Test").doc(this.userData.uid).get().toPromise().then(function (docs) {
+      clsStudents.id        = docs.data().ID;
+      clsStudents.firstname = docs.data().FirstName;
+      clsStudents.surname   = docs.data().Surname;
+      clsStudents.cell      = docs.data().ContactDetails.Cell;
+    }).catch(function (error) {
+      console.log(error);
+      return null;
+    });
+
+    return clsStudents;
+
+    //Will return here if there is an error and somehow misses the catch statement
+    //return null;
   }
 
 
