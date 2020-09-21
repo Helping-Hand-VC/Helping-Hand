@@ -3,6 +3,18 @@
   height: 20px;
   margin-right: 5px;
 }
+
+/* This is fix the zoom of the footer when the page is zoomed out */
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  
+  margin-bottom: -15px;
+}
+
+
 .containerLinks{
   line-height: 25px;
 }
@@ -31,8 +43,10 @@ input[type=email], input[type=password] {
 display: inline-block;
 }
 button {
-  background-color: #4CAF50;
+  /* background-color: #4CAF50; */
+  background-color: #64B5F6bd;
   color: white;
+  font-weight: bold;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
