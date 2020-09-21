@@ -1,54 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <!-- <title>Math Quiz</title> -->
-    <link type='text/css' rel='stylesheet' href='class-page.component.css'/>
- </head>
-<body>
-    <div class="grid">
-     <div class="quiz">
-        <h1>Select Class</h1>
+<div class="grid">
+    <div class="quiz">
+        <h1 id="subject">Select Class</h1>
         <hr style="margin-top:20px">
-         
-         
-         <p id="question"> Select the difficulty level for the Questions.</p>
-            
-         
-         <!-- <button id="btnBack"><span id="Back"></span>Back</button>
-         <button id="btnCancel"><span id="Cancel"></span>Cancel</button>
-         <button id="btnNext"><span id="Next"></span>Next</button> -->
 
-         <div class="buttons">
-             <button id="btn0"><span id="choice0"></span>Easy</button>  
-            <!-- <a class="inline">{{mockDropVal}}</a> -->
-             
-             <!-- <li class="guiz-awards-track">Yes</li>
-             <li class="guiz-awards-track">Yes</li> -->
-             
-             <button id="btn1"><span id="choice1"></span>Medium</button>
-             <button id="btn2"><span id="choice2"></span>Hard</button>
 
-         </div>
-            
-         <hr style="margin-top:50px">
-         
-        <!-- <footer>
-            <p id="progress">Question x of y.</p>
-         </footer> -->
+        <p> Select the difficulty level for the Questions.</p>
 
-         
-         <!-- <button id="btnBack"><span id="Back"></span>Back</button>
-         &nbsp; <button id="btnCancel"><span id="Cancel"></span>Cancel</button>
-         &nbsp;<button id="btnNext"><span id="Next"></span>&nbsp;Next</button> -->
-
-            
+        <div class="buttons">
+            <button id="btnEasy" (click)="ProceedToTest('Easy')">Easy</button>
+            <button id="btnMedium" (click)="ProceedToTest('Medium')">Medium</button>
+            <button id="btnHard" (click)="ProceedToTest('Hard')">Hard</button>
         </div>
+
+
+
     </div>
-   
-    
-    </body>
-</html>
-&nbsp;
-&nbsp;
+</div>

@@ -73,13 +73,4 @@ export class LoginComponent implements OnInit {
     }
 
   }
-
-  /*
-    Check if user is logged in
-
-    assign details to clsStudent
-    pass clsStudent to clsFirebaseConnectionService.SignInUser(clsStudent)
-    This will return a string
-  */
-
 }

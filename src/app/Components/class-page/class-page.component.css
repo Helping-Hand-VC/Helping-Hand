@@ -45,7 +45,7 @@ boby{
 
 .inline{display:inline}
 
-#btn0{
+#btnEasy{
     background-color: #6EB26E;
     width:100px;
     font-size:20px;
@@ -55,7 +55,7 @@ boby{
     padding: 10px 10px;
 }
 
-#btn1{
+#btnMedium{
     background-color: #6EBAF6;
     width:100px;
     font-size:20px;
@@ -65,7 +65,7 @@ boby{
     padding: 10px 10px;
 }
 
-#btn2{
+#btnHard{
     background-color: #C62324;
     width:100px;
     font-size:20px;

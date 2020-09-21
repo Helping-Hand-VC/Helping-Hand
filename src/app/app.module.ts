@@ -11,13 +11,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth"; //For Authentication
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //For Firestore
 import { environment } from '../environments/environment';
-import { ProfilePageComponent } from './Components/profile-page/profile-page.component';
-import { TestPageComponent } from './Components/test-page/test-page.component';
-import { AwardsComponent } from './Components/awards/awards.component';
-import { TestCompletionPageComponent } from './Components/test-completion-page/test-completion-page.component';
-import { ErrorPageComponent } from './Components/error-page/error-page.component';
-import { ClassPageComponent } from './Components/class-page/class-page.component';
-import { HomeComponent } from './Components/home/home.component';
+//END of Firebase
+
 
 
 
@@ -25,14 +20,7 @@ import { HomeComponent } from './Components/home/home.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    ProfilePageComponent,
-    TestPageComponent,
-    AwardsComponent,
-    TestCompletionPageComponent,
-    ErrorPageComponent,
-    ClassPageComponent,
-    HomeComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
