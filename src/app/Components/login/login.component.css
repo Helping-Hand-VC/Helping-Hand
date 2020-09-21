@@ -30,8 +30,9 @@ input[type=checkbox]{
   max-width: 90%;
 }
 button {
-  background-color: #4CAF50;
+  background-color: #64B5F6bd;
   color: white;
+  font-weight: bold;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
