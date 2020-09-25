@@ -1,6 +1,6 @@
 import { Injectable, NgZone  } from '@angular/core';
 
-import { Student } from 'src/app/models/Users/user.model';
+import { Student, User } from 'src/app/models/Users/user.model';
 import { Router } from "@angular/router";
 
 import { AngularFireAuth } from "@angular/fire/auth";
@@ -77,26 +77,29 @@ export class FirebaseConnectionService {
     return ReturnResult;
   }
 
-  async GetUsersDetails(): Promise<Student>{
-    var clsStudents = new Student();
-
+  async GetUsersDetails(): Promise<User>{
+    var clsUsers = new User();
+    
     if(this.userData == null){//Check to see if the user is Logged in or not
       this.router.navigate(['login']); //Something went wrong so make them login again
       return null;
     }
+    
 
-    clsStudents.email = this.userData.email;
+    clsUsers.email = this.userData.email;
     await this.firestore.collection("Users").doc(this.userData.uid).get().toPromise().then(function (docs) {
-      clsStudents.id        = docs.data().ID;
-      clsStudents.firstname = docs.data().FirstName;
-      clsStudents.surname   = docs.data().Surname;
-      clsStudents.cell      = docs.data().ContactDetails.Cell;
+      clsUsers.type = docs.data().Role;
+      clsUsers.id        = docs.data().ID;
+      clsUsers.firstname = docs.data().FirstName;
+      clsUsers.surname   = docs.data().Surname;
+      clsUsers.cell = docs.data().ContactDetails.Cell;
+      clsUsers.autoid = docs.id;
     }).catch(function (error) {
       console.log(error);
       return null;
     });
 
-    return clsStudents;
+    return clsUsers;
 
     //Will return here if there is an error and somehow misses the catch statement
     //return null;

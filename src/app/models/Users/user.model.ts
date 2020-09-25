@@ -1,3 +1,15 @@
+
+export class User {
+    type: string;
+    autoid: string;
+    id: string;
+    firstname: string;
+    surname: string;
+    email: string;
+    cell: string;
+
+}
+
 export class Student {
     id:             string;
     firstname:      string;
@@ -5,8 +17,15 @@ export class Student {
     email:          string;
     cell:           string;
 }
+export class Parent{
+    id: string;
+    firstname: string;
+    surname: string;
+    email: string;
+    cell: string;
+}
 
-export class Teahcer {
+export class Teacher {
     id:         string;
     firstname:  string;
     surname:    string;
