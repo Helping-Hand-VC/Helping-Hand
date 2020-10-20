@@ -11,7 +11,7 @@
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
             <label id="studNameDisp">Student name goes here</label>
-            
+
           </div>
           <div class="profile-usertitle-grade">
             <label id="studGradeDisp">Grade:</label>
@@ -51,7 +51,7 @@
       <div class="profile-content">
         <h3>Account Settings</h3>
         <br />
-        <form style="margin-bottom: 200px;" id="form1content1">
+        <form id="form1content1">
           <div class="form-row">
             <div class="col">
               <label>First Name</label>
@@ -74,7 +74,7 @@
             </div>
           </div>
         </form>
-        <div>
+        <div class="linkAccount">
           <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
             Generate Code
           </button>
@@ -84,8 +84,10 @@
             Link Account
           </button>
           <input type="text" name="linkCode" id="linkCode" placeholder="" />
+        </div>
+        <div>
           <button type="button" name="btnReset" id="btnReset">Reset</button>
-          <button type="button" name="btnSave" id="btnSave" (click)="saveProfile()" >Save</button>
+          <button type="button" name="btnSave" id="btnSave" (click)="saveProfile()">Save</button>
         </div>
       </div>
     </div>
