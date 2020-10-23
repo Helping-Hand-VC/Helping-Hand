@@ -12,6 +12,9 @@ import { AngularFireAuthModule } from "@angular/fire/auth"; //For Authentication
 import { AngularFirestoreModule } from '@angular/fire/firestore'; //For Firestore
 import { environment } from '../environments/environment';
 import { LodaingPageComponent } from './Components/lodaing-page/lodaing-page.component';
+import { CleanUpComponent } from './Components/clean-up/clean-up.component';
+
+
 //END of Firebase
 
 
@@ -22,7 +25,10 @@ import { LodaingPageComponent } from './Components/lodaing-page/lodaing-page.com
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LodaingPageComponent
+    LodaingPageComponent,
+    CleanUpComponent,
+
+
   ],
   imports: [
     BrowserModule,

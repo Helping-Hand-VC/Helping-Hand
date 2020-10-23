@@ -1,7 +1,13 @@
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   background-image: url(assets/img/BackgroundXBCAD50p.png);
   background-position: center;
   background-color: #64B5F6bd;
 }
+
+
