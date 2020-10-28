@@ -8,10 +8,13 @@ body {
   background: #F1F3FA;
 }
 
+li { 
+  cursor: pointer; 
+}
+
 form {
   padding: 20px;
-  margin-bottom: 200px;
-
+  /*margin-bottom: 200px;*/
 }
 .col-md-9{
   width: 65%;

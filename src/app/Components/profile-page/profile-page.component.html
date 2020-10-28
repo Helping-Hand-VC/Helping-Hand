@@ -10,13 +10,13 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            <label id="studNameDisp">Student name goes here</label>
+            <label id="edtNameDisp">Users name goes here</label>
 
           </div>
-          <div class="profile-usertitle-grade">
+          <div class="profile-usertitle-grade" [style.display]="(student == true) ? '' : 'none'">
             <label id="studGradeDisp">Grade:</label>
           </div>
-          <div class="profile-usertitle-class">
+          <div class="profile-usertitle-class" [style.display]="(student == true) ? '' : 'none'">
             <label id="studClassDisp">Class:</label>
           </div>
         </div>
@@ -24,20 +24,26 @@
         <!-- SIDEBAR MENU -->
         <div class="profile-usermenu">
           <ul class="nav">
-            <li class="active">
-              <a href="#">
+            <li [class]="(ViewAccountSettings == true) ? 'active' : ''" >
+              <a (click)="btnViewAccountSettings()">
                 <i class="glyphicon glyphicon-user"></i>
                 Account Settings
               </a>
             </li>
-            <li>
-              <a href="#" target="_blank">
+            <li [class]="(ViewChildrenSettings == true) ? 'active' : ''" [style.display]="(student == true) ? 'none' : ''">
+              <a (click)="btnViewChildren()">
+                <i class="glyphicon glyphicon-user"></i>
+                Children
+              </a>
+            </li>
+            <li [class]="(ViewTCs == true) ? 'active' : ''">
+              <a (click)="btnViewTCs()">
                 <i class="glyphicon glyphicon-question-sign"></i>
                 T's & C's
               </a>
             </li>
-            <li>
-              <a href="#">
+            <li [class]="(ViewHelp == true) ? 'active' : ''">
+              <a (click)="btnViewHelp()">
                 <i class="glyphicon glyphicon-flag"></i>
                 Help
               </a>
@@ -47,49 +53,141 @@
         <!-- END MENU -->
       </div>
     </div>
+
+    <!--Main View-->
     <div class="col-md-9">
-      <div class="profile-content">
+
+      <!--Account Settings-->
+      <div class="profile-content" [style.display]="(ViewAccountSettings == true) ? '' : 'none'">
         <h3>Account Settings</h3>
         <br />
-        <form id="form1content1">
+        <h4 ID="lblAdultsOnly" [style.display]="(student == true) ? '' : 'none'">Only adults can edit this area, please link your account below.</h4>
+        
+        <!--Main users account-->
+        <form id="frmAccountSettings">
           <div class="form-row">
             <div class="col">
               <label>First Name</label>
-              <br />
-              <input type="text" name="username" id="username" placeholder="Enter your first name" />
-              <br />
+              <br/>
+              <input type="text" name="username" id="edtMainusername" placeholder="Enter your first name" 
+              [readonly]="(student == true) ? 'true' : 'false'"/>
+              <br/>
               <label>Surname Name</label>
               <br />
-              <input type="text" name="usersurname" id="usersurname" placeholder="Enter your surname" />
-              <br />
+              <input type="text" name="usersurname" id="edtMainusersurname" placeholder="Enter your surname" 
+              [readonly]="(student == true) ? 'true' : 'false'"/>
+              <br/>
             </div>
             <div class="col">
               <label>Cell number</label>
-              <br />
-              <input type="text" name="mobile" id="mobile" placeholder="Enter your cellphone number" />
-              <br />
+              <br/>
+              <input type="text" name="mobile" id="edtMainmobile" placeholder="Enter your cellphone number" 
+              [readonly]="(student == true) ? 'true' : 'false'"/>
+              <br/>
               <label>ID number</label>
-              <br />
-              <input type="text" name="DOB" id="DOB" placeholder="Enter your ID number" />
+              <br/>
+              <input type="text" name="DOB" id="edtMainDOB" placeholder="Enter your ID number" 
+              [readonly]="(student == true) ? 'true' : 'false'"/>
             </div>
           </div>
         </form>
+       
+        <div [style.display]="(student == true) ? 'none' : ''">
+          <button type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
+          <button type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
+        </div>
+      </div>
+
+
+      <!--children-->
+      <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">       
+        <div [style.display]="(student == true) ? 'none' : ''">
+          <h3>Childs Account Settings</h3>
+          <form id="form1content1">
+            <div class="form-row">
+              <div class="col">
+                <label>First Name</label>
+                <br />
+                <input type="text" name="Childsusername" id="Childsusername" placeholder="Enter your first name" />
+                <br />
+                <label>Surname Name</label>
+                <br />
+                <input type="text" name="Childsusersurname" id="Childsusersurname" placeholder="Enter your surname" />
+                <br />
+              </div>
+              <div class="col">
+                <label>Cell number</label>
+                <br />
+                <input type="text" name="Childsmobile" id="Childsmobile" placeholder="Enter your cellphone number" />
+                <br />
+                <label>ID number</label>
+                <br />
+                <input type="text" name="ChildsDOB" id="ChildsDOB" placeholder="Enter your ID number" />
+              </div>
+            </div>
+          </form>
+        </div>
+        
+
         <div class="linkAccount">
           <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
             Generate Code
           </button>
-          <label id="GenCodeDisplay">code goes here</label>
+          <label id="GenCodeDisplay">Click the button to the left</label>
           <br />
-          <button type="button" name="btnLinkAccount" id="btnLinkAccount">
+          <button type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
             Link Account
           </button>
-          <input type="text" name="linkCode" id="linkCode" placeholder="" />
+          <input type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
         </div>
+
+        <div [style.display]="(student == true) ? 'none' : ''">
+          <button type="button" name="btnChildReset" id="btnChildReset" (click)="btnChildReset()">Reset</button>
+          <button type="button" name="btnChildSave" id="btnChildSave" (click)="saveChildProfile()">Save</button>
+
+          <br/>
+
+          <select [(ngModel)]="schoolSelectedId">
+            <option  selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
+            <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
+          </select>    
+          <select [(ngModel)]="GradeSelected">
+            <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a Grade</option>
+            <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
+          </select>   
+          <button type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
+
+        </div>
+
+
+        
+
+      </div>
+
+
+      <!--TCs-->
+      <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">       
         <div>
-          <button type="button" name="btnReset" id="btnReset">Reset</button>
-          <button type="button" name="btnSave" id="btnSave" (click)="saveProfile()">Save</button>
+          <h3>T's & C's</h3>
+          <p>Short Writeup 
+            of 
+            T's & C's</p>
+          <button type="button" (click) = "ViewTCPDF()">
+            View Full Document
+          </button>
         </div>
       </div>
+
+
+      <!--Help-->
+      <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">       
+        <div>
+          <h3>Help</h3>
+          <p>Documentation and short video's comming soon</p>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>

@@ -32,10 +32,10 @@
 
             <label>SELECT THE TYPE OF USER</label>
             <div class="btnUserClass">
-              <button id="btnStudent" type="button" (click)="studClick()">Student</button>
-              <button id="btnParent" type="button" (click)="parentClick()">Parent</button>
-              <button id="btnTeacher" type="button" (click)="teacherClick()">Teacher</button>
-              <button id="btnHeadmaster" type="button" (click)="hmClick()">Headmaster</button>
+              <button id="btnStudent" type="button" (click)="studClick()"    [class]="(userT == 'student') ? 'ButtonSelected' : 'ButtonNotSelected'">Student</button>
+              <button id="btnParent" type="button" (click)="parentClick()"   [class]="(userT == 'parent') ? 'ButtonSelected' : 'ButtonNotSelected'">Parent</button>
+              <button id="btnTeacher" type="button" (click)="teacherClick()" [class]="(userT == 'teacher') ? 'ButtonSelected' : 'ButtonNotSelected'">Teacher</button>
+              <button id="btnHeadmaster" type="button" (click)="hmClick()"   [class]="(userT == 'headmaster') ? 'ButtonSelected' : 'ButtonNotSelected'">Headmaster</button>
             </div>
             <br />
             <input type="checkbox" id="checkpolicy" style="float: left;" />

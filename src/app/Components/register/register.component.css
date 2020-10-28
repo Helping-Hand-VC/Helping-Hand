@@ -67,7 +67,22 @@ button {
   padding: 10px;
   box-shadow: 5px 5px 5px #888888;
 }
-button:focus {
+
+.ButtonNotSelected {
+
+  background-color: #64B5F6bd;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.ButtonSelected {
 
   background-color: red !important;
   color: white;
