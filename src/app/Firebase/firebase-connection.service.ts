@@ -55,8 +55,20 @@ export class FirebaseConnectionService {
                   JSON.parse(localStorage.getItem('user'));
                   await this.SetUsersDetails();
                 } else {
-                  localStorage.setItem('user', null);
-                  //JSON.parse(localStorage.getItem('user'));
+                  localStorage.removeItem('user');
+                  this.userData = null;
+                  this.clsUsers = {
+                    email : "",
+                    type      : "",
+                    id        : "",
+                    firstname : "",
+                    surname   : "",
+                    cell      : "",
+                    autoid    : "",
+                    ChildsID  : [],
+                    SchoolID  : ""
+                  };
+                  this.router.navigate(["login"]);
                 }
               })
             }
@@ -104,8 +116,10 @@ export class FirebaseConnectionService {
   }
 
   async SetUsersDetails(): Promise<User>{
+
     
-    if(this.userData == null){//Check to see if the user is Logged in or not
+
+    if(this.userData.email == ""){//Check to see if the user is Logged in or not
       this.router.navigate(['login']); //Something went wrong so make them login again
       return null;
     }
@@ -142,6 +156,10 @@ export class FirebaseConnectionService {
 
 
   GetUsersDetails(): User{
+    if(this.clsUsers.autoid == ""){
+      this.router.navigate(["login"]);
+    }
+
     return this.clsUsers;
   }
 
@@ -208,11 +226,11 @@ export class FirebaseConnectionService {
 
 
   // Sign out 
-  SignOut() {
-    return this.afAuth.signOut().then(() => {
+  async SignOut() {
+    
+    await this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.userData = null;
-      this.router.navigate(["login"]);
       this.clsUsers = {
         email : "",
         type      : "",
@@ -224,6 +242,7 @@ export class FirebaseConnectionService {
         ChildsID  : [],
         SchoolID  : ""
       };
+      this.router.navigate(["login"]);
     })
   }
 
@@ -381,6 +400,39 @@ export class FirebaseConnectionService {
 
 
   //FOR Tests
+  async getUsersPastTests(): Promise<takenTests[]>{
+    var SchoolList:takenTests[] = [];
+
+   
+    if(this.clsUsers.autoid == ""){
+      this.router.navigate(["login"]);
+    }
+
+
+    await this.firestore.collection("Users").doc(this.clsUsers.autoid).collection("Tests").get().toPromise().then((snapshot) =>{
+
+      snapshot.forEach(doc => {
+        let schoolTemp: takenTests={
+          Difficulty: doc.data().Difficulty,
+          Grade: doc.data().Grade,
+          Mark: doc.data().Mark,
+          Subject: doc.data().Subject
+        }
+        SchoolList.push(schoolTemp);
+      });
+
+      return SchoolList;
+      
+    }).catch(function (error) {
+      console.log(error);
+      return SchoolList;
+    });
+
+    return SchoolList;
+
+  }
+
+
   async GetTest(Subject, Difficulty): Promise<test[]>{
     var clsTests: test[] = [];
 
@@ -424,6 +476,9 @@ export class FirebaseConnectionService {
 
   async getSubjects(sGrade:string): Promise<string[]>{
     let lstSubjects: string[] = [];
+    if(this.clsUsers.autoid == ""){
+      this.router.navigate(["login"]);
+    }
     
     
     if(this.clsUsers.Grade == null){

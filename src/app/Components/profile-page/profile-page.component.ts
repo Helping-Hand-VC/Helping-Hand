@@ -104,9 +104,9 @@ export class ProfilePageComponent implements OnInit {
     }
   }
 
+
   async AccountSettingsOnLoad(){
     this.clsUser = await this.clsFirebaseConnectionService.GetUsersDetails();
-
     if(this.clsUser.email == ""){//if it is empty then need to try and get it
       this.clsUser = await this.clsFirebaseConnectionService.SetUsersDetails();
     }

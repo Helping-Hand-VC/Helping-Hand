@@ -9,6 +9,7 @@ import { ClassPageComponent } from './Components/class-page/class-page.component
 import { HomeComponent } from './Components/home/home.component';
 import {CleanUpComponent} from './Components/clean-up/clean-up.component'
 
+import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'class/:subject/test/:difficulty', component: TestPageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'Clean-up', component: CleanUpComponent },
+  { path: 'ViewMarks', component: ViewMarkComponent },
+
 
   //Working with this for design purposes - Jon Pallatte
   // { path: 'awards', component: AwardsComponent },
