@@ -33,9 +33,16 @@ export class HomeComponent implements OnInit {
   async lstGradeChanged(){
     let lstSubjects = await this.clsFirebaseConnectionService.getSubjects(this.GradeSelected);
 
+    this.Words = false;
+    this.Maths = false;
+    this.Sciences = false;
+    this.History = false;
+    this.Arts = false;
+
     if(lstSubjects.includes("English")){
       this.Words = true;
     }
+
     if(lstSubjects.includes("Maths")){
       this.Maths = true;
     }
