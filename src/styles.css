@@ -11,10 +11,10 @@ body {
 }
 
 /* This is start of fotter styles */
-html, body {
+/* html, body {
   height: 100%;
-  margin: 0;
-}
+  margin: 5;
+} */
 .wrapper {
   min-height: 100%;
 
@@ -30,11 +30,11 @@ html, body {
 .site-footer,
 .push
 {
-  /* height: 50px; */
+  height: auto;
   background-color:#26272b;
   padding:15px 0 15px;
   font-size:15px;
-  line-height:15px;
+  line-height:20px;
   color:#737373;
 
 
@@ -55,7 +55,7 @@ html, body {
 .site-footer hr
 {
   margin-top: 0 !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 0 !important;
   border-top-color:#bbb;
   opacity:0.5
 }
