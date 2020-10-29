@@ -59,120 +59,119 @@
 
       <!--Account Settings-->
       <div class="profile-content" [style.display]="(ViewAccountSettings == true) ? '' : 'none'">
-        <h3>Account Settings</h3>
+        <h1>Account Settings</h1>
         <br />
         <h4 ID="lblAdultsOnly" [style.display]="(student == true) ? '' : 'none'">Only adults can edit this area, please link your account below.</h4>
-        
+
         <!--Main users account-->
         <form id="frmAccountSettings">
           <div class="form-row">
             <div class="col">
               <label>First Name</label>
               <br/>
-              <input type="text" name="username" id="edtMainusername" placeholder="Enter your first name" 
+              <input type="text" name="username" id="edtMainusername" placeholder="Enter your first name"
               [readonly]="(student == true) ? 'true' : 'false'"/>
               <br/>
-              <label>Surname Name</label>
+              <label>Surname</label>
               <br />
-              <input type="text" name="usersurname" id="edtMainusersurname" placeholder="Enter your surname" 
+              <input type="text" name="usersurname" id="edtMainusersurname" placeholder="Enter your surname"
               [readonly]="(student == true) ? 'true' : 'false'"/>
               <br/>
             </div>
             <div class="col">
               <label>Cell number</label>
               <br/>
-              <input type="text" name="mobile" id="edtMainmobile" placeholder="Enter your cellphone number" 
+              <input type="text" name="mobile" id="edtMainmobile" placeholder="Enter your cellphone number"
               [readonly]="(student == true) ? 'true' : 'false'"/>
               <br/>
               <label>ID number</label>
               <br/>
-              <input type="text" name="DOB" id="edtMainDOB" placeholder="Enter your ID number" 
+              <input type="text" name="DOB" id="edtMainDOB" placeholder="Enter your ID number"
               [readonly]="(student == true) ? 'true' : 'false'"/>
             </div>
           </div>
         </form>
-       
-        <div [style.display]="(student == true) ? 'none' : ''">
-          <button type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
-          <button type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
+
+        <div class="MainUserbtn" style="text-align: center;" [style.display]="(student == true) ? 'none' : ''">
+          <button style="background-color: coral;" type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
+          <button style="background-color: #64B5F6;" type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
         </div>
       </div>
 
 
       <!--children-->
-      <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">       
+      <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">
         <div [style.display]="(student == true) ? 'none' : ''">
-          <h3>Childs Account Settings</h3>
+          <h1>Childs Account Settings</h1>
           <form id="form1content1">
             <div class="form-row">
-              <div class="col">
+              <div class="col childAccountControls">
                 <label>First Name</label>
                 <br />
                 <input type="text" name="Childsusername" id="Childsusername" placeholder="Enter your first name" />
                 <br />
-                <label>Surname Name</label>
+                <label>Surname</label>
                 <br />
                 <input type="text" name="Childsusersurname" id="Childsusersurname" placeholder="Enter your surname" />
                 <br />
+                <label>School</label>
+                <br>
+                <select [(ngModel)]="schoolSelectedId">
+                  <option  selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
+                  <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
+                </select>
               </div>
-              <div class="col">
+              <div class="col childAccountControls" >
                 <label>Cell number</label>
-                <br />
+                <br/>
                 <input type="text" name="Childsmobile" id="Childsmobile" placeholder="Enter your cellphone number" />
-                <br />
+                <br/>
                 <label>ID number</label>
-                <br />
+                <br/>
                 <input type="text" name="ChildsDOB" id="ChildsDOB" placeholder="Enter your ID number" />
+                <br>
+                <label>Grade</label>
+                <br>
+                <select [(ngModel)]="GradeSelected">
+                  <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a Grade</option>
+                  <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
+                </select>
               </div>
             </div>
           </form>
         </div>
-        
 
-        <div class="linkAccount">
-          <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
-            Generate Code
-          </button>
-          <label id="GenCodeDisplay">Click the button to the left</label>
-          <br />
-          <button type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
-            Link Account
-          </button>
-          <input type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
-        </div>
-
-        <div [style.display]="(student == true) ? 'none' : ''">
-          <button type="button" name="btnChildReset" id="btnChildReset" (click)="btnChildReset()">Reset</button>
-          <button type="button" name="btnChildSave" id="btnChildSave" (click)="saveChildProfile()">Save</button>
-
+        <div style="text-align: center;" class="childAccountControls" [style.display]="(student == true) ? 'none' : ''">
+          <button style="background-color: coral;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnChildReset()">Reset</button>
+          <button style="background-color:#64B5F6;" type="button" name="btnChildSave" id="btnChildSave" (click)="saveChildProfile()">Save</button>
           <br/>
-
-          <select [(ngModel)]="schoolSelectedId">
-            <option  selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
-            <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
-          </select>    
-          <select [(ngModel)]="GradeSelected">
-            <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a Grade</option>
-            <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
-          </select>   
-          <button type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
-
+          <button style="background-color: green;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
+          <br/>
+          <br>
+          <div class="linkAccount">
+            <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
+              Generate Code
+            </button>
+            <label id="GenCodeDisplay">Click the button to the left</label>
+            <br />
+            <p style="float: left;">Link account below</p>
+            <br>
+            <input type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
+            <br>
+            <button type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
+              Link Account
+            </button>
+          </div>
         </div>
-
-
-        
-
       </div>
-
-
       <!--TCs-->
-      <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">       
+      <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">
         <div>
-          <h3>T's & C's</h3>
-          <p>Short Writeup 
-            of 
+          <h1>T's & C's</h1>
+          <p>Short Writeup
+            of
             T's & C's</p>
-          <button type="button" (click) = "ViewTCPDF()">
+          <button style="background-color: green;" type="button" (click) = "ViewTCPDF()">
             View Full Document
           </button>
         </div>
@@ -180,9 +179,9 @@
 
 
       <!--Help-->
-      <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">       
+      <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">
         <div>
-          <h3>Help</h3>
+          <h1>Help</h1>
           <p>Documentation and short video's comming soon</p>
         </div>
       </div>

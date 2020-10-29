@@ -8,21 +8,19 @@
   </div>
 </div>
 <a hidden href='https://www.freepik.com/vectors/school'>School vector created by pch.vector - www.freepik.com</a>
-
-
-
 <div class="DivColorForFlippyCards">
 <h1 style="text-align: center; color: #000000; padding-top: 15px;">Select A Subject To Get Started</h1>
 
-<select [(ngModel)]="GradeSelected" (change)="lstGradeChanged()">
-  <option selected="selected" value="0" [value]="" disabled hidden>Choose a Grade</option>
-  <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
-</select>
-
+<div class="choose-grade">
+  <label>Choose a Grade from the list below</label>
+  <br>
+  <select class="selector" [(ngModel)]="GradeSelected" (change)="lstGradeChanged()">
+    <option selected="selected" value="0" [value]="" disabled hidden>Choose a Grade</option>
+    <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
+  </select>
+</div>
 <div style="text-align: center;" class="container">
   <div class="rowCards">
-
-
     <!--Words-->
     <div class="flip-card" [style.display]="(Words == true) ? '' : 'none'">
       <div class="flip-card-inner">
@@ -54,8 +52,8 @@
         </div>
         <div class="flip-card-back" (click)="this.router.navigate(['class','Maths']);">
           <h3>Maths</h3>
-          <p>Look at the picture for clues</p>
-          <p>and solve the quiz</p>
+          <p>Let us have some fun with</p>
+          <p>math quizes</p>
           <div class="btnDiv" style="margin-top: 60px;">
             <button id="btnSubjectStartMaths">start</button>
           </div>
@@ -128,7 +126,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <!--About the App-->
 <div class="containerPanel">
   <div class="rowPanel">
@@ -140,34 +138,33 @@
       </div>
       <div class="col-3">
         <div>
-          <H2>Lorem ipsum dolor sit amet</H2>
+          <H2>Welcome to Helping Hands</H2>
           <br>
-          <p>consectetur adipiscing elit. Sed molestie quis nisl quis bibendum. Sed nunc neque, maximus ornare odio eu,
-            convallis ultrices velit. Duis ut rutrum arcu. Aenean ornare sem in tempor viverra.
-            Vestibulum consequat sem et elit vestibulum fermentum. Nulla quis magna in libero placerat ullamcorper eget
-            iaculis odio.
-            Maecenas id risus at est pellentesque iaculis. Class aptent taciti sociosqu ad litora torquent per conubia
-            nostra,
-            per inceptos himenaeos.
-            Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          <p>Helping hands is an online and offline educational tool to help develop students skills using a variety of
+            quizes available.
+            <br>
+            The student may select their grade and start a quiz. There are 3 levels of difficulty Easy, Medium and Hard.
+            <br>
+            After each quiz you will be shown your score, how many gold stars you can get?
           </p>
         </div>
         <br>
       </div>
       <div class="col-6">
-        <H2>Lorem ipsum dolor sit amet</H2>
+        <H2>Why we developed Helping Hands</H2>
         <br>
-        <p>consectetur adipiscing elit. Sed molestie quis nisl quis bibendum. Sed nunc neque, maximus ornare odio eu,
-          convallis ultrices velit. Duis ut rutrum arcu. Aenean ornare sem in tempor viverra.
-          Vestibulum consequat sem et elit vestibulum fermentum. Nulla quis magna in libero placerat ullamcorper eget
-          iaculis odio.
-          Maecenas id risus at est pellentesque iaculis. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra,
-          per inceptos himenaeos.
-          Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <p>
+          As a group we wanted to help develop a world-class educational tool for
+          <br>
+          students with special needs to help them acquire the skills they need to excel in life.
+          <br>
+          We have designed the application to be as user friendly as possible for the students, parents and education staff.
+          <br>
+          Parents will be able to help students with tests and quizes. They can view the students marks at any time.
+          <br>
+          Parents can update their childs profile with contact information.
+        </p>
       </div>
     </div>
   </div>
-</div>
-
 </div>

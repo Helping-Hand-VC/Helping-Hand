@@ -38,9 +38,10 @@
               <button id="btnHeadmaster" type="button" (click)="hmClick()"   [class]="(userT == 'headmaster') ? 'ButtonSelected' : 'ButtonNotSelected'">Headmaster</button>
             </div>
             <br />
-            <input type="checkbox" id="checkpolicy" style="float: left;" />
-            <label style="float: left; padding-top: 5px;">I accept the Privacy policy</label>
-
+            <label class="container-checkbox">I accept the Privacy policy
+              <input hidden type="checkbox">
+              <span class="checkmark"></span>
+            </label>
             <button type="submit" id="btnRegister" (click)="RegisterUser()">Confirm Registration</button>
             <button type="button" id="btnLogin" (click)="this.router.navigate(['login']);">Login</button>
 
