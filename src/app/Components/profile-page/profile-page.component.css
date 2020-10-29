@@ -1,5 +1,7 @@
 body {
+  padding-top: 10px;
   background: #F1F3FA;
+  height: 565px;
 }
 
 li {
@@ -8,7 +10,12 @@ li {
 
 form {
   padding: 20px;
+<<<<<<< HEAD
 
+=======
+  
+  /*margin-bottom: 200px;*/
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 }
 
 .col-md-9{
@@ -44,10 +51,68 @@ h1 {
   margin-left: 25px;
   text-align: center;
 }
+<<<<<<< HEAD
 .linkAccount{
   margin: 10px;
   display: block;
   text-align: left;
+=======
+
+#btnReset {
+  float: center;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 110px;
+  background-color: #FF7043;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: 20dp;
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+#btnSave{
+  font-size: 25px;
+  
+  float: center;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 110px;
+  background-color: #64B5F6;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: 20dp;
+  margin-left: 10px;
+}
+#btnReset:hover {
+  /* float: right; */
+  border-radius: 50px;
+  width: 100%;
+  max-width: 110px;
+  opacity: 0.8;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+#btnSave:hover{
+  font-size: 16px;
+  /* float: right; */
+  border-radius: 50px;
+  width: 100%;
+  max-width: 110px;
+  opacity: 0.8;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin-left: 10px;
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 }
 
 #btnGenerateLinkCode {
@@ -114,6 +179,59 @@ input[type=text] {
   height: 100%;
 
 }
+.ngChooseGrade{
+  margin-bottom: 1%;
+  border-width: 5px;
+ margin-left: 5px;
+}
+.ngChooseSchool{
+  margin-bottom: 3%;
+  border-width: 5px;
+  padding-right: 1%;
+  margin-left: 5px;
+  margin-inline-start: 15%;
+}
+#btnLinkToSchool{
+  border-radius: 50px;
+  width: auto;
+  /* max-width: 155px; */
+  background-color: #64B5F6;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  /* margin: 50; */
+  margin-inline-start: 1%;
+  font-size: 20px;
+}
+.btnChildResetClass {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 155px;
+  background-color: #FF7043;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin: 50;
+  margin-inline-start: 65%;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#btnChildSave {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 155px;
+  background-color: #4CAF50;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin-left: 1%;
+  font-size: 20px;
+}
 
 /* Profile sidebar */
 .profile-sidebar {
@@ -161,6 +279,18 @@ input[type=text] {
   margin-bottom: 15px;
 }
 
+.btnDownload {
+  background-color: #64B5F6bd;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: center;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
 .profile-userbuttons {
   text-align: center;
   margin-top: 10px;
@@ -220,8 +350,14 @@ input[type=text] {
 /* Profile Content */
 .profile-content {
   width: 100%;
-  padding: 20px;
+  padding: 0px;
+  padding-right: 0px;
+  padding-left: 15px;
   background: #ffffffbd;
+<<<<<<< HEAD
+=======
+  min-height: 425px;
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
   border-radius: 25px;
 
 }
@@ -312,9 +448,9 @@ input[type=text] {
 @media screen and (max-width: 400px) {
   .profile-content {
     width: 100%;
-    padding: 20px;
+    padding: 0px;
     background: #ffffffbd;
-    min-height: 595px;
+    min-height: 110%;
     border-radius: 25px;
 
   }

@@ -1,10 +1,11 @@
 .container {
   height: 100%;
   text-align: center;
+ /* padding-top: 5%; */
   width: 100%;
   max-width: 80%;
   padding: 20px;
-
+  border-radius: 50px;
 }
 
 .ButtonSelected {
@@ -20,7 +21,7 @@
 .grid {
   max-width: 600px;
   width: 100%;
-
+  /* padding-top: 50%; */
   margin: 0 auto;
   background-color: #fff;
   padding: 10px 50px 50px 50px;
@@ -201,11 +202,14 @@ button:hover {
 }
 @media screen and (max-width: 400px) {
   .container {
-    height: 100%;
+    height: auto;
     text-align: center;
-    width: 100%;
-    max-width: 80%;
-    padding: 20px;
+  
+    padding-top: 10%;
+    margin-bottom: auto;
+    width: auto;
+    /* max-width: 80%; */
+    padding: 0px;
 
   }
 
@@ -215,7 +219,7 @@ button:hover {
     height: 100%;
     margin: 0 auto;
     background-color: #fff;
-    padding: 10px 50px 50px 50px;
+    padding: 10px 10px 10px 10px;
     border-radius: 50px;
     box-shadow: 5px 5px 5px #525252;
   }
@@ -599,6 +603,7 @@ input {
   font-size: 17px;
 }
 
+<<<<<<< HEAD
 .quiz-window {
   position: absolute;
   left: 0;
@@ -606,6 +611,17 @@ input {
   margin-top: 20px;
   height: 100%;
   max-height: 86%;
+=======
+
+.quiz-window {
+  position: absolute;
+  /* padding-top: 10%; */
+  left:0; right:0;
+  /*
+  Below is the padding from top
+  */
+  top: 10%;
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
   margin: auto;
   width: 600px;
   border-radius: 4px;
@@ -683,7 +699,9 @@ input {
 .guiz-awards-header-track,
 .guiz-awards-header-time {
   min-width: 54px;
-  text-align: center;
+  /* place-content: center; */
+  /* padding-left: 30%; */
+  /* text-align: center; */
   width: 16%;
 }
 
@@ -724,16 +742,35 @@ input {
 .guiz-awards-time .null {
   color: #bababa;
 }
+<<<<<<< HEAD
 
+=======
+.StarDiv{
+  display: flex;
+  /* position: absolute; */
+  /* padding-bottom: 1dp; */
+  padding-inline-start: 30%;
+  /* align-items: center;  */
+}
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 .star {
   display: block;
   width: 50px;
+
+  /* padding-left: 10%; */
+  align-items: center;
   height: 50px;
 
 }
 
 .goldstar {
+<<<<<<< HEAD
   background-image: url(../../../assets/img/CorrectTick.svg);
+=======
+  
+  border-color: #4c8193;
+  background: #14b0bf;  
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 }
 
 .silverstar {
@@ -766,10 +803,17 @@ input {
   background: #61a3e5;
   border: 1px solid #ffffff;
   border-radius: 21px;
+<<<<<<< HEAD
   padding: 7px 40px 7px 40px;
   color: #FFFFFF;
   font-size: 20px;
   cursor: pointer;
+=======
+  padding: 7px 20px 7px 20px;
+  color: #61a3e5;
+  font-size: 17px;
+  cursor:pointer;
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
   transition: all .3s ease;
 }
 

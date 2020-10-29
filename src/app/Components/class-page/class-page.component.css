@@ -1,9 +1,17 @@
+
 .container{
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   max-height: 76.2%;
+=======
+  /* max-height: 150px; */
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
   text-align: center;
-  padding: 20px;
+  /* padding: 10px; */
+  padding-top: 150px;
+  /* padding-bottom: -20px; */
+  /* padding-inline: center; */
 }
 .grid{
     widows: 100%;;

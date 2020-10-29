@@ -11,6 +11,8 @@ import {CleanUpComponent} from './Components/clean-up/clean-up.component'
 
 import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
 
+import { LodaingPageComponent} from './Components/lodaing-page/lodaing-page.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'Clean-up', component: CleanUpComponent },
   { path: 'ViewMarks', component: ViewMarkComponent },
+  { path: 'Loading', component: LodaingPageComponent },
+  
 
 
   //Working with this for design purposes - Jon Pallatte
@@ -36,4 +40,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  LodaingPageComponent
+ }

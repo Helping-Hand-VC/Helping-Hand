@@ -1,5 +1,8 @@
+<body>
+
 <div class="container">
   <div class="row profile" style="display: block;">
+    <div>
     <div class="col-md-3">
       <div class="profile-sidebar">
         <!-- SIDEBAR USERPIC -->
@@ -59,7 +62,12 @@
 
       <!--Account Settings-->
       <div class="profile-content" [style.display]="(ViewAccountSettings == true) ? '' : 'none'">
+<<<<<<< HEAD
         <h1>Account Settings</h1>
+=======
+        &nbsp; 
+        <h2>&nbsp;&nbsp; Account Settings</h2>
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
         <br />
         <h4 ID="lblAdultsOnly" [style.display]="(student == true) ? '' : 'none'">Only adults can edit this area, please link your account below.</h4>
 
@@ -102,7 +110,12 @@
       <!--children-->
       <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">
         <div [style.display]="(student == true) ? 'none' : ''">
+<<<<<<< HEAD
           <h1>Childs Account Settings</h1>
+=======
+          &nbsp; 
+          <h2>&nbsp; Childs Account Settings</h2>
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
           <form id="form1content1">
             <div class="form-row">
               <div class="col childAccountControls">
@@ -140,11 +153,33 @@
             </div>
           </form>
         </div>
+<<<<<<< HEAD
+=======
+        
+        <div class="linkAccount">
+          <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
+            Generate Code
+          </button>
+          <label id="GenCodeDisplay">Click the button to the left</label>
+          <br />
+          <button type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
+            Link Account
+          </button>
+          <input type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
+        </div>
+
+        
+        <!-- <button type="button" name="btnChildReset"  id="btnChildReset" (click)="btnChildReset()">Reset</button> -->
+
+        <div [style.display]="(student == true) ? 'none' : ''">
+          
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 
         <div style="text-align: center;" class="childAccountControls" [style.display]="(student == true) ? 'none' : ''">
           <button style="background-color: coral;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnChildReset()">Reset</button>
           <button style="background-color:#64B5F6;" type="button" name="btnChildSave" id="btnChildSave" (click)="saveChildProfile()">Save</button>
           <br/>
+<<<<<<< HEAD
           <button style="background-color: green;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
           <br/>
           <br>
@@ -162,16 +197,41 @@
               Link Account
             </button>
           </div>
+=======
+
+          <select [(ngModel)]="schoolSelectedId" class="ngChooseSchool">
+            <option  selected="selected" value="0" disabled hidden>Choose a school</option>
+            <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
+          </select>    
+          <select [(ngModel)]="GradeSelected" class="ngChooseGrade">
+            <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a Grade</option>
+            <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
+          </select>   
+          <button type="button" class="btnLinkToSchool" name="btnLinkToSchool" id="btnLinkToSchool" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
+
+          <button type="button" name="btnChildReset" class="btnChildResetClass" id="btnChildReset" (click)="btnChildReset()">Reset</button>
+          <button type="button" name="btnChildSave" class="btnChildSaveClass" id="btnChildSave" (click)="saveChildProfile()">Save</button>
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
         </div>
       </div>
       <!--TCs-->
       <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">
         <div>
+<<<<<<< HEAD
           <h1>T's & C's</h1>
           <p>Short Writeup
             of
             T's & C's</p>
           <button style="background-color: green;" type="button" (click) = "ViewTCPDF()">
+=======
+          &nbsp; 
+          <h2>&nbsp; T's & C's</h2>
+          <!-- Terms and conditions  -->
+          <p>Please follow this page as we do update our Terms &amp; Conditions and our Terms of Use regularly: (28 October 2020 : 13:30)</p>
+          <p>Helping Hands' mission is to assist individuals with learning. We aim to enable anyone to use and share educational resources from any location in order to improve the learning experience.</p>
+          <p>In order to keep our platform functioning as intended, we have created some rules in order to keep our platform as well as each individual safe. The following Terms &amp; Conditions apply to all activity on the  Helping Hands website and other related services.</p>
+          <button type="button" class="btnDownload" (click) = "ViewTCPDF()">
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
             View Full Document
           </button>
         </div>
@@ -181,7 +241,12 @@
       <!--Help-->
       <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">
         <div>
+<<<<<<< HEAD
           <h1>Help</h1>
+=======
+          &nbsp; 
+          <h2>&nbsp; Help</h2>
+>>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
           <p>Documentation and short video's comming soon</p>
         </div>
       </div>
@@ -189,4 +254,7 @@
 
     </div>
   </div>
+  </div>
 </div>
+  
+</body>
