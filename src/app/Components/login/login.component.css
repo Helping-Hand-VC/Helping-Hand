@@ -1,6 +1,10 @@
-
+body {
+  /* padding-top: 10px; */
+  /* background: #F1F3FA; */
+  height: 650px;
+}
 .column2{
-  padding: 10px;
+  padding: 1px;
   background-color: #FFFFFFbd;
   border: none;
   border-radius: 25px;

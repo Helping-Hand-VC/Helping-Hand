@@ -5,7 +5,9 @@ Licensed under MIT
 ***/
 
 body {
+  padding-top: 10px;
   background: #F1F3FA;
+  height: 565px;
 }
 
 li { 
@@ -14,6 +16,7 @@ li {
 
 form {
   padding: 20px;
+  
   /*margin-bottom: 200px;*/
 }
 .col-md-9{
