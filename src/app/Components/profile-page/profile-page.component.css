@@ -50,56 +50,59 @@ h3 {
 }
 
 #btnReset {
-  float: right;
+  float: center;
   border-radius: 50px;
   width: 100%;
-  max-width: 55px;
+  max-width: 110px;
   background-color: #FF7043;
   font-family: helvetica;
   font-weight: 600;
   color: white;
-  border: none;
-  font-size: 16px;
-  margin-left: 10px;
+  border: 20dp;
+  font-size: 25px;
+  margin-left: 20px;
 }
 
 #btnSave{
-  font-size: 16px;
-  float: right;
+  font-size: 25px;
+  
+  float: center;
   border-radius: 50px;
   width: 100%;
-  max-width: 55px;
+  max-width: 110px;
   background-color: #64B5F6;
   font-family: helvetica;
   font-weight: 600;
   color: white;
-  border: none;
+  border: 20dp;
+  margin-left: 10px;
 }
 #btnReset:hover {
-  float: right;
+  /* float: right; */
   border-radius: 50px;
   width: 100%;
-  max-width: 55px;
+  max-width: 110px;
   opacity: 0.8;
   font-family: helvetica;
   font-weight: 600;
   color: white;
   border: none;
   font-size: 16px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 #btnSave:hover{
   font-size: 16px;
-  float: right;
+  /* float: right; */
   border-radius: 50px;
   width: 100%;
-  max-width: 55px;
+  max-width: 110px;
   opacity: 0.8;
   font-family: helvetica;
   font-weight: 600;
   color: white;
   border: none;
+  margin-left: 10px;
 }
 
 #btnGenerateLinkCode {
@@ -212,6 +215,18 @@ input[type=text] {
   margin-bottom: 15px;
 }
 
+.btnDownload {
+  background-color: #64B5F6bd;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: center;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
 .profile-userbuttons {
   text-align: center;
   margin-top: 10px;
@@ -271,9 +286,11 @@ input[type=text] {
 /* Profile Content */
 .profile-content {
   width: 100%;
-  padding: 20px;
+  padding: 0px;
+  padding-right: 0px;
+  padding-left: 15px;
   background: #ffffffbd;
-  min-height: 595px;
+  min-height: 425px;
   border-radius: 25px;
 
 }
@@ -284,9 +301,9 @@ input[type=text] {
 @media screen and (max-width: 400px) {
   .profile-content {
     width: 100%;
-    padding: 20px;
+    padding: 0px;
     background: #ffffffbd;
-    min-height: 595px;
+    min-height: 110%;
     border-radius: 25px;
 
   }

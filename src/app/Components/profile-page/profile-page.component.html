@@ -59,7 +59,8 @@
 
       <!--Account Settings-->
       <div class="profile-content" [style.display]="(ViewAccountSettings == true) ? '' : 'none'">
-        <h3>Account Settings</h3>
+        &nbsp; 
+        <h2>&nbsp;&nbsp; Account Settings</h2>
         <br />
         <h4 ID="lblAdultsOnly" [style.display]="(student == true) ? '' : 'none'">Only adults can edit this area, please link your account below.</h4>
         
@@ -102,7 +103,8 @@
       <!--children-->
       <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">       
         <div [style.display]="(student == true) ? 'none' : ''">
-          <h3>Childs Account Settings</h3>
+          &nbsp; 
+          <h2>&nbsp; Childs Account Settings</h2>
           <form id="form1content1">
             <div class="form-row">
               <div class="col">
@@ -168,11 +170,15 @@
       <!--TCs-->
       <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">       
         <div>
-          <h3>T's & C's</h3>
-          <p>Short Writeup 
-            of 
-            T's & C's</p>
-          <button type="button" (click) = "ViewTCPDF()">
+          &nbsp; 
+          <h2>&nbsp; T's & C's</h2>
+          <!-- Terms and conditions  -->
+          <p>Please follow this page as we do update our Terms &amp; Conditions and our Terms of Use regularly: (28 October 2020 : 13:30)</p>
+
+<p>Helping Hands' mission is to assist individuals with learning. We aim to enable anyone to use and share educational resources from any location in order to improve the learning experience.</p>
+
+<p>In order to keep our platform functioning as intended, we have created some rules in order to keep our platform as well as each individual safe. The following Terms &amp; Conditions apply to all activity on the  Helping Hands website and other related services.</p>
+          <button type="button" class="btnDownload" (click) = "ViewTCPDF()">
             View Full Document
           </button>
         </div>
@@ -182,7 +188,8 @@
       <!--Help-->
       <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">       
         <div>
-          <h3>Help</h3>
+          &nbsp; 
+          <h2>&nbsp; Help</h2>
           <p>Documentation and short video's comming soon</p>
         </div>
       </div>
@@ -190,4 +197,10 @@
 
     </div>
   </div>
+  &nbsp; 
+  &nbsp; 
+  &nbsp; 
+  &nbsp; 
+  &nbsp; 
+
 </div>
