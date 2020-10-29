@@ -8,10 +8,16 @@
     <div class="buttons">
       <button id="btn0" (click)="Choice0()" [class]="(iChoice == 0) ? 'ButtonSelected' : 'ButtonNotSelected'" ><span id="choice0"></span></button>
       <button id="btn1" (click)="Choice1()"  [class]="(iChoice == 1) ? 'ButtonSelected' : 'ButtonNotSelected'"><span id="choice1"></span></button>
+
+      
+
     </div>
     <p id="progress">Question x of y</p>
     <button id="btnCancel"  (click)="this.router.navigate(['home']);">Cancel</button>
     <button id="btnNext" (click)="btnNextQuestion()">Next</button>
+
+    <!-- <label id="ValidateAnswer">Result</label> -->
+
   </div>
   
   <div class="quiz-window" [style.display]="(awards == false) ? 'none' : ''" style="display: none;">

@@ -133,7 +133,6 @@
           </form>
         </div>
         
-
         <div class="linkAccount">
           <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
             Generate Code
@@ -146,22 +145,26 @@
           <input type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
         </div>
 
+        
+        <!-- <button type="button" name="btnChildReset"  id="btnChildReset" (click)="btnChildReset()">Reset</button> -->
+
         <div [style.display]="(student == true) ? 'none' : ''">
-          <button type="button" name="btnChildReset" id="btnChildReset" (click)="btnChildReset()">Reset</button>
-          <button type="button" name="btnChildSave" id="btnChildSave" (click)="saveChildProfile()">Save</button>
+          
 
           <br/>
 
-          <select [(ngModel)]="schoolSelectedId">
-            <option  selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
+          <select [(ngModel)]="schoolSelectedId" class="ngChooseSchool">
+            <option  selected="selected" value="0" disabled hidden>Choose a school</option>
             <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
           </select>    
-          <select [(ngModel)]="GradeSelected">
+          <select [(ngModel)]="GradeSelected" class="ngChooseGrade">
             <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a Grade</option>
             <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
           </select>   
-          <button type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
+          <button type="button" class="btnLinkToSchool" name="btnLinkToSchool" id="btnLinkToSchool" (click)="btnLinkToSchool()">Link Child to school and Grade</button>
 
+          <button type="button" name="btnChildReset" class="btnChildResetClass" id="btnChildReset" (click)="btnChildReset()">Reset</button>
+          <button type="button" name="btnChildSave" class="btnChildSaveClass" id="btnChildSave" (click)="saveChildProfile()">Save</button>
         </div>
 
 

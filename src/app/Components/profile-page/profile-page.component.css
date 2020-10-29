@@ -171,6 +171,59 @@ input[type=text] {
 
 
 }
+.ngChooseGrade{
+  margin-bottom: 1%;
+  border-width: 5px;
+ margin-left: 5px;
+}
+.ngChooseSchool{
+  margin-bottom: 3%;
+  border-width: 5px;
+  padding-right: 1%;
+  margin-left: 5px;
+  margin-inline-start: 15%;
+}
+#btnLinkToSchool{
+  border-radius: 50px;
+  width: auto;
+  /* max-width: 155px; */
+  background-color: #64B5F6;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  /* margin: 50; */
+  margin-inline-start: 1%;
+  font-size: 20px;
+}
+.btnChildResetClass {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 155px;
+  background-color: #FF7043;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin: 50;
+  margin-inline-start: 65%;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#btnChildSave {
+  border-radius: 50px;
+  width: 100%;
+  max-width: 155px;
+  background-color: #4CAF50;
+  font-family: helvetica;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin-left: 1%;
+  font-size: 20px;
+}
 
 /* Profile sidebar */
 .profile-sidebar {
