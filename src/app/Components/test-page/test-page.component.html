@@ -14,16 +14,20 @@
     <button id="btnCancel"  (click)="this.router.navigate(['home']);">Cancel</button>
     <button id="btnNext" (click)="btnNextQuestion()">Next</button>
   </div>
-
+  
   <div class="quiz-window" [style.display]="(awards == false) ? 'none' : ''" style="display: none;">
     <div class="quiz-window-header">
+      &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
       <div class="quiz-window-title">Congratulations</div>
       <button class="quiz-window-close">&times;</button>
     </div>
     <div class="quiz-window-body">
       <div class="gui-window-awards">
         <ul class="guiz-awards-row guiz-awards-header">
-          <li class="guiz-awards-header-star">&nbsp;</li>
+          <li class="guiz-awards-header-star"></li>
           <li class="guiz-awards-header-title">Questions</li>
           <li class="guiz-awards-header-track">Correct</li>
           <li class="guiz-awards-header-time">Marks</li>
@@ -32,7 +36,7 @@
         <div *ngFor="let qst of clsTests;let i = index">
 
           <ul class="guiz-awards-row guiz-awards-row-even">
-            <li class="guiz-awards-star"><span [class]="(qst.userGetCorrect == true) ? 'star goldstar' : 'star bronzestar'" ></span></li>
+           <li class="guiz-awards-star"><span [class]="(qst.userGetCorrect == true) ? 'star goldstar' : 'star bronzestar'" ></span></li>
             <li class="guiz-awards-title">Question {{i+1}}
                 <div class="guiz-awards-subtitle">{{qst.Question}}</div></li>
             <li class="guiz-awards-track">{{(qst.userGetCorrect == true) ? 'Right' : 'Wrong'}}</li>
@@ -44,7 +48,7 @@
 
         <div>
           <p id="progress">Question {{iCorrect}} of {{clsTests.length}}</p>
-          <div class="StarDiv" style="display: flex;">
+          <div class="StarDiv" >
 
             <div *ngFor="let qst of clsTests;">
               <img id="starAchieve1" [style.display]="(qst.userGetCorrect == false) ? 'none' : ''"  [src]="(qst.userGetCorrect == true) ? '../../../assets/img/Stars.svg' : ''" alt="Star achievement">
@@ -64,7 +68,7 @@
   
       </div>
       <div class="guiz-awards-buttons">
-        <button class="guiz-awards-but-back" (click)="btnFinishClicked()"> Finish</button>
+        <button class="guiz-awards-but-back" (click)="btnFinishClicked()">Finish</button>
       </div>
     </div>
   </div>
