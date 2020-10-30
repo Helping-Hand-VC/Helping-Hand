@@ -11,7 +11,6 @@ import {CleanUpComponent} from './Components/clean-up/clean-up.component'
 
 import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
 
-import { LodaingPageComponent} from './Components/lodaing-page/lodaing-page.component';
 
 
 const routes: Routes = [
@@ -25,7 +24,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'Clean-up', component: CleanUpComponent },
   { path: 'ViewMarks', component: ViewMarkComponent },
-  { path: 'Loading', component: LodaingPageComponent },
   
 
 

@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   public lstGrades = [];
   public GradeSelected = "2";
 
+  public isLearner = false;
+
   constructor(private clsFirebaseConnectionService: FirebaseConnectionService,public router: Router) { 
     this.AccountSettingsOnLoad();
 
@@ -64,9 +66,16 @@ export class HomeComponent implements OnInit {
   async AccountSettingsOnLoad(){
 
     let clsUser = await this.clsFirebaseConnectionService.GetUsersDetails();
-    clsUser.Grade = "2";
 
-    let lstSubjects = await this.clsFirebaseConnectionService.getSubjects(clsUser.Grade);
+    if(clsUser.type == "student"){
+      this.isLearner = true;
+      this.GradeSelected = clsUser.Grade;
+    }else{
+      this.isLearner = false;
+      this.GradeSelected = "2";
+    }
+    
+    let lstSubjects = await this.clsFirebaseConnectionService.getSubjects(this.GradeSelected);
 
     if(lstSubjects.includes("Words")){
       this.Words = true;

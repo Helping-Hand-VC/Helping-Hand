@@ -8,6 +8,32 @@
   border-radius: 50px;
 }
 
+.fade-out {
+  opacity: 0;
+  /* fade in */
+  -webkit-animation: fadeinout 6s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeinout 64s;
+  /* Firefox < 16 */
+  -ms-animation: fadeinout 6s;
+  /* Internet Explorer */
+  -o-animation: fadeinout 6s;
+  /* Opera < 12.1 */
+  animation: fadeinout 6s;
+}
+
+@keyframes fadeinout {
+  from {
+      opacity: 0;
+  }
+  33% {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
 .ButtonSelected {
   background-color: Red !important;
   border: none;
@@ -138,13 +164,7 @@ button:hover {
 
 }
 
-.fade-in {
-  animation: fadeIn ease-in 3s;
-  -webkit-animation: fadeIn ease-in 3s;
-  -moz-animation: fadeIn ease-in 3s;
-  -o-animation: fadeIn ease-in 3s;
-  -ms-animation: fadeIn ease-in 3s;
-}
+
 
 @keyframes fadeIn {
   0% {
@@ -419,7 +439,7 @@ button:hover {
 
   .guiz-awards-header-title {
     width: 40%;
-    min-width: 160px;
+    min-width: 291px;
   }
 
   .guiz-awards-subtitle {
@@ -514,12 +534,25 @@ button:hover {
 
   }
 
+  
+
+
   .fade-in {
     animation: fadeIn ease-in 3s;
     -webkit-animation: fadeIn ease-in 3s;
     -moz-animation: fadeIn ease-in 3s;
     -o-animation: fadeIn ease-in 3s;
     -ms-animation: fadeIn ease-in 3s;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
   }
 
   @keyframes fadeIn {
@@ -603,25 +636,12 @@ input {
   font-size: 17px;
 }
 
-<<<<<<< HEAD
 .quiz-window {
   position: absolute;
   left: 0;
   right: 0;
   margin-top: 20px;
-  height: 100%;
-  max-height: 86%;
-=======
-
-.quiz-window {
-  position: absolute;
-  /* padding-top: 10%; */
-  left:0; right:0;
-  /*
-  Below is the padding from top
-  */
-  top: 10%;
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
+  max-height: max-content;
   margin: auto;
   width: 600px;
   border-radius: 4px;
@@ -715,7 +735,8 @@ input {
 
 .guiz-awards-header-title {
   width: 40%;
-  min-width: 160px;
+  min-width: 291px;;
+  padding-left: 90px;
 }
 
 .guiz-awards-subtitle {
@@ -742,17 +763,6 @@ input {
 .guiz-awards-time .null {
   color: #bababa;
 }
-<<<<<<< HEAD
-
-=======
-.StarDiv{
-  display: flex;
-  /* position: absolute; */
-  /* padding-bottom: 1dp; */
-  padding-inline-start: 30%;
-  /* align-items: center;  */
-}
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 .star {
   display: block;
   width: 50px;
@@ -764,13 +774,7 @@ input {
 }
 
 .goldstar {
-<<<<<<< HEAD
   background-image: url(../../../assets/img/CorrectTick.svg);
-=======
-  
-  border-color: #4c8193;
-  background: #14b0bf;  
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 }
 
 .silverstar {
@@ -803,17 +807,10 @@ input {
   background: #61a3e5;
   border: 1px solid #ffffff;
   border-radius: 21px;
-<<<<<<< HEAD
   padding: 7px 40px 7px 40px;
   color: #FFFFFF;
   font-size: 20px;
   cursor: pointer;
-=======
-  padding: 7px 20px 7px 20px;
-  color: #61a3e5;
-  font-size: 17px;
-  cursor:pointer;
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
   transition: all .3s ease;
 }
 

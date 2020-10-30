@@ -11,7 +11,7 @@
 <div class="DivColorForFlippyCards">
 <h1 style="text-align: center; color: #000000; padding-top: 15px;">Select A Subject To Get Started</h1>
 
-<div class="choose-grade">
+<div class="choose-grade" [style.display]="(isLearner == true) ? 'none' : ''">
   <label>Choose a Grade from the list below</label>
   <br>
   <select class="selector" [(ngModel)]="GradeSelected" (change)="lstGradeChanged()">

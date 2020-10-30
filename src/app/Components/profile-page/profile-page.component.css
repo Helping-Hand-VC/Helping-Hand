@@ -1,6 +1,6 @@
 body {
   padding-top: 10px;
-  background: #F1F3FA;
+  background: #64B5F6bd;
   height: 565px;
 }
 
@@ -10,12 +10,6 @@ li {
 
 form {
   padding: 20px;
-<<<<<<< HEAD
-
-=======
-  
-  /*margin-bottom: 200px;*/
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
 }
 
 .col-md-9{
@@ -51,69 +45,66 @@ h1 {
   margin-left: 25px;
   text-align: center;
 }
-<<<<<<< HEAD
 .linkAccount{
   margin: 10px;
   display: block;
   text-align: left;
-=======
-
-#btnReset {
-  float: center;
-  border-radius: 50px;
-  width: 100%;
-  max-width: 110px;
-  background-color: #FF7043;
-  font-family: helvetica;
-  font-weight: 600;
-  color: white;
-  border: 20dp;
-  font-size: 25px;
-  margin-left: 20px;
 }
-
-#btnSave{
-  font-size: 25px;
+  #btnReset {
+    float: center;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 110px;
+    background-color: #FF7043;
+    font-family: helvetica;
+    font-weight: 600;
+    color: white;
+    border: 20dp;
+    font-size: 25px;
+    margin-left: 20px;
+  }
   
-  float: center;
-  border-radius: 50px;
-  width: 100%;
-  max-width: 110px;
-  background-color: #64B5F6;
-  font-family: helvetica;
-  font-weight: 600;
-  color: white;
-  border: 20dp;
-  margin-left: 10px;
-}
-#btnReset:hover {
-  /* float: right; */
-  border-radius: 50px;
-  width: 100%;
-  max-width: 110px;
-  opacity: 0.8;
-  font-family: helvetica;
-  font-weight: 600;
-  color: white;
-  border: none;
-  font-size: 16px;
-  margin-left: 20px;
-}
+  #btnSave{
+    font-size: 25px;
+    float: center;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 110px;
+    background-color: #64B5F6;
+    font-family: helvetica;
+    font-weight: 600;
+    color: white;
+    border: 20dp;
+    margin-left: 10px;
+  }
 
-#btnSave:hover{
-  font-size: 16px;
-  /* float: right; */
-  border-radius: 50px;
-  width: 100%;
-  max-width: 110px;
-  opacity: 0.8;
-  font-family: helvetica;
-  font-weight: 600;
-  color: white;
-  border: none;
-  margin-left: 10px;
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
-}
+  #btnReset:hover {
+    /* float: right; */
+    font-size: 25px;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 110px;
+    opacity: 0.8;
+    font-family: helvetica;
+    font-weight: 600;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-left: 20px;
+  }
+  
+  #btnSave:hover{
+    font-size: 25px;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 110px;
+    opacity: 0.8;
+    font-family: helvetica;
+    font-weight: 600;
+    color: white;
+    border: none;
+    margin-left: 10px;
+  }
 
 #btnGenerateLinkCode {
   border-radius: 50px;
@@ -177,7 +168,6 @@ input[type=text] {
   width: 100%;
   float: left;
   height: 100%;
-
 }
 .ngChooseGrade{
   margin-bottom: 1%;
@@ -351,16 +341,11 @@ input[type=text] {
 .profile-content {
   width: 100%;
   padding: 0px;
-  padding-right: 0px;
-  padding-left: 15px;
   background: #ffffffbd;
-<<<<<<< HEAD
-=======
-  min-height: 425px;
->>>>>>> 11066912ecf8dd36d90138495d11289db54f7f42
   border-radius: 25px;
-
+  min-height:400px;
 }
+
 .profile-content button {
   width: 100%;
   border-radius: 15px;
@@ -377,11 +362,7 @@ input[type=text] {
   font-size: 18px;
   float: left;
 }
-#linkCode{
-  width: 20%;
-  margin-left: -154px;
 
-}
 .childAccountControls button, select{
   width: 100%;
   max-width: 20%;

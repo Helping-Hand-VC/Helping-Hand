@@ -18,6 +18,8 @@ export class TestPageComponent implements OnInit {
   public awards = false;
   public clsTests: test[] = [];
 
+  public ShowCorrectOrNot = false;
+
 
   iCorrect = 0;
   iCurrent = 0;
@@ -59,17 +61,24 @@ export class TestPageComponent implements OnInit {
   }
 
   async btnNextQuestion(){
+    this.ShowCorrectOrNot = false;
+
     if(this.iChoice == -1){
       window.alert("Please select an answer");
+      this.ShowCorrectOrNot = true;
+      
     }else{
+      
+
+
       if(((<HTMLLabelElement>document.getElementById("choice" + this.iChoice)).innerHTML) == this.clsTests[this.iCurrent].CorrectAnswer){
         //Correct
-        window.alert("That is correct");
+        //window.alert("That is correct");
         this.clsTests[this.iCurrent].userGetCorrect = true;
         this.iCorrect++;
       }else{
         //Wrong
-        window.alert("That was wrong");
+        //window.alert("That was wrong");
         this.clsTests[this.iCurrent].userGetCorrect = false;
       }
       

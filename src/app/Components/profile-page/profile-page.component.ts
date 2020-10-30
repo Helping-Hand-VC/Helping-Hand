@@ -22,6 +22,8 @@ export class ProfilePageComponent implements OnInit {
   public ViewTCs              = false;
   public ViewHelp             = false;
 
+  public ChildLinked          = false;
+
   
   public lstSchools: school[] = [];
   public schoolSelectedId = "0";
@@ -79,29 +81,43 @@ export class ProfilePageComponent implements OnInit {
         
 
       }else if (this.clsUser.type == "parent") {
+
         this.student = false;
-        //Get children's values
-        console.log("Getting children ID's");
-        var clsnewUsers = await this.clsFirebaseConnectionService.getParentChildDetails();
-        if(clsnewUsers == null){//something went wrong
-          window.alert("Something went wrong");
-          this.router.navigate(['login']); //Something went wrong so make them login again
+        if(!this.clsUser.ChildsID){
+          this.ChildLinked = false;
+        }else{
+          this.getUserChildDetails();
         }
-
-        await this.getSchools();
-        if(clsnewUsers.SchoolID !== null){
-          this.schoolSelectedId = clsnewUsers.SchoolID;
-        }
-
-        (<HTMLInputElement>document.getElementById("Childsusername")).value = clsnewUsers.firstname;
-        (<HTMLInputElement>document.getElementById("Childsusersurname")).value = clsnewUsers.surname;
-        (<HTMLInputElement>document.getElementById("Childsmobile")).value = clsnewUsers.cell;
-        (<HTMLInputElement>document.getElementById("ChildsDOB")).value = clsnewUsers.id;
-
-        (<HTMLInputElement>document.getElementById("btnGenerateLinkCode")).hidden = true;
-        (<HTMLLabelElement>document.getElementById("GenCodeDisplay")).hidden = true;
+        
+        
+       
       }      
     }
+  }
+
+  async getUserChildDetails(){
+    this.ChildLinked = true;
+
+    //Get children's values
+    var clsnewUsers = await this.clsFirebaseConnectionService.getParentChildDetails();
+            
+    if(clsnewUsers.firstname == ""){//something went wrong
+      window.alert("Something went wrong");
+      this.router.navigate(['login']); //Something went wrong so make them login again
+    }
+
+    await this.getSchools();
+    if(clsnewUsers.SchoolID !== null){
+      this.schoolSelectedId = clsnewUsers.SchoolID;
+    }
+
+    (<HTMLInputElement>document.getElementById("Childsusername")).value = clsnewUsers.firstname;
+    (<HTMLInputElement>document.getElementById("Childsusersurname")).value = clsnewUsers.surname;
+    (<HTMLInputElement>document.getElementById("Childsmobile")).value = clsnewUsers.cell;
+    (<HTMLInputElement>document.getElementById("ChildsDOB")).value = clsnewUsers.id;
+
+    (<HTMLInputElement>document.getElementById("btnGenerateLinkCode")).hidden = true;
+    this.GradeSelected = clsnewUsers.Grade;
   }
 
 
@@ -225,7 +241,6 @@ export class ProfilePageComponent implements OnInit {
     let bvalid = await this.clsFirebaseConnectionService.setLinkCode(strCode);
 
     if(bvalid === true){
-      strCode = strCode.toUpperCase();
       (<HTMLLabelElement>document.getElementById("GenCodeDisplay")).innerHTML= strCode;
     }else{
       (<HTMLLabelElement>document.getElementById("GenCodeDisplay")).innerHTML= "Something went wrong, please try again.";
@@ -241,8 +256,12 @@ export class ProfilePageComponent implements OnInit {
 
     let bvalid = await this.clsFirebaseConnectionService.LinkAccounts(enteredCode);
     if(bvalid == true){
-      console.log("Linked accounts");
+
       window.alert("account linked");
+      //Display new data to screen
+      this.clsUser = await this.clsFirebaseConnectionService.SetUsersDetails();//Force reload of data
+      this.getUserChildDetails();
+
     }else{
       console.log("unable to Linked accounts");
       window.alert("failed to link account's linked");
@@ -271,6 +290,8 @@ export class ProfilePageComponent implements OnInit {
       ChildsID  : []
     };
 
+    this.btnLinkToSchool();
+
 
     let reply = await this.clsFirebaseConnectionService.updateChildDetails(clsUser);
     if(reply == "true"){
@@ -290,9 +311,9 @@ export class ProfilePageComponent implements OnInit {
 
     let reply = await this.clsFirebaseConnectionService.LinkChildToSchool(schoolID,this.GradeSelected);
     if(reply == "true"){
-      window.alert("Childs details have been updated");
+      //window.alert("Childs details have been updated");
     }else{
-      window.alert(reply);
+      window.alert("Sorry Something went wrong");
     }
   }
 
@@ -300,7 +321,7 @@ export class ProfilePageComponent implements OnInit {
 
 //View T's & C's-----------------------------------------------------------
   ViewTCPDF(){
-    window.open('http://stackoverflow.com','_blank');
+    window.open('https://www.dropbox.com/s/0l2ntqvofvgy23o/Helping%20Hands%20T%27s%20%26%20C%27s.pdf?dl=0','_blank');
   }
 
 
