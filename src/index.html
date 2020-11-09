@@ -8,6 +8,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+<!-- this style is here for the footer -->
+<style>
+  #footer { 
+            position: fixed; 
+            padding: 0px 0px 0px 0px; 
+            bottom: 0; 
+            width: 100%; 
+            /* Height of the footer*/  
+            height: auto; 
+        } 
+</style>
 <body>
   <app-root> <style>
     app-root {
@@ -54,6 +65,7 @@
     .d-3 {
       animation-delay: 1s;
     }
+
     </style>
   
     Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span> </app-root>
@@ -67,7 +79,63 @@
       <!-- all other page content -->
     </div>
 
-  </div>
+    
 
+  </div>
+  <div id=”content-desktop”> 
+    <div id="footer">
+
+    <footer class="site-footer">
+  <div class="container">
+    <div class="row" >
+      <div class="col-xs-12 col-md-3">
+        <h6>Team Members</h6>
+        <ul class="footer-links">
+          <li><a href="">Kai Davey</a></li>
+          <li><a href="">Dani Waksman</a></li>
+          <li><a href="">Penina Barkowitz</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-md-3" style="padding-top: 30px;">
+        <ul class="footer-links">
+          <li><a href="">Tyler Chalmers</a></li>
+          <li><a href="">Kyle Johnson</a></li>
+          <li><a href="">Mitchell Jon Pallatte</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-3 col-md-6">
+        <h6 style="font-size: 12px;">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="">About Us</a></li>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+     <a href="#">Guardians</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</div> 
+    </div>
+
+ 
 </body>
 </html>
+

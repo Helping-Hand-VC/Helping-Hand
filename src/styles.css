@@ -22,7 +22,10 @@ body {
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
 }
+
+
 .footer,
+
 .push {
   height: 50px;
 }
@@ -127,11 +130,13 @@ body {
     margin-bottom:30px
   }
 }
+/* This hides the footer on smaller screen resoulutions*/
 @media (max-width:767px)
 {
   .site-footer
   {
-    padding-bottom:0
+    visibility: hidden;
+    /* padding-bottom:0 */
   }
   .site-footer .copyright-text,.site-footer .social-icons
   {
