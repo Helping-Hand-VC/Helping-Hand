@@ -98,15 +98,23 @@
             <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
               Generate Code
             </button>
+            <br>
             <label id="GenCodeDisplay" style="width: auto;border: none;"></label>
+            <br>
+            <audio controls>
+              <source src="horse.ogg" type="audio/ogg">
+              <source src="../assets/audio/generateCodeParent.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
           </div>  
-
+         
           
         </form>
 
         <div class="MainUserbtn" style="text-align: center;position: absolute;bottom: 0px;width: 95%;" [style.display]="(student == true) ? 'none' : ''">
           <button style="background-color: coral;float: left;font-size: 25px;" type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
           <button style="background-color: #64B5F6;float:right;font-size: 25px;" type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
+          
         </div>
       </div>
 
@@ -157,13 +165,22 @@
             </div>
 
             <div class="form-row" style="display: block !important;" [style.display]="(ChildLinked == true) ? 'none' : 'block !important'">
-              <label style="width: 200px;">Link account below</label>
+              <label style="width: 200px; size: 10px;">Link account below</label>
+              <!-- <h1>Link Account Below</h1> -->
               <br/>
               <input style="padding:0px;padding-top:10px;width:100px;" type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
               <br>
               <button type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
                 Link Account
               </button>
+              <br>
+              <br>
+              
+              <audio controls>
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="../assets/audio/linkGenerateCode.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio>
             </div>
 
           </form>
