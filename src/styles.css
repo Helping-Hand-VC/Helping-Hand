@@ -20,7 +20,7 @@ body {
 
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -50px;
+  /* margin-bottom: -50px; */
 }
 
 
@@ -39,8 +39,10 @@ body {
   font-size:15px;
   line-height:20px;
   color:#737373;
+}
 
-
+.site-footer .container{
+  width: 100%;
 }
 
 /* .site-footer
@@ -52,9 +54,6 @@ body {
   color:#737373;
 
 } */
-.site-footer .container{
-  width: 100%;
-}
 .site-footer hr
 {
   margin-top: 0 !important;
@@ -136,11 +135,30 @@ body {
   .site-footer
   {
     visibility: hidden;
+    height: 0%;
+    width: 0%;
     /* padding-bottom:0 */
   }
+
+  .site-footer,
+.push
+{
+  height: 0px;
+  /* background-color:#26272b; */
+  /* padding:15px 0 15px; */
+  font-size:0px;
+  line-height:0px;
+  color:#737373;
+}
+
+.site-footer .container{
+visibility: hidden;
+}
+
+
   .site-footer .copyright-text,.site-footer .social-icons
   {
-    text-align:center
+    visibility: hidden;
   }
 }
 .social-icons
@@ -215,3 +233,74 @@ body {
   }
 }
 /* end of footer */
+
+
+/*Button styles - Start*/
+.btnGreen {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+.BtnBlue {
+  background-color: #64B5F6bd;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+/* Ronded buttons */
+.BlueButtonRounded {
+
+  background-color: #64B5F6bd;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.ResetButtonRounded {
+
+  background-color: coral;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.ButtonSelected {
+
+  background-color: red !important;
+  color: white;
+  font-weight: bold;
+  outline:none;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+/*Button styles - End*/
