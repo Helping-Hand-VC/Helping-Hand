@@ -18,7 +18,7 @@ import { LodaingPageComponent } from './Components/lodaing-page/lodaing-page.com
 import { CleanUpComponent } from './Components/clean-up/clean-up.component';
 
 
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 
 import {ProfilePageComponent} from '../app/Components/profile-page/profile-page.component';
 
@@ -26,6 +26,7 @@ import {HomeComponent} from '../app/Components/home/home.component';
 
 import {TestPageComponent} from '../app/Components/test-page/test-page.component';
 import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
+
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
     ProfilePageComponent,
     HomeComponent,
     TestPageComponent,
-    ViewMarkComponent
+    ViewMarkComponent,
+
   ],
   imports: [
     BrowserModule,
