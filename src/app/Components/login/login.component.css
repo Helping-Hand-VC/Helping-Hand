@@ -1,7 +1,14 @@
-body {
-  /* padding-top: 10px; */
-  /* background: #F1F3FA; */
-  /* height: auto; */
+#btnlogin{
+  margin-top: 10px;
+  background-color: rgb(67, 182, 32) !important;
+  color: white;
+  padding: 10px;
+}
+#btnRegister{
+  background-color: rgb(29, 180, 250) !important;
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
 }
 .column2{
   padding: 1px;
@@ -11,16 +18,13 @@ body {
   width: 100%;
   max-width: 500px;
 }
-
 input[type=email], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
 /* The container */
 .container-checkbox {
   display: block;
@@ -34,81 +38,19 @@ input[type=email], input[type=password] {
   -ms-user-select: none;
   user-select: none;
 }
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  margin-top: 2px;
-  top: 0;
-  left: 0;
-  height: 15px;
-  width: 15px;
-  border: solid 0.5px black;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 4.5px;
-  top: 0.5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 .row{
   display: -webkit-inline-box;
   flex-wrap: wrap;
   max-width: 90%;
 }
-.buttonReset {
-  background-color: #9C9E9B;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  padding: 10px;
-  box-shadow: 5px 5px 5px #888888;
-}
 
 button:hover {
   opacity: 0.8;
 }
-
-
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
 }
-
 img.avatar {
   width: 100%;
   max-width: 150px;
@@ -116,14 +58,10 @@ img.avatar {
   max-height: 150px;
   border-radius: 50%;
 }
-
 .container {
   padding: 16px;
-  text-align: center;
-
   width: 100%;
 }
-
 span.psw {
   float: right;
   padding-top: 16px;
@@ -132,7 +70,6 @@ label{
   float: left;
   margin-bottom: 0px !important;
 }
-
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;

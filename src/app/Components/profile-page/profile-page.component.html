@@ -1,5 +1,4 @@
 <body>
-
 <div class="container">
   <div class="row profile" style="display: block;">
     <div>
@@ -64,7 +63,7 @@
       <div class="profile-content" [style.display]="(ViewAccountSettings == true) ? '' : 'none'">
         <h1>Account Settings</h1>
         <br />
-        
+
         <!--Main users account-->
         <form id="frmAccountSettings">
           <h4 ID="lblAdultsOnly" [style.display]="(student == true) ? '' : 'none'">Only adults can edit this area, please link your account below.</h4>
@@ -95,7 +94,7 @@
           </div>
 
           <div style="padding-top: 20px;" class="form-row" [style.display]="(student == true) ? '' : 'none'">
-            <button type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
+            <button class="btn" type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
               Generate Code
             </button>
             <br>
@@ -106,15 +105,15 @@
               <source src="../assets/audio/generateCodeParent.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio>
-          </div>  
-         
-          
+          </div>
+
+
         </form>
 
-        <div class="MainUserbtn" style="text-align: center;position: absolute;bottom: 0px;width: 95%;" [style.display]="(student == true) ? 'none' : ''">
-          <button class="ResetButtonRounded" style="float: left;font-size: 25px;" type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
-          <button class="ResetButtonRounded" style="float:right;font-size: 25px;" type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
-          
+        <div class="MainUserbtn" [style.display]="(student == true) ? 'none' : ''">
+          <button class="btn"  type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
+          <button class="btn"  type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
+
         </div>
       </div>
 
@@ -124,7 +123,7 @@
         <h1>Childs Account Settings</h1>
 
         <div [style.display]="(student == true) ? 'none' : ''">
-          
+
           <form id="form1content1">
             <div class="form-row" [style.display]="(ChildLinked == true) ? '' : 'none'">
               <div class="col childAccountControls">
@@ -160,7 +159,7 @@
                 </select>
               </div>
 
-              
+
 
             </div>
 
@@ -170,12 +169,12 @@
               <br/>
               <input style="padding:0px;padding-top:10px;width:100px;" type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
               <br>
-              <button class="btnGreen" type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
+              <button class="btn" type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
                 Link Account
               </button>
               <br>
               <br>
-              
+
               <audio controls>
                 <source src="horse.ogg" type="audio/ogg">
                 <source src="../assets/audio/linkGenerateCode.mp3" type="audio/mpeg">
@@ -185,14 +184,14 @@
 
           </form>
 
-         
+
         </div>
 
-        
 
-        <div style="text-align: center;position: absolute;bottom: 0px;width: 95%;" class="childAccountControls" [style.display]="(student == true) ? 'none' : ''">
-          <button style="background-color: coral;float:left;font-size: 25px;" type="button" name="btnChildReset" id="btnReset" (click)="btnChildReset()">Reset</button>
-          <button style="background-color:#64B5F6;float:right;font-size: 25px;" type="button" name="btnChildSave" id="btnSave" (click)="saveChildProfile()">Save</button>
+
+        <div class="childAccountControlsBTN" [style.display]="(student == true) ? 'none' : ''">
+          <button class="btn"  type="button" name="btnChildReset" id="btnReset" (click)="btnChildReset()">Reset</button>
+          <button class="btn"  type="button" name="btnChildSave" id="btnSave" (click)="saveChildProfile()">Save</button>
           <br/>
           <!--<button style="background-color: green;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>-->
         </div>
@@ -204,13 +203,13 @@
       <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">
         <h1>T's & C's</h1>
         <div style="padding-left: 5px; padding-right: 5px;">
-          
+
           <p>Please follow this page as we do update our Terms &amp; Conditions and our Terms of Use regularly: (28 October 2020 : 13:30)</p>
           <p>Helping Hands' mission is to assist individuals with learning. We aim to enable anyone to use and share educational resources from any location in order to improve the learning experience.</p>
           <p>In order to keep our platform functioning as intended, we have created some rules in order to keep our platform as well as each individual safe. The following Terms &amp; Conditions apply to all activity on the  Helping Hands website and other related services.</p>
-        
+
         </div>
-        <button class="btnGreen" style="margin-top: 80px;margin-left: 40%;" type="button" (click) = "ViewTCPDF()">
+        <button class="btn" id="btnTC" type="button" (click) = "ViewTCPDF()">
           View Full Document
         </button>
       </div>
@@ -230,5 +229,4 @@
     </div>
   </div>
 </div>
-  
 </body>

@@ -14,6 +14,7 @@ import { LearnAlphabetComponent } from './Components/learn-alphabet/learn-alphab
 import { LearnFamilyMembersComponent } from './Components/learn-family-members/learn-family-members.component';
 import { LearnNumbersComponent } from './Components/learn-numbers/learn-numbers.component';
 import { LearnHomeComponent } from './Components/learn-home/learn-home.component';
+import { TeacherQuestionsComponent } from './Components/teacher-questions/teacher-questions.component';
 
 
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'learn-family-members', component: LearnFamilyMembersComponent },
   { path: 'learn-numbers', component: LearnNumbersComponent },
   { path: 'learn-home', component: LearnHomeComponent },
+  { path: 'teacher-questions', component: TeacherQuestionsComponent },
 
 
 

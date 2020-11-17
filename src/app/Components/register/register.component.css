@@ -1,29 +1,19 @@
-body {
-  /* padding-top: 10px; */
-  /* background: #F1F3FA; */
-  height: 850px;
-}
-#checkpolicy{
+#checkpolicy {
   width: 20px;
   height: 20px;
   margin-right: 5px;
 }
 
-/* This is fix the zoom of the footer when the page is zoomed out */
 .wrapper {
   min-height: 100%;
-
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-
   margin-bottom: -15px;
 }
 
-
-.containerLinks{
+.containerLinks {
   line-height: 25px;
 }
-.column2{
+
+.column2 {
   padding: 1px;
   background-color: #FFFFFFbd;
   border: none;
@@ -32,20 +22,22 @@ body {
   max-width: 500px;
 }
 
-input[type=email], input[type=password] {
+input[type=email],
+input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.row{
+
+.row {
   display: inline-block;
   max-width: 95%;
 }
-.btnUserClass{
-display: inline-block;
+
+.btnUserClass {
+  display: inline-block;
 }
 
 .ButtonNotSelected {
@@ -62,25 +54,29 @@ display: inline-block;
   box-shadow: 5px 5px 5px #888888;
 }
 
-.ButtonSelected {
+#btnRegister {
 
-  background-color: red !important;
+  background-color: rgb(29, 180, 250) !important;
   color: white;
   font-weight: bold;
-  outline:none;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
   padding: 10px;
-  box-shadow: 5px 5px 5px #888888;
+}
+
+#btnLogin {
+
+  background-color: rgb(67, 182, 32) !important;
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  padding: 10px;
 }
 
 button:hover {
   opacity: 0.8;
 }
-
 
 .imgcontainer {
   text-align: center;
@@ -101,50 +97,52 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
-label{
+
+label {
   float: left;
   margin-bottom: 0px !important;
 }
 
-
-#btnStudent{
+#btnStudent {
   background-color: #6EBAF6;
-  width:130px;
-  font-size:20px;
-  color:#fff;
+  width: 130px;
+  font-size: 20px;
+  color: #fff;
   border-radius: 50px;
-  margin: 10px 20px 10px 10px;
+  margin: 10px 19px 10px 20px;
   padding: 10px 10px;
 }
 
-#btnParent{
+#btnParent {
   background-color: #6EBAF6;
-  width:130px;
-  font-size:20px;
-  color:#fff;
+  width: 130px;
+  font-size: 20px;
+  color: #fff;
   border-radius: 50px;
-  margin: 10px 10px 10px 0px;
+  margin: 10px 20px 10px 5px;
   padding: 10px 10px;
 }
 
-#btnTeacher{
+#btnTeacher {
   background-color: #6EBAF6;
-  width:130px;
-  font-size:20px;
-  color:#fff;
+  width: 130px;
+  font-size: 20px;
+  color: #fff;
   border-radius: 50px;
-  margin: 10px 20px 10px 10px;
+  margin: 10px 20px 10px 5px;
   padding: 10px 10px;
 }
-#btnHeadmaster{
+
+#btnHeadmaster {
   background-color: #6EBAF6;
-  width:130px;
-  font-size:20px;
-  color:#fff;
+  width: 130px;
+  font-size: 20px;
+  color: #fff;
   border-radius: 50px;
-  margin: 10px 10px 10px 0px;
+  margin: 10px 0px 10px 5px;
   padding: 10px 10px;
 }
+
 /* The container */
 .container-checkbox {
   display: block;
@@ -158,60 +156,15 @@ label{
   -ms-user-select: none;
   user-select: none;
 }
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  margin-top: 2px;
-  top: 0;
-  left: 0;
-  height: 15px;
-  width: 15px;
-  border: solid 0.5px black;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 4.5px;
-  top: 0.5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 400px) {
   span.psw {
-     display: block;
-     float: none;
+    display: block;
+    float: none;
   }
+
   .cancelbtn {
-     width: 100%;
+    width: 100%;
   }
 }

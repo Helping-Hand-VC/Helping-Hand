@@ -1,0 +1,60 @@
+.container{
+  height: 100%;
+  padding: 10px;
+}
+form{
+  padding: 20px;
+  width: 100%;
+}
+.panel{
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+.inputField{
+  display: inline-flex;
+  width: 100%;
+}
+input{
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  width: 100%;
+}
+.row1{
+  display: inline-flex;
+}
+.col-3{
+ width: 100%;
+}
+.col-6{
+  max-width: 20%;
+  width: 100%;
+
+}
+input[type="checkbox"]{
+margin-top: 20px;
+}
+#btnSaveQuestion{
+  background-color: green;
+  max-width: 100px;
+  margin: 10px;
+}
+#btnClear{
+  background-color: rgb(251, 86, 10);
+  max-width: 100px;
+  margin: 10px;
+}
+#btnCancel{
+  background-color: red;
+  max-width: 100px;
+  margin: 10px;
+}
+#checkboxAnswer2{
+  margin-top: 33px;
+  margin-bottom: 23px;
+}
+#checkboxAnswer4{
+  margin-top: 30px;
+}

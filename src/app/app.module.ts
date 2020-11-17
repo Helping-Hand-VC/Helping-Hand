@@ -26,6 +26,7 @@ import {HomeComponent} from '../app/Components/home/home.component';
 
 import {TestPageComponent} from '../app/Components/test-page/test-page.component';
 import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
+import { TeacherQuestionsComponent } from './Components/teacher-questions/teacher-questions.component';
 
 
 
@@ -42,6 +43,7 @@ import { ViewMarkComponent } from './Components/view-mark/view-mark.component';
     HomeComponent,
     TestPageComponent,
     ViewMarkComponent,
+    TeacherQuestionsComponent,
 
   ],
   imports: [
