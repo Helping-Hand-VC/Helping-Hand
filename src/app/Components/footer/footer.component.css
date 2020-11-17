@@ -1,13 +1,13 @@
-/* html, body {
+ html, body {
   height: 100%;
   margin: 0;
 }
 .wrapper {
-  min-height: 100%; */
+  min-height: 100%;
 
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
-  /* margin-bottom: -50px;
+   margin-bottom: -50px;
 }
 .footer,
 .push {
@@ -18,16 +18,16 @@
 .push
 {
   /* height: 50px; */
-  /* background-color:#26272b;
+  background-color:#26272b;
   padding:15px 0 15px;
   font-size:15px;
   line-height:15px;
   color:#737373;
 
 
-} */
+} 
 
-/* .site-footer
+ .site-footer
 {
   background-color:#26272b;
   padding:15px 0 15px;
@@ -35,8 +35,8 @@
   line-height:15px;
   color:#737373;
 
-} */
-/* .site-footer .container{
+} 
+ .site-footer .container{
   width: 100%;
 }
 .site-footer hr
@@ -195,4 +195,4 @@
     margin-right:0;
     font-weight:600
   }
-}  */
+} 

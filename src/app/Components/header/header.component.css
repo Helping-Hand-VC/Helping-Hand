@@ -1,4 +1,5 @@
 /* bootstrap dropdown hover menu*/
+.context-menu {cursor: context-menu;}
 
 body {
   font-family: 'PT Sans', sans-serif;
@@ -44,6 +45,8 @@ body {
 }
 li:hover{
   color: #000000;
+  cursor: pointer;
+  /* cursor: context-menu; */
 }
 nav {
   width: 100%;
