@@ -4,6 +4,12 @@
   color: white;
   padding: 10px;
 }
+#btnShowPassword{
+  margin-top: 10px;
+  background-color: rgb(67, 182, 32) !important;
+  color: white;
+  padding: 10px;
+}
 #btnRegister{
   background-color: rgb(29, 180, 250) !important;
   color: white;
@@ -30,6 +36,19 @@ input[type=email], input[type=password] {
   display: block;
   position: relative;
   padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* container checkbox for revelaing password */
+.container-checkboxPassword {
+  display: block;
+  position: relative;
+  padding-left: 30px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 14px;
