@@ -34,7 +34,7 @@
 
               <button type="button" class="button-psswd" (click)="x.type=x.type=='password'?'text':'password'" (click)="y.type=y.type=='password'?'text':'password'">Show password</button>
 
-            <label>SELECT THE TYPE OF USER</label>
+            <label><b>Select The Type of User</b></label>
             <div class="btnUserClass">
               <button id="btnStudent" type="button" (click)="studClick()"    [class]="(userT == 'student') ? 'ButtonSelected' : 'ButtonNotSelected'">Student</button>
               <button id="btnParent" type="button" (click)="parentClick()"   [class]="(userT == 'parent') ? 'ButtonSelected' : 'ButtonNotSelected'">Parent</button>

@@ -42,7 +42,7 @@ input[type=password] {
 
 .ButtonNotSelected {
 
-  background-color: #64B5F6bd;
+  /* background-color: #64B5F6bd; */
   color: white;
   font-weight: bold;
   padding: 14px 20px;
@@ -111,6 +111,7 @@ label {
   border-radius: 50px;
   margin: 10px 19px 10px 20px;
   padding: 10px 10px;
+ 
 }
 
 #btnParent {
