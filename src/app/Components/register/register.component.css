@@ -40,6 +40,23 @@ input[type=password] {
   display: inline-block;
 }
 
+<<<<<<< HEAD
+=======
+.ButtonNotSelected {
+
+  /* background-color: #64B5F6bd; */
+  color: white;
+  font-weight: bold;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+>>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 #btnRegister {
 
   background-color: rgb(29, 180, 250) !important;
@@ -90,6 +107,7 @@ label {
   max-width: 130px;
   margin: 10px 19px 10px 20px;
   padding: 10px 10px;
+ 
 }
 
 #btnParent {

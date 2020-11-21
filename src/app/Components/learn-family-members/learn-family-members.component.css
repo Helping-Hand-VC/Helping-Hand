@@ -12,11 +12,15 @@
   padding-left: 175px;
 }
 h1{
+<<<<<<< HEAD
 
   font-size: 75px;
   background-color: #4CAF50;
   color: white;
   margin-bottom: 0;
+=======
+  font-size: 20px;
+>>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 }
 h2{
   margin-top: 0;
@@ -62,6 +66,16 @@ h2{
   color: black;
 }
 
+<<<<<<< HEAD
+=======
+/* Style the back side */
+.flip-card-back{
+  background-color:white;
+  color: white;
+  transform: rotateY(180deg);
+
+}
+>>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 .btn{
   margin-top: 10px;
   max-width: 50px;
@@ -83,6 +97,7 @@ h2{
     width: fit-content;
     margin-left: 30px;
     padding: 25px;
+    padding-bottom: 10px;
   }
 
 
@@ -120,6 +135,7 @@ h2{
   .flip-card-front {
     color: black;
   }
+<<<<<<< HEAD
   h1{
     font-size: 40px;
     padding: 5px;
@@ -132,4 +148,14 @@ h2{
   .row{
     padding:10px;
   }
+=======
+
+  /* Style the back side */
+  /* .flip-card-back{
+    background-color: rgb(51, 112, 255);
+    color: white;
+    transform: rotateY(180deg);
+
+  } */
+>>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 }
