@@ -36,10 +36,10 @@
 
             <label>SELECT THE TYPE OF USER</label>
             <div class="btnUserClass">
-              <button id="btnStudent" type="button" (click)="studClick()"    [class]="(userT == 'student') ? 'ButtonSelected' : 'ButtonNotSelected'">Student</button>
-              <button id="btnParent" type="button" (click)="parentClick()"   [class]="(userT == 'parent') ? 'ButtonSelected' : 'ButtonNotSelected'">Parent</button>
-              <button id="btnTeacher" type="button" (click)="teacherClick()" [class]="(userT == 'teacher') ? 'ButtonSelected' : 'ButtonNotSelected'">Teacher</button>
-              <button id="btnHeadmaster" type="button" (click)="hmClick()"   [class]="(userT == 'headmaster') ? 'ButtonSelected' : 'ButtonNotSelected'">Headmaster</button>
+              <button class="btn" id="btnStudent" type="button" (click)="studClick()"    [class]="(userT == 'student') ? 'ButtonSelected' : 'ButtonNotSelected'">Student</button>
+              <button class="btn" id="btnParent" type="button" (click)="parentClick()"   [class]="(userT == 'parent') ? 'ButtonSelected' : 'ButtonNotSelected'">Parent</button>
+              <button class="btn" id="btnTeacher" type="button" (click)="teacherClick()" [class]="(userT == 'teacher') ? 'ButtonSelected' : 'ButtonNotSelected'">Teacher</button>
+              <button class="btn" id="btnHeadmaster" type="button" (click)="hmClick()"   [class]="(userT == 'headmaster') ? 'ButtonSelected' : 'ButtonNotSelected'">Headmaster</button>
             </div>
             <br />
             <label class="container-checkbox">I accept the Privacy policy

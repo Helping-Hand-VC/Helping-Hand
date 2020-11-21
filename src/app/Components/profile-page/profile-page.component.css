@@ -7,6 +7,9 @@ li {
 form {
   padding: 20px;
 }
+#form1content1{
+  margin-top: 19.5px;
+}
 
 .col-md-9{
   width: 65%;
@@ -213,6 +216,7 @@ input[type=text] {
 
 .profile-usermenu {
   margin-top: 30px;
+  text-align: left;
 }
 
 .profile-usermenu ul li {
@@ -272,7 +276,7 @@ input[type=text] {
 
 }
 .childAccountControlsBTN{
-  margin-top: 28.5px;
+  margin-top: 65px;
 }
 .childAccountControls select{
 
@@ -303,7 +307,7 @@ input[type=text] {
     background-size: .65em auto, 100%;
 }
 .MainUserbtn {
- margin-top: 75px;
+ margin-top: 130.5px;
 }
 
 @media screen and (max-width: 400px) {

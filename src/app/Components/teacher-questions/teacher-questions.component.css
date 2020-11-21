@@ -6,8 +6,11 @@ form{
   padding: 20px;
   width: 100%;
 }
+.row{
+  margin-top: 20px;
+}
 .panel{
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
   margin: auto;
 }
@@ -27,19 +30,19 @@ input{
 }
 .col-3{
  width: 100%;
+ max-width: 10%;
 }
 .col-6{
-  max-width: 20%;
+
   width: 100%;
 
 }
-input[type="checkbox"]{
-margin-top: 20px;
-}
+
 #btnSaveQuestion{
   background-color: green;
   max-width: 100px;
   margin: 10px;
+  float: left;
 }
 #btnClear{
   background-color: rgb(251, 86, 10);
@@ -50,11 +53,124 @@ margin-top: 20px;
   background-color: red;
   max-width: 100px;
   margin: 10px;
+  float: right;
 }
 #checkboxAnswer2{
   margin-top: 33px;
   margin-bottom: 23px;
 }
 #checkboxAnswer4{
-  margin-top: 30px;
+  margin-top: 25px;
+}
+
+/* Create a custom checkbox */
+.checkBoxCustom {
+  margin-top: 17px;
+  height: 20px;
+  border: solid 0.5px black;
+  background-color: #eee;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkBoxCustom {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkBoxCustom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkBoxCustom:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkBoxCustom:after {
+  left: 6.5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 400px) {
+
+  .container{
+    padding: 10px;
+    margin-bottom: -1000px;
+  }
+  form{
+    padding: 20px;
+    width: 100%;
+  }
+  .panel{
+    width: 90%;
+    margin: auto;
+    padding: 0;
+  }
+  .inputField{
+    display: inline-flex;
+    width: 100%;
+  }
+  input{
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    width: 100%;
+  }
+  .row1{
+    display: inline-flex;
+  }
+  .col-3{
+   width: 100%;
+   max-width: 5%;
+  }
+  .col-6{
+    margin-left: 20px;
+    width: 100%;
+
+  }
+  #btnSaveQuestion{
+    background-color: green;
+    max-width: 100px;
+    margin: 10px;
+
+  }
+  #btnClear{
+    background-color: rgb(251, 86, 10);
+    max-width: 100px;
+    margin: 10px;
+  }
+  #btnCancel{
+    background-color: red;
+    max-width: 100px;
+    margin: 10px;
+
+  }
+  #checkboxAnswer2{
+    margin-top: 33px;
+    margin-bottom: 23px;
+  }
+  #checkboxAnswer4{
+    margin-top: 30px;
+  }
+  .checkmark{
+    margin-top: 17px;
+  }
+  .btnDIV{
+    display: inline-grid;
+  }
+  h1{
+    font-size: 25px;
+  }
 }

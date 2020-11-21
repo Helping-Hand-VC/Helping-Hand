@@ -6,27 +6,32 @@
           <h1>Prepare new questions here!</h1>
           <label>Type out the question in the below box.</label>
           <input type="text" id="txtQuestion" placeholder="Enter Question here -->">
-            <label>Now type out the various answers 3 incorrect and 1 correct.</label>
-            <div class="row1">
-              <div class="col-3">
-                <input type="text" id="txtAnswer1" placeholder="Enter an Answer -->">
-                <input type="text" id="txtAnswer2" placeholder="Enter an Answer -->">
-                <input type="text" id="txtAnswer3" placeholder="Enter an Answer -->">
-                <input type="text" id="txtAnswer4" placeholder="Enter an Answer -->">
-              </div>
-              <div class="col-6">
-                <input type="checkbox" id="checkboxAnswer1">
-                <input type="checkbox" id="checkboxAnswer2">
-                <input type="checkbox" id="checkboxAnswer3">
-                <input type="checkbox" id="checkboxAnswer4">
-              </div>
+          <label>Now type out the various answers 3 incorrect and 1 correct.</label>
+          <div class="row1">
+            <div class="col-3">
+
+              <input class="checkBoxCustom" type="checkbox" name="checkboxAnswer1" id="checkboxAnswer1">
+
+              <input class="checkBoxCustom" type="checkbox" name="checkboxAnswer2" id="checkboxAnswer2">
+
+              <input class="checkBoxCustom" type="checkbox" name="checkboxAnswer3" id="checkboxAnswer3">
+
+              <input class="checkBoxCustom" type="checkbox" name="checkboxAnswer4" id="checkboxAnswer4">
+
             </div>
-        </div>
-          <div class="btnDIV">
-            <button class="btn" id="btnSaveQuestion">Save</button>
-            <button class="btn" id="btnClear">Clear</button>
-            <button class="btn" id="btnCancel">Cancel</button>
+            <div class="col-6">
+              <input type="text" id="txtAnswer1" placeholder="Enter an Answer -->">
+              <input type="text" id="txtAnswer2" placeholder="Enter an Answer -->">
+              <input type="text" id="txtAnswer3" placeholder="Enter an Answer -->">
+              <input type="text" id="txtAnswer4" placeholder="Enter an Answer -->">
+            </div>
           </div>
+        </div>
+        <div class="btnDIV">
+          <button class="btn" id="btnSaveQuestion">Save</button>
+          <button class="btn" id="btnClear">Clear</button>
+          <button class="btn" id="btnCancel">Cancel</button>
+        </div>
       </form>
     </div>
   </div>
