@@ -66,8 +66,6 @@ h2{
   color: black;
 }
 
-<<<<<<< HEAD
-=======
 /* Style the back side */
 .flip-card-back{
   background-color:white;
@@ -75,7 +73,6 @@ h2{
   transform: rotateY(180deg);
 
 }
->>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 .btn{
   margin-top: 10px;
   max-width: 50px;
@@ -135,7 +132,6 @@ h2{
   .flip-card-front {
     color: black;
   }
-<<<<<<< HEAD
   h1{
     font-size: 40px;
     padding: 5px;
@@ -148,14 +144,4 @@ h2{
   .row{
     padding:10px;
   }
-=======
-
-  /* Style the back side */
-  /* .flip-card-back{
-    background-color: rgb(51, 112, 255);
-    color: white;
-    transform: rotateY(180deg);
-
-  } */
->>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 }
