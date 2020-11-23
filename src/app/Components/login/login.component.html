@@ -1,32 +1,6 @@
-<!-- <body> -->
-  
-  <style>
-    #footer {
-  
-              padding: 0px 0px 0px 0px;
-              bottom: 0;
-              width: 100%;
-              height: auto;
-          } 
-  </style>
-
-<!-- Password: <input type="password" value="FakePSW" id="myInput"><br><br>
-<input type="checkbox" onclick="myFunction()">Show Password -->
-
-<!-- <script>
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-</script> -->
- 
 <div class="container">
-  
-  <div class="row">
+
+<div class="row">
     <div class="column1" style="width: 33%;">
     </div>
     <div class="column2"  style="width: 100%;">
@@ -40,9 +14,7 @@ function myFunction() {
           <input type="email"  minlength="3" placeholder="Enter Email Address" name="userEmail" id="userEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           title="Must contain @ and . (example characters@characters.domain)"required>
           <label><b>Password</b></label>
-          <!-- original -->
-          <!-- <input type="password" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required> -->
+
           <!-- Show password method -->
           <input #x type="password" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
@@ -53,14 +25,9 @@ function myFunction() {
             <input hidden type="checkbox" name="remember" id="rememberMe">
             <span class="checkmark"></span>
           </label>
-          <!-- <label class="container-checkbox">Show Password
-            <input hidden type="checkbox" name="reavealPassword" id="showPassword" (click)="x.type=x.type=='password'?'text':'password'">
-            <span class="checkmark"></span>
-          </label> -->
-
           <button class="btn" type="submit" id="btnlogin" (click)="SignInUser()">Login</button>
           <button class="btn" type="submit" id="btnRegister" (click)="this.router.navigate(['register']);">Register</button>
-          <!-- <button type="submit" id="btnPSWReset" class="buttonReset">Forgot Password?</button> -->
+         
         </div>
       </form>
       <div class="container">
@@ -82,4 +49,29 @@ function myFunction() {
   <br>
   <br>
 </div>
+<!-- 
+not used saving incase we change our minds -->
+ <!-- uncomment above -->
 
+          <!-- original -->
+          <!-- <input type="password" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required> -->
+           <!-- <label class="container-checkbox">Show Password
+            <input hidden type="checkbox" name="reavealPassword" id="showPassword" (click)="x.type=x.type=='password'?'text':'password'">
+            <span class="checkmark"></span>
+          </label> -->
+           <!-- <button type="submit" id="btnPSWReset" class="buttonReset">Forgot Password?</button> -->
+          
+           <!-- Password: <input type="password" value="FakePSW" id="myInput"><br><br>
+<input type="checkbox" onclick="myFunction()">Show Password -->
+
+<!-- <script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script> -->
