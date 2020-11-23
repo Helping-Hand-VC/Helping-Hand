@@ -40,8 +40,6 @@ input[type=password] {
   display: inline-block;
 }
 
-<<<<<<< HEAD
-=======
 .ButtonNotSelected {
 
   /* background-color: #64B5F6bd; */
@@ -56,7 +54,6 @@ input[type=password] {
   box-shadow: 5px 5px 5px #888888;
 }
 
->>>>>>> 383f65fb30c04d448ffbeaab408cc5b3727faa8b
 #btnRegister {
 
   background-color: rgb(29, 180, 250) !important;

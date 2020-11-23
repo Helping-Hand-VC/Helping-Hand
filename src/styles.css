@@ -8,6 +8,8 @@ body {
   background-image: url(assets/img/BackgroundXBCAD50p.png);
   background-position: center;
   background-color: #64B5F6bd;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  
 }
 
 /* This is start of fotter styles */
