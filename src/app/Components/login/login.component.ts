@@ -19,9 +19,26 @@ export class LoginComponent implements OnInit {
   clsStudent: Student;
   strErr: string;
 
+  // variable
+show: boolean;
+
+// click event function toggle
+password() {
+this.show = !this.show;
+}
+
+  alert() {
+    window.alert('password'?'text':'password');
+  }
+
+
+
   constructor(private clsFirebaseConnectionService: FirebaseConnectionService,
     public router: Router
-  ) { }
+  ) {// initialize variable value  
+    this.show = false; }
+
+  
 
   ngOnInit(): void {
     document.getElementById("btnlogin").addEventListener("click", function (event) {
@@ -51,6 +68,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  
   ValidateUserInfo(uemail: string, pwd: string): void {
     let regexPass = new RegExp('^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$');
     let regexEmail = new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$');
@@ -73,4 +91,5 @@ export class LoginComponent implements OnInit {
     }
 
   }
+
 }

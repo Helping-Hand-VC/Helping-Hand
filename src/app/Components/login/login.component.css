@@ -25,12 +25,37 @@
   width: 100%;
   max-width: 500px;
 }
-input[type=email], input[type=password] {
+
+/* input[type=email],input[type=password]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   box-sizing: border-box;
+} */
+input[type=email],input[type=password]{
+  
+  /* display: block; */
+  display: inline-block;
+  width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d4d4d4;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.04em;
+    transition: 0.4s ease;
+}
+
+.btnPassword{
+  width:25px; 
+      height:21px; 
+      border: 0;
+  background-image: url(../../../assets/img/key.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: none;
 }
 /* The container */
 .container-checkbox {
@@ -88,7 +113,8 @@ span.psw {
 }
 label{
   float: left;
-  margin-bottom: 0px !important;
+  margin-bottom: 1px !important;
+  
 }
 .checkmark{
   top:0;
@@ -96,10 +122,12 @@ label{
 }
 @media screen and (max-width: 300px) {
   span.psw {
-     display: block;
+    display: block;
      float: none;
   }
   .cancelbtn {
      width: 100%;
   }
 }
+
+

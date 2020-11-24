@@ -291,13 +291,28 @@ label{
 /* Text styles - end */
 
 /* input styles - start */
-input{
+/* input{
   font-size: 16px;
   font-weight: 100;
   color: black;
   border: 1px solid;
   border-radius: 15px;
+} */
+
+input{
+  /* display: block; */
+  width: 100%;
+  display: inline-block;
+  /* box-sizing: border-box; */
+  border: 1px solid #d4d4d4;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.04em;
+  transition: 0.4s ease;
 }
+
 /* input styles - end*/
 
 /* Container styles - start */

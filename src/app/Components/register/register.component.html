@@ -31,10 +31,11 @@
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
               required />
-
-              <button type="button" class="button-psswd" (click)="x.type=x.type=='password'?'text':'password'" (click)="y.type=y.type=='password'?'text':'password'">Show password</button>
-
-            <label><b>Select The Type of User</b></label>
+              <br>
+              <br>
+              <button type="button" class="btnPassword" (click)="x.type=x.type=='password'?'text':'password'" (click)="y.type=y.type=='password'?'text':'password'"></button>
+              
+              <label><b>Select The Type of User</b></label>
             <div class="btnUserClass">
               <button class="btn" id="btnStudent" type="button" (click)="studClick()"    [class]="(userT == 'student') ? 'ButtonSelected' : 'ButtonNotSelected'">Student</button>
               <button class="btn" id="btnParent" type="button" (click)="parentClick()"   [class]="(userT == 'parent') ? 'ButtonSelected' : 'ButtonNotSelected'">Parent</button>

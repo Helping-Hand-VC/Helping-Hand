@@ -24,11 +24,26 @@
 
 input[type=email],
 input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
   display: inline-block;
-  box-sizing: border-box;
+  width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d4d4d4;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.04em;
+    transition: 0.4s ease;
+}
+
+.btnPassword{
+  width:25px; 
+      height:21px; 
+      border: 0;
+  background-image: url(../../../assets/img/key.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: none;
 }
 
 .row {
