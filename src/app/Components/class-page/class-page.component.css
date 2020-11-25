@@ -1,10 +1,21 @@
 
 .container{
-  width: 100%;
+  /* width: 100%;
+  display: inline-block;
   height: 100%;
   max-height: 76.2%;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 25px; */
+
+  height: auto;
+  text-align: center;
+ /* padding-top: 5%; */
+  width: 100%;
+  max-width: 80%;
+  padding: 20px;
+  border-radius: 50px;
+  min-height: 100%;
+  bottom: 0;
 
 }
 .grid{
@@ -78,7 +89,9 @@ p{
     margin: 10px 40px 10px 0px;
     padding: 10px 10px;
 }
-
+.btnUserClass {
+    display: inline;
+  }
 
 #score {
     color: #5A6772;

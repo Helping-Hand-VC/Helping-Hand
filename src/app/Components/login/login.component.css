@@ -69,6 +69,7 @@ input[type=email],input[type=password]{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  
 }
 /* container checkbox for revelaing password */
 .container-checkboxPassword {
@@ -106,6 +107,7 @@ img.avatar {
 .container {
   padding: 16px;
   width: 100%;
+  
 }
 span.psw {
   float: right;

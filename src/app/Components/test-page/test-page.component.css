@@ -6,6 +6,8 @@
   max-width: 80%;
   padding: 20px;
   border-radius: 50px;
+  min-height: 100%;
+  bottom: 0;
 }
 
 .fade-out {
@@ -36,7 +38,10 @@
 
 .ButtonSelected {
   background-color: Red !important;
+  color: white;
+
   border: none;
+
 }
 
 .ButtonNotSelected {
@@ -86,6 +91,7 @@
 
 #btnNext {
   background-color: #6EB26E;
+  color: white;
   max-width: 100px;
   font-weight: 600;
   margin: 10px 40px 10px 0px;
@@ -140,6 +146,7 @@ button:hover {
 
 .StarDiv {
   display: inline-flex;
+  color: white;
 }
 
 .lblAlert {
@@ -204,6 +211,8 @@ button:hover {
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #61a3e5;
+  color: white;
+
 }
 @media screen and (max-width: 400px) {
   .container {

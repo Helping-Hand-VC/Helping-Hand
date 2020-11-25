@@ -24,7 +24,11 @@
   padding-top: 100px;
   color: white !important;
 }
+h3{
 
+  color: white;
+  /* margin-bottom: 0; */
+}
 
 .flip-card {
   background-color: transparent;
