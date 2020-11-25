@@ -100,12 +100,9 @@
             <br>
             <label id="GenCodeDisplay" style="width: auto;border: none;"></label>
             <br>
-            <audio controls>
-              <source src="horse.ogg" type="audio/ogg">
-              <source src="../assets/audio/generateCodeParent.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-            </audio>
-          </div>
+            <audio  id="GenCodeDisplay" src="../assets/audio/generateCodeParent.mp3" preload="auto"></audio>
+        <button class="btnAuidoPlayer" onclick="document.getElementById('GenCodeDisplay').play();"></button>
+        </div>
 
 
         </form>
@@ -174,12 +171,13 @@
               </button>
               <br>
               <br>
-
-              <audio controls>
+              <audio  id="geneCode" src="../assets/audio/linkGenerateCode.mp3" preload="auto"></audio>
+        <button class="btnAuidoPlayer" onclick="document.getElementById('geneCode').play();"></button>
+              <!-- <audio controls>
                 <source src="horse.ogg" type="audio/ogg">
                 <source src="../assets/audio/linkGenerateCode.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
-              </audio>
+              </audio> -->
             </div>
 
           </form>

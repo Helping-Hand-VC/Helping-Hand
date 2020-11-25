@@ -33,8 +33,19 @@
   background-image: url(../../../assets/img/key.svg);
   background-color: transparent;
   background-repeat: no-repeat;
-  
 } 
+
+.btnAuidoPlayer{
+
+  margin-top: 10px;
+  max-width: 50px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: transparent;
+  background-image: url(../../../assets/img/volume_up-black-48dp.svg);
+  background-repeat: no-repeat;
+}
 
 .btnPassword{
   width:25px; 

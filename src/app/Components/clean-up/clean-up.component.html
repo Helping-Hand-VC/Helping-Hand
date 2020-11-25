@@ -4,11 +4,13 @@
       <h1 class="rainbow-text" >Lets Play Clean Up!!</h1>
     </div>
     <div class="panel">
-      <audio controls>
+      <audio  id="CleanUp" src="../assets/audio/cleanUpGameObjective.mp3" preload="auto"></audio>
+      <button class="btnAuidoPlayer" onclick="document.getElementById('CleanUp').play();"></button>
+      <!-- <audio controls>
         <source src="horse.ogg" type="audio/ogg">
         <source src="../assets/audio/cleanUpGameObjective.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
-      </audio>
+      </audio> -->
       <h2>Look at the picture of the item below.</h2>
       <div class="points-div">
         <p style="float: left;">Points: </p>

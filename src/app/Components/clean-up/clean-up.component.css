@@ -128,4 +128,17 @@ img{
     max-width: 50px;
   }
 }
+.btnAuidoPlayer{
+
+  margin-top: 10px;
+  max-width: 50px;
+  width: 100%;
+  color: white;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  background-image: url(../../../assets/img/volume_up-black-48dp.svg);
+  background-repeat: no-repeat;
+}
 
