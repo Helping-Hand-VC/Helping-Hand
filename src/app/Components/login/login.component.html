@@ -1,5 +1,6 @@
-<div class="container">
 
+
+<div class="container">
 <div class="row">
     <div class="column1" style="width: 33%;">
     </div>
@@ -14,19 +15,33 @@
           <input type="email"  minlength="3" placeholder="Enter Email Address" name="userEmail" id="userEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           title="Must contain @ and . (example characters@characters.domain)"required>
           <label><b>Password</b></label>
-          <input [type]="show ? 'text' : 'password'" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-    
+
+            <!-- test here -->
+          <div class="buttonIn"> 
+            <input  [type]="show ? 'text' : 'password'" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <button class="buTest" id="reavealPass" type="button" (click)="password()" ></button> 
+        </div>
+<!-- end test -->
+          <!-- <input [type]="show ? 'text' : 'password'" placeholder="Enter Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required> -->
+
           <br><br>
           <label class="container-checkbox"> <b> Remember Me </b>
             <input hidden type="checkbox" name="remember" id="rememberMe">
             <span class="checkmark"></span>
           </label>
-          <button class="btnPassword" id="reavealPass" type="button" (click)="password()" ></button>
+          <!-- <button class="btnPassword" id="reavealPass" type="button" (click)="password()" ></button> -->
           <button class="btn" type="submit" id="btnlogin" (click)="SignInUser()">Login</button>
           <button class="btn" type="submit" id="btnRegister" (click)="this.router.navigate(['register']);">Register</button>   
         </div>
       </form>
+      <!-- test here -->
+      <!-- <div class="buttonIn"> 
+        <input class="inputPass" type="text" id="enter"> 
+        <button class="buTest" id="clear"></button> 
+    </div> -->
+<!-- end test -->
       <div class="container">
         <span>Change language to<a href="#"> Afrikaans</a></span>
         <br>
