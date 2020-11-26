@@ -9,7 +9,7 @@ body {
   background-position: center;
   background-color: #64B5F6bd;
   overflow-x: hidden; /* Hide horizontal scrollbar */
-  
+
 }
 
 /* This is start of fotter styles */
@@ -235,7 +235,7 @@ visibility: hidden;
 }
 
 .btn:hover{
-outline: none;
+  outline: none;
  opacity: 0.8;
  color: white;
 }
@@ -291,19 +291,10 @@ label{
 /* Text styles - end */
 
 /* input styles - start */
-/* input{
-  font-size: 16px;
-  font-weight: 100;
-  color: black;
-  border: 1px solid;
-  border-radius: 15px;
-} */
 
 input{
-  /* display: block; */
   width: 100%;
   display: inline-block;
-  /* box-sizing: border-box; */
   border: 1px solid #d4d4d4;
   padding: 15px 20px;
   background: white;
@@ -330,7 +321,6 @@ input{
 
 /* Create a custom checkbox */
 .checkmark {
-  position: absolute;
   margin-top: 2px;
   height: 20px;
   width: 20px;

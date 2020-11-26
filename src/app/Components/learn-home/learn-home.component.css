@@ -1,6 +1,6 @@
 /* The hero image */
 .hero-image {
-  background-image: linear-gradient(to right, #00000094, #0000004f), url("../../../assets/img/LearnHomeBanner.svg");
+  background-image: linear-gradient(to right, #000000bd, #000000bd), url("../../../assets/img/LearnHomeBanner.svg");
   min-height: 300px;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,10 +29,15 @@
 
 .flip-card {
   background-color: transparent;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   perspective: 1000px;
   margin-right: 15px;
+}
+img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50px;
 }
 
 .flip-card-inner {
@@ -63,7 +68,7 @@
   width: fit-content;
   display: inline-flex;
   flex-wrap: wrap;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 .containerPanel {
@@ -81,8 +86,6 @@
   visibility: hidden;
 }
 
-
-
 button {
   border-radius: 50px;
   background-color: #4CAF50;
@@ -95,8 +98,9 @@ button {
   line-height: 5px;
 }
 
-
-
+h1{
+  font-size: 50px;
+}
 @media screen and (max-width: 400px) {
 
 
@@ -148,4 +152,15 @@ button {
     transform: rotateY(180deg);
   }
 
+  h1{
+    font-size: 40px;
+    padding: 5px;
+  }
+
+  /* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  padding-top: 50px;
+  color: white !important;
+}
 }

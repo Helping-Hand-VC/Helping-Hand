@@ -31,6 +31,7 @@ input{
 .col-3{
  width: 100%;
  max-width: 10%;
+ display: inline-grid;
 }
 .col-6{
 
@@ -56,54 +57,28 @@ input{
   float: left;
 }
 #checkboxAnswer2{
-  margin-top: 33px;
-  margin-bottom: 23px;
-  
+  margin-top: 20px;
+  margin-bottom: 15px;
+
 }
 #checkboxAnswer4{
-  margin-top: 25px;
+  margin-top: 23px;
 }
 
-/* Create a custom checkbox */
-.checkBoxCustom {
-  margin-top: 17px;
+
+/* Hide the default checkbox */
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+/* Creating a custom checkbox
+based on demand */
+.checkmark {
+  margin-top: 15px;
+  margin-left: 10px;
   height: 20px;
-  border: solid 0.5px black;
-  background-color: #eee;
-}
-
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkBoxCustom {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkBoxCustom:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkBoxCustom:after {
-  display: block;
-  /* padding-left: 15px;
-  text-indent: -15px; */
-}
-
-/* Style the checkmark/indicator */
-.container .checkBoxCustom:after {
-
-  left: 6.5px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  width: 20px;
+  background-color: rgb(197, 197, 197);
 }
 
 @media screen and (max-width: 400px) {
@@ -178,3 +153,4 @@ input{
     font-size: 25px;
   }
 }
+

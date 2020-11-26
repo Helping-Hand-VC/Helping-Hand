@@ -129,6 +129,7 @@ input[type=text] {
 #btnTC{
   max-width: 250px;
   background-color: #00b100;
+  margin-top: 150px;
 }
 #btnChildSave {
 

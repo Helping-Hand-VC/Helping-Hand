@@ -1,71 +1,74 @@
 /* test start here */
-.buttonIn { 
-  width: auto; 
-  position: relative; 
-} 
+.buttonIn {
+  width: auto;
+  position: relative;
+}
 
-.inputPass { 
-  margin: 0px; 
-  padding: 0px; 
-  height: 50px; 
+.inputPass {
+  margin: 0px;
+  padding: 0px;
+  height: 50px;
   padding: 15px 20px;
   display: inline-block;
   width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #d4d4d4;
-    padding: 15px 20px;
-    background: white;
-    border-radius: 10px;
-    outline: none;
-    font-size: 1.04em;
-    transition: 0.4s ease;
-} 
+  box-sizing: border-box;
+  border: 1px solid #d4d4d4;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.04em;
+  transition: 0.4s ease;
+}
 
-.buTest { 
-  position: absolute; 
+.buTest {
+  position: absolute;
   right: 10px;
-  bottom: 17px; 
-  z-index: 2; 
-  border: none; 
-  width:25px; 
-  height:21px;
-  /* border: 0;  */
+  bottom: 17px;
+  z-index: 2;
+  border: none;
+  width: 25px;
+  height: 21px;
   background-image: url(../../../assets/img/key.svg);
   background-color: transparent;
   background-repeat: no-repeat;
-  
-} 
 
-.btnPassword{
-  width:25px; 
-      height:21px; 
-      border: 0;
+}
+
+.btnPassword {
+  width: 25px;
+  height: 21px;
+  border: 0;
   background-image: url(../../../assets/img/key.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   outline: none;
 }
+
 /* test end here */
 
-#btnlogin{
+#btnlogin {
   margin-top: 10px;
   background-color: rgb(67, 182, 32) !important;
   color: white;
   padding: 10px;
 }
-#btnShowPassword{
+
+#btnShowPassword {
   margin-top: 10px;
   background-color: rgb(67, 182, 32) !important;
   color: white;
   padding: 10px;
 }
-#btnRegister{
+
+#btnRegister {
   background-color: rgb(29, 180, 250) !important;
   color: white;
   padding: 10px;
   margin-top: 15px;
 }
-.column2{
+
+.column2 {
   padding: 1px;
   background-color: #FFFFFFbd;
   border: none;
@@ -75,26 +78,22 @@
 }
 
 
-input[type=email]{
-  
-  /* display: block; */
+input[type=email] {
+
+
   display: inline-block;
   width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #d4d4d4;
-    padding: 15px 20px;
-    background: white;
-    border-radius: 10px;
-    outline: none;
-    font-size: 1.04em;
-    transition: 0.4s ease;
+  box-sizing: border-box;
+  border: 1px solid #d4d4d4;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.04em;
+  transition: 0.4s ease;
 }
 
-/* input[type=password]{
-
-} */
-
-.btnAuidoPlayer{
+.btnAuidoPlayer {
 
   margin-top: 10px;
   max-width: 50px;
@@ -106,15 +105,16 @@ input[type=email]{
   background-repeat: no-repeat;
 }
 
-.btnPassword{
-  width:25px; 
-      height:21px; 
-      border: 0;
+.btnPassword {
+  width: 25px;
+  height: 21px;
+  border: 0;
   background-image: url(../../../assets/img/key.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   outline: none;
 }
+
 /* The container */
 .container-checkbox {
   display: block;
@@ -127,8 +127,9 @@ input[type=email]{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  
+
 }
+
 /* container checkbox for revelaing password */
 .container-checkboxPassword {
   display: block;
@@ -142,7 +143,8 @@ input[type=email]{
   -ms-user-select: none;
   user-select: none;
 }
-.row{
+
+.row {
   display: -webkit-inline-box;
   flex-wrap: wrap;
   max-width: 90%;
@@ -151,10 +153,12 @@ input[type=email]{
 button:hover {
   opacity: 0.8;
 }
+
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
 }
+
 img.avatar {
   width: 100%;
   max-width: 150px;
@@ -162,32 +166,37 @@ img.avatar {
   max-height: 150px;
   border-radius: 50%;
 }
+
 .container {
   padding: 16px;
   width: 100%;
-  
+
 }
+
 span.psw {
   float: right;
   padding-top: 16px;
 }
-label{
+
+label {
   float: left;
   margin-bottom: 1px !important;
-  
+
 }
-.checkmark{
-  top:0;
+
+.checkmark {
+  position: absolute;
+  top: 0;
   left: 0;
 }
+
 @media screen and (max-width: 300px) {
   span.psw {
     display: block;
-     float: none;
+    float: none;
   }
+
   .cancelbtn {
-     width: 100%;
+    width: 100%;
   }
 }
-
-
