@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { school, Student, User } from 'src/app/models/Users/user.model';
 import { NumberFormatStyle } from '@angular/common';
+import { stringify } from 'querystring';
 
  
 @Component({
@@ -31,6 +32,7 @@ export class ProfilePageComponent implements OnInit {
   public GradeSelected = "0";
 
   strErr: string;
+  iErr: number; 
   blnValid: boolean = true;
   uAuto: string;
   clsUser;
@@ -88,9 +90,7 @@ export class ProfilePageComponent implements OnInit {
         }else{
           this.getUserChildDetails();
         }
-        
-        
-       
+
       }      
     }
   }
@@ -164,13 +164,38 @@ export class ProfilePageComponent implements OnInit {
   }
 
   async saveMainProfile() {
-    let userName = (<HTMLInputElement>document.getElementById("edtMainusername")).value;
-    let userSName = (<HTMLInputElement>document.getElementById("edtMainusersurname")).value;
-    let userCell = (<HTMLInputElement>document.getElementById("edtMainmobile")).value;
-    let userIdNo = (<HTMLInputElement>document.getElementById("edtMainDOB")).value;
+    this.blnValid = true;
+    this.strErr = "";
+    this.iErr = 0;
+    if ((<HTMLInputElement>document.getElementById("edtMainusername")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "No first name inputted. \n";
+      this.blnValid = false;
+    }
+    if ((<HTMLInputElement>document.getElementById("edtMainusersurname")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "No surname inputted. \n";
+      this.blnValid = false;
+    }
+    if ((<HTMLInputElement>document.getElementById("edtMainmobile")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "No cellphone number inputted.\n";
+      this.blnValid = false;
+    }
+    if ((<HTMLInputElement>document.getElementById("edtMainDOB")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "No ID number inputted.";
+      this.blnValid = false;
+    }
+    
 
     //this.validateInfo(userName, userSName, userCell, userIdNo);
     if (this.blnValid) {
+      let userName = (<HTMLInputElement>document.getElementById("edtMainusername")).value;
+      let userSName = (<HTMLInputElement>document.getElementById("edtMainusersurname")).value;
+      let userCell = (<HTMLInputElement>document.getElementById("edtMainmobile")).value;
+      let userIdNo = (<HTMLInputElement>document.getElementById("edtMainDOB")).value;
+
       let strResult: string = await (this.clsFirebaseConnectionService.UpdateUser(userName, userSName, userCell, userIdNo));
       if (strResult.includes("error,")) {
         window.alert(strResult.replace("error,", ""));
@@ -251,21 +276,28 @@ export class ProfilePageComponent implements OnInit {
 
   async LinkToAccount(){
     //link parent to child account
+    this.strErr = "";
 
-    let enteredCode = (<HTMLInputElement>document.getElementById("linkCode")).value;
+    if ((<HTMLInputElement>document.getElementById("linkCode")).value.length < 4) {
+      this.strErr = "Error: Please insert a valid link code.";
+      window.alert(this.strErr);
+    } else {
+      let enteredCode = (<HTMLInputElement>document.getElementById("linkCode")).value;
 
-    let bvalid = await this.clsFirebaseConnectionService.LinkAccounts(enteredCode);
-    if(bvalid == true){
+      let bvalid = await this.clsFirebaseConnectionService.LinkAccounts(enteredCode);
+      if (bvalid == true) {
 
-      window.alert("account linked");
-      //Display new data to screen
-      this.clsUser = await this.clsFirebaseConnectionService.SetUsersDetails();//Force reload of data
-      this.getUserChildDetails();
+        window.alert("account linked");
+        //Display new data to screen
+        this.clsUser = await this.clsFirebaseConnectionService.SetUsersDetails();//Force reload of data
+        this.getUserChildDetails();
 
-    }else{
-      console.log("unable to Linked accounts");
-      window.alert("failed to link account's linked");
+      } else {
+        console.log("unable to Linked accounts");
+        window.alert("failed to link account's linked");
+      }
     }
+    
 
   }
 
@@ -273,32 +305,60 @@ export class ProfilePageComponent implements OnInit {
     this.SetUsersValues();
   }
 
-  async saveChildProfile(){
-    let sName = (<HTMLInputElement>document.getElementById("Childsusername")).value;
-    let sSurname = (<HTMLInputElement>document.getElementById("Childsusersurname")).value;
-    let sMobile = (<HTMLInputElement>document.getElementById("Childsmobile")).value;
-    let sID = (<HTMLInputElement>document.getElementById("ChildsDOB")).value;
-
-    let clsUser = {
-      email : "",
-      type      : "",
-      id        : sID,
-      firstname : sName,
-      surname   : sSurname,
-      cell      : sMobile,
-      autoid    : "",
-      ChildsID  : []
-    };
-
-    this.btnLinkToSchool();
-
-
-    let reply = await this.clsFirebaseConnectionService.updateChildDetails(clsUser);
-    if(reply == "true"){
-      window.alert("Childs details have been updated");
-    }else{
-      window.alert(reply);
+  async saveChildProfile() {
+    this.blnValid = true;
+    this.strErr = "";
+    this.iErr = 0;
+    if ((<HTMLInputElement>document.getElementById("Childsusername")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "Child's first name not inputted.\n";
+      this.blnValid = false;
     }
+    if ((<HTMLInputElement>document.getElementById("Childsusersurname")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "Child's surname not inputted.\n";
+      this.blnValid = false;
+    }
+    if ((<HTMLInputElement>document.getElementById("Childsmobile")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "Child's cellphone number not inputted.\n";
+      this.blnValid = false;
+    }
+    if ((<HTMLInputElement>document.getElementById("ChildsDOB")).value.length == 0) {
+      this.iErr++;
+      this.strErr = this.strErr + "Error " + this.iErr.toString() + ": " + "Child's date of birth not inputted.";
+      this.blnValid = false;
+    }
+    if (this.blnValid) {
+      let sName = (<HTMLInputElement>document.getElementById("Childsusername")).value;
+      let sSurname = (<HTMLInputElement>document.getElementById("Childsusersurname")).value;
+      let sMobile = (<HTMLInputElement>document.getElementById("Childsmobile")).value;
+      let sID = (<HTMLInputElement>document.getElementById("ChildsDOB")).value;
+    
+      let clsUser = {
+        email: "",
+        type: "",
+        id: sID,
+        firstname: sName,
+        surname: sSurname,
+        cell: sMobile,
+        autoid: "",
+        ChildsID: []
+      };
+
+      this.btnLinkToSchool();
+
+      
+      let reply = await this.clsFirebaseConnectionService.updateChildDetails(clsUser);
+      if (reply == "true") {
+        window.alert("Childs details have been updated");
+      } else {
+        window.alert(reply);
+      }
+    } else {
+      window.alert(this.strErr);
+    }
+    
   }
 
   async getSchools(){
