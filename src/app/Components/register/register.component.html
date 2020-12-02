@@ -21,9 +21,10 @@
              <div class="buttonIn"> 
               <label><b>Password</b></label>
                 <input #x type="password" placeholder="Enter Password" name="RegPsw" id="RegPsw"
-                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                   required />
+                <button class="buTest" id="reavealPass2" type="button" (click)="x.type=x.type=='password'?'text':'password'" ></button> 
           </div>
           <div class="buttonIn"> 
             <label><b>Confirm Password</b></label>

@@ -73,6 +73,14 @@
   line-height: 25px;
 }
 
+.ButtonSelected {
+  background-color: Red !important;
+  color: white;
+
+  border: none;
+
+}
+
 .column2 {
   padding: 1px;
   background-color: #FFFFFFbd;
@@ -81,6 +89,11 @@
   width: 100%;
   max-width: 500px;
 }
+
+input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
 
 input[type=email],
 input[type=password] {
@@ -203,29 +216,6 @@ label {
   padding: 10px 10px;
 }
 
-#btnStudent:focus {
-  background-color: red;
-  color: white;
-  outline: none;
-}
-
-#btnParent:focus {
-  background-color: red;
-  color: white;
-  outline: none;
-}
-
-#btnTeacher:focus {
-  background-color: red;
-  color: white;
-  outline: none;
-}
-
-#btnHeadmaster:focus {
-  background-color: red;
-  color: white;
-  outline: none;
-}
 
 /* The container */
 .container-checkbox {

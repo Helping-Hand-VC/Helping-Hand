@@ -14,7 +14,7 @@ import { stringify } from 'querystring';
 })
 export class ProfilePageComponent implements OnInit {
 
-  public student = false;
+  public student = true;
   
 
   //For DisplayPurposes
@@ -71,14 +71,14 @@ export class ProfilePageComponent implements OnInit {
       if (this.clsUser.type == "student") {
         this.student = true;
 
-        (<HTMLInputElement>document.getElementById("edtMainusername")).disabled = true;
+        /*(<HTMLInputElement>document.getElementById("edtMainusername")).disabled = true;
         (<HTMLInputElement>document.getElementById("edtMainusersurname")).disabled = true;
         (<HTMLInputElement>document.getElementById("edtMainmobile")).disabled = true;
-        (<HTMLInputElement>document.getElementById("edtMainDOB")).disabled = true;
+        (<HTMLInputElement>document.getElementById("edtMainDOB")).disabled = true;*/
         
         (<HTMLInputElement>document.getElementById("btnLinkAccount")).hidden = true;
 
-        (<HTMLInputElement>document.getElementById("studGradeDisp")).innerHTML = "Grade: " + this.clsUser.Grade;
+        (<HTMLInputElement>document.getElementById("studGradeDisp")).innerHTML = "Level: " + this.clsUser.Grade;
 
         
 

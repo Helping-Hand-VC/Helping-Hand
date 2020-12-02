@@ -5,32 +5,32 @@
         <div class="form1">
           <h1>Prepare new questions here</h1>
           <label>Type out the question in the below box.</label>
-          <input type="text" id="txtQuestion" placeholder="Enter Question here -->">
+          <input type="text" id="txtQuestion" placeholder="Enter Question here">
           <label>Now type out the various answers 3 incorrect and 1 correct.</label>
           <div class="row1">
             <div class="col-3">
 
-              <input hidden type="checkbox" name="checkboxAnswer1" id="checkboxAnswer1">
-              <span class="checkmark"></span>
-              <input hidden type="checkbox" name="checkboxAnswer2" id="checkboxAnswer2">
-              <span class="checkmark"></span>
-              <input hidden type="checkbox" name="checkboxAnswer3" id="checkboxAnswer3">
-              <span class="checkmark"></span>
-              <input hidden type="checkbox" name="checkboxAnswer4" id="checkboxAnswer4">
-              <span class="checkmark"></span>
+              <label class="container-checkbox">
+                <input hidden type="radio" name="remember" id="rememberMe1">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container-checkbox">
+                <input hidden type="radio" name="remember" id="rememberMe2">
+                <span class="checkmark"></span>
+              </label>
+
             </div>
             <div class="col-6">
-              <input type="text" id="txtAnswer1" placeholder="Enter an Answer -->">
-              <input type="text" id="txtAnswer2" placeholder="Enter an Answer -->">
-              <input type="text" id="txtAnswer3" placeholder="Enter an Answer -->">
-              <input type="text" id="txtAnswer4" placeholder="Enter an Answer -->">
+              <input type="text" id="txtAnswer1" placeholder="Enter an Answer">
+              <input type="text" id="txtAnswer2" placeholder="Enter an Answer">
             </div>
           </div>
         </div>
         <div class="btnDIV">
           <button class="btn" id="btnCancel">Cancel</button>
-          <button class="btn" id="btnClear">Clear</button>
-          <button class="btn" id="btnSaveQuestion">Save</button>
+          <button class="btn" id="btnClear" (click)="ResetScreen()">Clear</button>
+          <button class="btn" id="btnSaveQuestion" (click)="SubmitQuestion()">Save</button>
         </div>
       </form>
     </div>

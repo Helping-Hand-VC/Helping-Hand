@@ -65,6 +65,9 @@ export class RegisterComponent implements OnInit {
       //window.alert(this.clsFirebaseConnectionService.CreateNewUser(email, psw, utype));
       //this.router.navigate(['profile']); 
       //console.log("Worked")
+      if(utype != "student"){
+        utype = "parent";
+      }
       let strResult: string = await(this.clsFirebaseConnectionService.CreateNewUser(email, psw, utype));
 
       if(strResult.includes("error,")){

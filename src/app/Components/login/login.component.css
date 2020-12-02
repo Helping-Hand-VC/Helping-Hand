@@ -21,6 +21,11 @@
   transition: 0.4s ease;
 }
 
+input::-ms-reveal,
+      input::-ms-clear {
+        display: none;
+      }
+
 .buTest {
   position: absolute;
   right: 10px;

@@ -2,225 +2,230 @@
   <div class="container">
     <div class="row profile" style="display: block;">
       <div>
-        <div class="col-md-3">
-          <div class="profile-sidebar">
-            <!-- SIDEBAR USERPIC -->
-            <div id="ProfilePicture" class="profile-userpic">
-              <img src="../../../assets/img/HelpingHandsLogo.png" class="img-responsive" alt="" />
-            </div>
-
-            <!-- SIDEBAR USER TITLE -->
-            <div class="profile-usertitle">
-              <div class="profile-usertitle-name">
-                <label id="edtNameDisp">Users name goes here</label>
-
-              </div>
-              <div class="profile-usertitle-grade" [style.display]="(student == true) ? '' : 'none'">
-                <label id="studGradeDisp">Grade:</label>
-              </div>
-              <div class="profile-usertitle-class" [style.display]="(student == true) ? '' : 'none'">
-                <label id="studClassDisp">Class:</label>
-              </div>
-            </div>
-
-            <!-- SIDEBAR MENU -->
-            <div class="profile-usermenu">
-              <ul class="nav">
-                <li [class]="(ViewAccountSettings == true) ? 'active' : ''">
-                  <a (click)="btnViewAccountSettings()">
-                    <i class="glyphicon glyphicon-user"></i>
-                    Account Settings
-                  </a>
-                </li>
-                <li [class]="(ViewChildrenSettings == true) ? 'active' : ''"
-                  [style.display]="(student == true) ? 'none' : ''">
-                  <a (click)="btnViewChildren()">
-                    <i class="glyphicon glyphicon-user"></i>
-                    Children
-                  </a>
-                </li>
-                <li [class]="(ViewTCs == true) ? 'active' : ''">
-                  <a (click)="btnViewTCs()">
-                    <i class="glyphicon glyphicon-question-sign"></i>
-                    T's & C's
-                  </a>
-                </li>
-                <li [class]="(ViewHelp == true) ? 'active' : ''">
-                  <a (click)="btnViewHelp()">
-                    <i class="glyphicon glyphicon-flag"></i>
-                    Help
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- END MENU -->
+      <div class="col-md-3">
+        <div class="profile-sidebar">
+          <!-- SIDEBAR USERPIC -->
+          <div id="ProfilePicture" class="profile-userpic">
+            <img src="../../../assets/img/HelpingHandsLogo.png" class="img-responsive" alt="" />
           </div>
+  
+          <!-- SIDEBAR USER TITLE -->
+          <div class="profile-usertitle">
+            <div class="profile-usertitle-name">
+              <label id="edtNameDisp">Users name goes here</label>
+  
+            </div>
+            <div class="profile-usertitle-grade" [style.display]="(student == true) ? '' : 'none'">
+              <label id="studGradeDisp">Level:</label>
+            </div>
+            <div class="profile-usertitle-class" [style.display]="(student == true) ? 'none' : 'none'">
+              <label id="studClassDisp">Class:</label>
+            </div> 
+          </div>
+  
+          <!-- SIDEBAR MENU -->
+          <div class="profile-usermenu">
+            <ul class="nav">
+              <li [class]="(ViewAccountSettings == true) ? 'active' : ''" >
+                <a (click)="btnViewAccountSettings()">
+                  <i class="glyphicon glyphicon-user"></i>
+                  Account Settings
+                </a>
+              </li>
+              <li [class]="(ViewChildrenSettings == true) ? 'active' : ''" [style.display]="(student == true) ? 'none' : ''">
+                <a (click)="btnViewChildren()">
+                  <i class="glyphicon glyphicon-user"></i>
+                  Children
+                </a>
+              </li>
+              <li [class]="(ViewTCs == true) ? 'active' : ''">
+                <a (click)="btnViewTCs()">
+                  <i class="glyphicon glyphicon-question-sign"></i>
+                  T's & C's
+                </a>
+              </li>
+              <li [class]="(ViewHelp == true) ? 'active' : ''">
+                <a (click)="btnViewHelp()">
+                  <i class="glyphicon glyphicon-flag"></i>
+                  Help
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- END MENU -->
         </div>
-
-      <!--children-->
-      <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">
-        <h1>Children's Account Settings</h1>
-
-        <div [style.display]="(student == true) ? 'none' : ''">
-
-          <form id="form1content1">
-            <div class="form-row" [style.display]="(ChildLinked == true) ? '' : 'none'">
-              <div class="col childAccountControls">
+      </div>
+  
+      <!--Main View-->
+      <div class="col-md-9">
+  
+        <!--Account Settings-->
+        <div class="profile-content" [style.display]="(ViewAccountSettings == true) ? '' : 'none'">
+          <h1>Account Settings</h1>
+          <br />
+  
+          <!--Main users account-->
+          <form id="frmAccountSettings">
+            <h4 ID="lblAdultsOnly" [style.display]="(student == true) ? '' : 'none'">Only adults can edit this area, please link your account below.</h4>
+            <div class="form-row">
+              <div class="col">
                 <label>First Name</label>
-                <br />
-                <input type="text" name="Childsusername" id="Childsusername" placeholder="Enter your first name" />
-                <br />
+                <br/>
+                <input type="text" name="username" id="edtMainusername" placeholder="Enter your first name" 
+                [disabled]="(student == true) ? 'disabled' : ''" [style.cursor]="(student == true) ? 'no-drop' : 'text'"/>
+                <br/>
                 <label>Surname</label>
                 <br />
-                <input type="text" name="Childsusersurname" id="Childsusersurname" placeholder="Enter your surname" />
-                <br />
-                <label>School</label>
-                <br>
-                <select [(ngModel)]="schoolSelectedId" name="School" style="min-width: 80%;">
-                  <option  selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
-                  <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
-                </select>
+                <input type="text" name="usersurname" id="edtMainusersurname" placeholder="Enter your surname"
+                [disabled]="(student == true) ? 'disabled' : ''" [style.cursor]="(student == true) ? 'no-drop' : 'text'"/>
+                <br/>
               </div>
-
-              <div style="padding-top: 20px;" class="form-row" [style.display]="(student == true) ? '' : 'none'">
-                <button class="btn" type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode"
-                  (click)="GenerateCode()">
-                  Generate Code
+              <div class="col">
+                <label>Cell number</label>
+                <br/>
+                <input type="text" name="mobile" id="edtMainmobile" placeholder="Enter your cellphone number"
+                [disabled]="(student == true) ? 'disabled' : ''" [style.cursor]="(student == true) ? 'no-drop' : 'text'"/>
+                <br/>
+                <label>Birthday</label>
+                <br/>
+                <input type="date" name="DOB" id="edtMainDOB" placeholder="Enter your Date of birth"
+                [disabled]="(student == true) ? 'disabled' : ''" [style.cursor]="(student == true) ? 'no-drop' : 'text'"/>
+              </div>
+            </div>
+  
+            <div style="padding-top: 20px;padding-left: 42px;" class="form-row" [style.display]="(student == true) ? '' : 'none'">
+              <button class="btn" type="button" name="btnGenerateLinkCode" id="btnGenerateLinkCode" (click)="GenerateCode()">
+                Generate Code
+              </button>
+              <br>
+              <label id="GenCodeDisplay" style="width: 100%;top:100%;border: none;padding-top: 18px;"></label>
+              <br>
+              <audio  id="GenCodeDisplay1" src="../assets/audio/generateCodeParent.mp3" preload="auto"></audio>
+              <button class="btnAuidoPlayer" onclick="document.getElementById('GenCodeDisplay1').play();"></button>
+          </div>
+  
+  
+          </form>
+  
+          <div class="MainUserbtn" [style.display]="(student == true) ? 'none' : ''">
+            <button class="btn"  type="button" name="btnMainReset" id="btnReset" (click)="btnMainReset()">Reset</button>
+            <button class="btn"  type="button" name="btnMainSave" id="btnSave" (click)="saveMainProfile()">Save</button>
+  
+          </div>
+        </div>
+  
+  
+        <!--children-->
+        <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">
+          <h1>Children's Account Settings</h1>
+  
+          <div [style.display]="(student == true) ? 'none' : ''">
+  
+            <form id="form1content1">
+              <div class="form-row" [style.display]="(ChildLinked == true) ? '' : 'none'">
+                <div class="col childAccountControls">
+                  <label>First Name</label>
+                  <br />
+                  <input type="text" name="Childsusername" id="Childsusername" placeholder="Enter your first name" />
+                  <br />
+                  <label>Surname</label>
+                  <br />
+                  <input type="text" name="Childsusersurname" id="Childsusersurname" placeholder="Enter your surname" />
+                  <br />
+                  <label>School</label>
+                  <br>
+                  <select [(ngModel)]="schoolSelectedId" name="School" style="min-width: 80%;">
+                    <option  selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
+                    <option *ngFor="let reg of lstSchools"  [value]="reg.id">{{reg.Name}}</option>
+                  </select>
+                </div>
+                <div class="col childAccountControls" >
+                  <label>Cell number</label>
+                  <br/>
+                  <input type="text" name="Childsmobile" id="Childsmobile" placeholder="Enter your cellphone number" />
+                  <br/>
+                  <label>Birthday</label>
+                  <br/>
+                  <input type="Date" name="ChildsDOB" id="ChildsDOB" placeholder="Enter your date of birth" />
+                  <br>
+                  <label>Level</label>
+                  <br>
+                  <select [(ngModel)]="GradeSelected" name="Grade" style="min-width: 80%;">
+                    <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a level</option>
+                    <option *ngFor="let gr of lstGrades"  [value]="gr">{{gr}}</option>
+                  </select>
+                </div>
+  
+  
+  
+              </div>
+  
+              <div class="form-row" style="display: block !important; min-height: 252px;" [style.display]="(ChildLinked == true) ? 'none' : 'block !important'">
+                <label style="width: 200px; size: 10px;">Link account below</label>
+                <!-- <h1>Link Account Below</h1> -->
+                <br/>
+                <input style="width:150px;" type="text" [style.display]="(student == true) ? 'none' : ''"  name="linkCode" id="linkCode" placeholder="" />
+                <br>
+                <button class="btn" type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
+                  Link Account
                 </button>
                 <br>
-                <label id="GenCodeDisplay" style="width: auto;border: none;"></label>
                 <br>
-                <audio id="GenCodeDisplay" src="../assets/audio/generateCodeParent.mp3" preload="auto"></audio>
-                <button class="btnAuidoPlayer" onclick="document.getElementById('GenCodeDisplay').play();"></button>
+                <audio  id="geneCode" src="../assets/audio/linkGenerateCode.mp3" preload="auto"></audio>
+          <button class="btnAuidoPlayer" onclick="document.getElementById('geneCode').play();"></button>
+                <!-- <audio controls>
+                  <source src="horse.ogg" type="audio/ogg">
+                  <source src="../assets/audio/linkGenerateCode.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio> -->
               </div>
-              <div class="MainUserbtn" [style.display]="(student == true) ? 'none' : ''">
-                <button class="btn" type="button" name="btnMainReset" id="btnReset"
-                  (click)="btnMainReset()">Reset</button>
-                <button class="btn" type="button" name="btnMainSave" id="btnSave"
-                  (click)="saveMainProfile()">Save</button>
-              </div>
-            </div>
-              
-          </form>
-
-
-        </div>
-
-
-          <!--children-->
-          <div class="profile-content" [style.display]="(ViewChildrenSettings == true) ? '' : 'none'">
-            <h1>Childs Account Settings</h1>
-
-            <div [style.display]="(student == true) ? 'none' : ''">
-
-              <form id="form1content1">
-                <div class="form-row" [style.display]="(ChildLinked == true) ? '' : 'none'">
-                  <div class="col childAccountControls">
-                    <label>First Name</label>
-                    <br />
-                    <input type="text" name="Childsusername" id="Childsusername" placeholder="Enter your first name" />
-                    <br />
-                    <label>Surname</label>
-                    <br />
-                    <input type="text" name="Childsusersurname" id="Childsusersurname"
-                      placeholder="Enter your surname" />
-                    <br />
-                    <label>School</label>
-                    <br>
-                    <select [(ngModel)]="schoolSelectedId" name="School" style="min-width: 80%;">
-                      <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a school</option>
-                      <option *ngFor="let reg of lstSchools" [value]="reg.id">{{reg.Name}}</option>
-                    </select>
-                  </div>
-                  <div class="col childAccountControls">
-                    <label>Cell number</label>
-                    <br />
-                    <input type="text" name="Childsmobile" id="Childsmobile"
-                      placeholder="Enter your cellphone number" />
-                    <br />
-                    <label>ID number</label>
-                    <br />
-                    <input type="text" name="ChildsDOB" id="ChildsDOB" placeholder="Enter your ID number" />
-                    <br>
-                    <label>Grade</label>
-                    <br>
-                    <select [(ngModel)]="GradeSelected" name="Grade" style="min-width: 80%;">
-                      <option selected="selected" value="0" [ngValue]="" disabled hidden>Choose a Grade</option>
-                      <option *ngFor="let gr of lstGrades" [value]="gr">{{gr}}</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-row" style="display: block !important;"
-                  [style.display]="(ChildLinked == true) ? 'none' : 'block !important'">
-                  <label style="width: 200px; size: 10px;">Link account below</label>
-                  <!-- <h1>Link Account Below</h1> -->
-                  <br />
-                  <input style="padding:0px;padding-top:10px;width:100px;" type="text"
-                    [style.display]="(student == true) ? 'none' : ''" name="linkCode" id="linkCode" placeholder="" />
-                  <br>
-                  <button class="btn" type="button" name="btnLinkAccount" (click)="LinkToAccount()" id="btnLinkAccount">
-                    Link Account
-                  </button>
-                  <br>
-                  <br>
-                  <audio id="geneCode" src="../assets/audio/linkGenerateCode.mp3" preload="auto"></audio>
-                  <button class="btnAuidoPlayer" onclick="document.getElementById('geneCode').play();"></button>
-                  <!-- <audio controls>
-                <source src="horse.ogg" type="audio/ogg">
-                <source src="../assets/audio/linkGenerateCode.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-              </audio> -->
-                </div>
-
-              </form>
-
-
-            </div>
-
-
-
-            <div class="childAccountControlsBTN" [style.display]="(student == true) ? 'none' : ''">
-              <button class="btn" type="button" name="btnChildReset" id="btnReset"
-                (click)="btnChildReset()">Reset</button>
-              <button class="btn" type="button" name="btnChildSave" id="btnSave"
-                (click)="saveChildProfile()">Save</button>
-              <br />
-              <!--<button style="background-color: green;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>-->
-            </div>
+  
+            </form>
+  
+  
           </div>
-
-
-
-          <!--TCs-->
-          <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">
-            <h1>T's & C's</h1>
-            <div style="padding-left: 5px; padding-right: 5px;">
-
-              <p>Please follow this page as we do update our Terms &amp; Conditions and our Terms of Use regularly: (28
-                October 2020 : 13:30)</p>
-              <p>Helping Hands' mission is to assist individuals with learning. We aim to enable anyone to use and share
-                educational resources from any location in order to improve the learning experience.</p>
-              <p>In order to keep our platform functioning as intended, we have created some rules in order to keep our
-                platform as well as each individual safe. The following Terms &amp; Conditions apply to all activity on
-                the Helping Hands website and other related services.</p>
-
-            </div>
-            <button class="btn" id="btnTC" type="button" (click)="ViewTCPDF()">
-              View Full Document
-            </button>
-          </div>
-
-
-          <!--Help-->
-          <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">
-            <h1>Help</h1>
-            <div style="padding-left: 5px; padding-right: 5px;">
-              <p>Documentation and short video's comming soon</p>
-            </div>
+  
+  
+  
+          <div class="childAccountControlsBTN" [style.display]="(student == true) ? 'none' : ''">
+            <button class="btn"  type="button" name="btnChildReset" id="btnReset" (click)="btnChildReset()">Reset</button>
+            <button class="btn"  type="button" name="btnChildSave" id="btnSave" (click)="saveChildProfile()">Save</button>
+            <br/>
+            <!--<button style="background-color: green;" type="button" name="btnChildReset" id="btnChildReset" (click)="btnLinkToSchool()">Link Child to school and Grade</button>-->
           </div>
         </div>
+  
+  
+  
+        <!--TCs-->
+        <div class="profile-content" [style.display]="(ViewTCs == true) ? '' : 'none'">
+          <h1>T's & C's</h1>
+          <div style="padding-left: 5px; padding-right: 5px;">
+  
+            <p>Please follow this page as we do update our Terms &amp; Conditions and our Terms of Use regularly: (28 October 2020 : 13:30)</p>
+            <p>Helping Hands' mission is to assist individuals with learning. We aim to enable anyone to use and share educational resources from any location in order to improve the learning experience.</p>
+            <p>In order to keep our platform functioning as intended, we have created some rules in order to keep our platform as well as each individual safe. The following Terms &amp; Conditions apply to all activity on the  Helping Hands website and other related services.</p>
+  
+          </div>
+          <button class="btn" id="btnTC" type="button" (click) = "ViewTCPDF()">
+            View Full Document
+          </button>
+        </div>
+  
+  
+        <!--Help-->
+        <div class="profile-content" [style.display]="(ViewHelp == true) ? '' : 'none'">
+          <h1>Help</h1>
+          <div style="padding-left: 5px; padding-right: 5px;">
+            <p>Documentation and short video's comming soon</p>
+          </div>
+        </div>
+  
+  
+      </div>
+  
       </div>
     </div>
   </div>
-</body>
+  </body>
+  

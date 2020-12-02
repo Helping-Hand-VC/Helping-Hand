@@ -1,4 +1,7 @@
-<div class="container" style="width: 100%;">
+
+
+
+<div class="container" style="width: 100%;" >
   <div class="row">
     <div class="hero-image">
       <div class="hero-text">
@@ -12,12 +15,12 @@
   <div style="text-align: center;" class="container">
     <div class="rowCards">
       <!--Words-->
-      <div class="flip-card">
+      <div class="flip-card" style="cursor: pointer;" (click)="this.router.navigate(['learn-numbers']);">
         <div class="flip-card-inner">
           <div class="flip-card-front">
            
 
-            <a href="http://localhost:4200/learn-numbers" target="_blank">
+            <a>
               <img src="../../../assets/img/FunWithNumbers.svg" alt="Avatar">
             </a>
 
@@ -26,11 +29,11 @@
         </div>
         <h3 class="Subjectlabel">Learn about the Alphabet</h3>
       </div>
-      <div class="flip-card">
+      <div class="flip-card" style="cursor: pointer;" (click)="this.router.navigate(['learn-family-members']);">
         <div class="flip-card-inner">
           <div class="flip-card-front">
 
-            <a href="http://localhost:4200/learn-family-members" target="_blank">
+            <a>
               <img src="../../../assets/img/FunWithFamily.svg" alt="Avatar">
             </a>
 
@@ -39,12 +42,12 @@
         </div>
         <h3 class="Subjectlabel">Learn about your Family members</h3>
       </div>
-      <div class="flip-card">
+      <div  class="flip-card" style="cursor: pointer;" (click)="this.router.navigate(['learn-alphabet']);">
         <div class="flip-card-inner">
           <div class="flip-card-front">
 
             
-            <a href="http://localhost:4200/learn-alphabet" target="_blank">
+            <a>
               <img src="../../../assets/img/FunWithAlphabet.svg" alt="Avatar">
             </a>
             
@@ -55,3 +58,5 @@
     </div>
   </div>
 </div>
+
+

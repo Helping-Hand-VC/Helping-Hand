@@ -38,6 +38,34 @@ export class CleanUpComponent implements OnInit {
     },
     {
       Correct: "Bathroom .svg",
+      Incorrect: "Playing .svg",
+      Item: "Bathroom/towel.png",
+      OptionA : "Outside",
+      OptionB : "Bathroom"
+    },
+    {
+      Correct: "Kitchen.svg",
+      Incorrect: "Bathroom .svg",
+      Item: "Kitchen/bigpot.png",
+      OptionA : "Bathroom",
+      OptionB : "Kitchen"
+    },
+    {
+      Correct: "Bathroom .svg",
+      Incorrect: "Dinning room.svg",
+      Item: "Bathroom/bath.png",
+      OptionA : "Dinning room",
+      OptionB : "Bathroom"
+    },
+    {
+      Correct: "Bedroom.svg",
+      Incorrect: "Playing .svg",
+      Item: "Bedroom/bed.png",
+      OptionA : "Outside",
+      OptionB : "Bedroom"
+    },
+    {
+      Correct: "Bathroom .svg",
       Incorrect: "Dinning room.svg",
       Item: "Bathroom/toilet.png",
       OptionA : "Dinning room",
@@ -50,6 +78,7 @@ export class CleanUpComponent implements OnInit {
       OptionA : "Bathroom",
       OptionB : "Kitchen"
     }
+
 
   ];
   

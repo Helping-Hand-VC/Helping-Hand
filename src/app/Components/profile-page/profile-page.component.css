@@ -89,7 +89,7 @@ h1 {
 }
 
 
-input[type=text] {
+input[type=text],input[type=date]  {
   width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -103,7 +103,7 @@ input[type=text] {
   margin: 20px 0;
   width: 100%;
   float: left;
-  height: 100%;
+
 }
 .ngChooseGrade{
   margin-bottom: 1%;

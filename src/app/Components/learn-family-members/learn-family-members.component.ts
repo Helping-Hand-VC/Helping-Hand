@@ -10,6 +10,7 @@ export class LearnFamilyMembersComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    (<HTMLInputElement>document.getElementById("container")).scrollTop = 0;
   }
 
 }
